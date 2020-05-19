@@ -1,0 +1,7 @@
+﻿[*.cs]
+
+# IDE1006: 命名样式
+dotnet_diagnostic.IDE1006.severity = silent
+
+# CS1002: 
+dotnet_diagnostic.CS1002.severity = none
