@@ -47,14 +47,29 @@ namespace snip2latex
                     BitmapImage bmp = new BitmapImage();
                     await bmp.SetSourceAsync(await file.OpenAsync(FileAccessMode.Read));
                     imagecontrol.Source = bmp;
-                    fuckText.Text = await LatexFacade.PostAsync(file);
+                    String str = await LatexFacade.PostAsync(file);
+                    Model.DataWrapperReturn data = Model.Data.wrapper(str);
+                    Model.Data.restoreWords(data);
+                    TextDemo.Text = data.formula_result_num + "\n";
+                    await MathJaxServer.initAsync();
+                    foreach (var i in data.formula_result) {
+                        TextDemo.Text += i.words+"\n";
+                    }
+                    TextDemo.Text += "including words:\n";
+                    foreach (var i in data.words_result) {
+                        TextDemo.Text += i.words + "\n";
+                    }
+                    await MathJaxServer.multiOutlineFomulas(data, Model.Data.FomulaWordsSeparateOption.bothFomulaAndWords);
+                    string htmlString = await MathJaxServer.getServerHtmlAsync();
+                    WebDemo.NavigateToString(htmlString);
+                    progresring.Visibility = Visibility.Collapsed;
                 }
                 catch (WebException ex) {
                     var res= (HttpWebResponse)ex.Response;
                     StreamReader streamReader = new StreamReader(res.GetResponseStream());
-                    fuckText.Text = streamReader.ReadToEnd();
+                    TextDemo.Text = streamReader.ReadToEnd();
                 }catch(Exception ex) {
-                    fuckText.Text = ex.ToString();
+                    TextDemo.Text = ex.ToString();
                 }
             }
 

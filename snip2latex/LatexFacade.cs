@@ -36,7 +36,7 @@ namespace snip2latex
             request.KeepAlive = true;
             string base64 = await toBase64Async(image);
             String str = "image=" + base64;
-            //str += "&disp_formula=true";
+            str += "&disp_formula=true";
             byte[] buffer = encoding.GetBytes(str);
             request.ContentLength = buffer.Length;
             request.GetRequestStream().Write(buffer, 0, buffer.Length);
@@ -48,10 +48,6 @@ namespace snip2latex
 
         private static async Task<string> toBase64Async(StorageFile image)
         {
-            //BinaryFormatter binaryFormatter = new BinaryFormatter();
-            //MemoryStream memoryStream = new MemoryStream();
-            ////IRandomAccessStream iras = await image.OpenAsync(FileAccessMode.Read) ;
-            //binaryFormatter.Serialize(memoryStream, image);
             IBuffer buffer = await FileIO.ReadBufferAsync(image as IStorageFile);
             byte[] bytes = buffer.ToArray();
             String base64 = Convert.ToBase64String(bytes);
