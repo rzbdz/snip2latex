@@ -27,6 +27,10 @@ namespace snip2latex
                 throw ex;
             }
         }
+        public static string WebServerErrorHandle(Exception ex)
+        {
+            return "<html><body><center><h1 >&gt;_&lt;LaTeX 渲染器遇到异常</h1><p>遇到异常,异常信息为:</p></center><p>"+ex.Message+"</p></body></html>";
+        }
         public static async Task singleOutlineFomula(string fomulaString)
         {
             try {

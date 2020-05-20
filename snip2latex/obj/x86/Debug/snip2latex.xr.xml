@@ -1,7 +1,11 @@
 ﻿<?xml version="1.0" encoding="utf-8"?>
 <Roots >
   <Roots.RootTypes>
-    <RootType FullName="Windows.UI.Xaml.Application" />
+    <RootType FullName="Windows.UI.Xaml.Application">
+      <RootProperty Name="Resources" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.ResourceDictionary" />
+    <RootType FullName="Windows.UI.Color" />
     <RootType FullName="Windows.UI.Xaml.Controls.Page">
       <RootProperty Name="Background" />
       <RootProperty Name="Content" />
@@ -14,6 +18,7 @@
       <RootProperty Name="OpenPaneLength" />
       <RootProperty Name="IsBackButtonVisible" />
       <RootProperty Name="Background" />
+      <RootProperty Name="IsPaneOpen" />
       <RootProperty Name="MenuItems" />
       <RootProperty Name="Content" />
       <RootEvent Name="ItemInvoked" />
@@ -29,12 +34,12 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Frame">
       <RootProperty Name="Name" />
+      <RootProperty Name="Background" />
     </RootType>
     <RootType FullName="snip2latex.MainPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="RowDefinitions" />
       <RootProperty Name="Children" />
-      <RootProperty Name="Background" />
       <RootMethod Name="GetRow" />
       <RootMethod Name="SetRow" />
       <RootMethod Name="GetRowSpan" />

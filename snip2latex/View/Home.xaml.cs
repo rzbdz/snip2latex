@@ -52,7 +52,6 @@ namespace snip2latex.View
                     if (data == null) throw new Exception("Json didn't deserialize anything");
                     Model.Data.restoreWords(data);
                     TextDemo.Text = data.formula_result_num + "\n";
-                    await MathJaxServer.initAsync();
                     foreach (var i in data.formula_result) {
                         TextDemo.Text += i.words + "\n";
                     }
@@ -60,8 +59,14 @@ namespace snip2latex.View
                     foreach (var i in data.words_result) {
                         TextDemo.Text += i.words + "\n";
                     }
-                    await MathJaxServer.multiOutlineFomulas(data, Model.Data.FomulaWordsSeparateOption.bothFomulaAndWords);
-                    string htmlString = await MathJaxServer.getServerHtmlAsync();
+                    string htmlString;
+                    try {
+                        await MathJaxServer.initAsync();
+                        await MathJaxServer.multiOutlineFomulas(data, Model.Data.FomulaWordsSeparateOption.bothFomulaAndWords);
+                        htmlString = await MathJaxServer.getServerHtmlAsync();
+                    }catch(Exception e) {
+                        htmlString = MathJaxServer.WebServerErrorHandle(e);
+                    }
                     WebDemo.NavigateToString(htmlString);
                     progresring.Visibility = Visibility.Collapsed;
                 }

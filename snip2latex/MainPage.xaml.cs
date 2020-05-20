@@ -6,6 +6,7 @@ using System.IO;
 using System.Linq;
 using System.Net;
 using System.Runtime.InteropServices.WindowsRuntime;
+using Windows.ApplicationModel.Core;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage;
@@ -36,7 +37,7 @@ namespace snip2latex
         {
             this.InitializeComponent();
             Current = this;
-            setTitleBarColor(Windows.UI.Color.FromArgb(1, 73, 73, 73), Windows.UI.Color.FromArgb(1, 100, 100, 100));
+            setTitleBarColor(Windows.UI.Color.FromArgb(1, 107, 105, 214), Windows.UI.Color.FromArgb(1, 210, 195, 255));
             MainFrame.Navigate(typeof(Home));
 
         }
@@ -51,6 +52,7 @@ namespace snip2latex
         private void mainNav_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
         {
             if (args.IsSettingsInvoked) {
+                toNavigate(typeof(ErrorPage));
             }
         }
 

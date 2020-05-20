@@ -5,16 +5,15 @@
     xmlns:local="using:snip2latex.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
+    mc:Ignorable="d">
+    <!--Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"-->
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="2*"/>
             <RowDefinition Height="2*"/>
         </Grid.RowDefinitions>
-        <Grid Background="{ThemeResource SystemControlAcrylicWindowBrush}" Grid.Row="1">
+        <Grid  Grid.Row="1">
             <Button CornerRadius="3" Content="Open image!" Name="@imagebutton" Click="Button_Click"/>
             <Image Name="imagecontrol" Stretch="Uniform" Width="600" Source="Assets/Square150x150Logo.scale-200.png" />
         </Grid>
