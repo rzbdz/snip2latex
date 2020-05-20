@@ -61,9 +61,9 @@ namespace snip2latex.View
                     }
                     string htmlString;
                     try {
-                        await MathJaxServer.initAsync();
-                        await MathJaxServer.multiOutlineFomulas(data, Model.Data.FomulaWordsSeparateOption.bothFomulaAndWords);
-                        htmlString = await MathJaxServer.getServerHtmlAsync();
+                        MathJaxServer.init();
+                        MathJaxServer.multiOutlineFomulas(data, Model.Data.FomulaWordsSeparateOption.bothFomulaAndWords);
+                        htmlString = MathJaxServer.getServerHtmlAsync();
                     }catch(Exception e) {
                         htmlString = MathJaxServer.WebServerErrorHandle(e);
                     }

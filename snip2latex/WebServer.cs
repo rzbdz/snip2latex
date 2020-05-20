@@ -18,73 +18,55 @@ namespace snip2latex
         private readonly static String inLineRightBrace = "\\)";
         private readonly static String outLineleftBrace = "\\[";
         private readonly static String outLineRightBrace = "\\]";
-        public static async Task initAsync()
+        private static string result="";
+        public static void init()
         {
-            try {
-                StorageFolder storageFolder = ApplicationData.Current.LocalFolder;
-                StorageFile storageFile = await storageFolder.CreateFileAsync("webserver.html", CreationCollisionOption.ReplaceExisting);
-            }catch(Exception ex) {
-                throw ex;
-            }
+            result = "";
         }
         public static string WebServerErrorHandle(Exception ex)
         {
-            return "<html><body><center><h1 >&gt;_&lt;LaTeX 渲染器遇到异常</h1><p>遇到异常,异常信息为:</p></center><p>"+ex.Message+"</p></body></html>";
+            result= "<html><body><center><h1 >&gt;_&lt;LaTeX 渲染器遇到异常</h1><p>遇到异常,异常信息为:</p></center><p>" + ex.Message + "</p></body></html>";
+            return result;
         }
-        public static async Task singleOutlineFomula(string fomulaString)
+        public static string singleOutlineFomula(string fomulaString)
         {
-            try {
-                StorageFile file = await ApplicationData.Current.LocalFolder.GetFileAsync("webserver.html");
-                await FileIO.WriteTextAsync(file, pre);
-                await FileIO.AppendTextAsync(file, "<p>" + outLineleftBrace + fomulaString + outLineRightBrace + "</p>");
-                await FileIO.AppendTextAsync(file, suf);
-            }
-            catch(Exception ex) {
-                throw ex;
-            }
+            result = pre + "<p>" + outLineleftBrace + fomulaString + outLineRightBrace + "</p>" + suf;
+            return result;
         }
-        public static async Task multiOutlineFomulas(Model.DataWrapperReturn data,Model.Data.FomulaWordsSeparateOption option)
+        public static string multiOutlineFomulas(Model.DataWrapperReturn data, Model.Data.FomulaWordsSeparateOption option)
         {
-            try {
-                StorageFile file = await ApplicationData.Current.LocalFolder.GetFileAsync("webserver.html");
-                await FileIO.WriteTextAsync(file, pre);
-                switch (option) {
-                    case Data.FomulaWordsSeparateOption.fomula:
-                        foreach (var i in data.formula_result) {
-                            await FileIO.AppendTextAsync(file, "<p>" + outLineleftBrace + i.words + outLineRightBrace + "/p");
-                        }
-                        break;
-                    case Data.FomulaWordsSeparateOption.words:
-                        foreach (var i in data.words_result) {
-                            string str = i.words.Replace(" ", " \\ ");
-                            str = i.words.Replace("\\\\ \\ ", "\\\\ ");
-                            await FileIO.AppendTextAsync(file, outLineleftBrace + str + outLineRightBrace);
-                        }
-                        break;
-                    case Data.FomulaWordsSeparateOption.bothFomulaAndWords:
-                        await FileIO.AppendTextAsync(file, "<p>纯公式部分</p>");
-                        foreach (var i in data.formula_result) {
-                            await FileIO.AppendTextAsync(file, outLineleftBrace + i.words + outLineRightBrace);
-                        }
-                        await FileIO.AppendTextAsync(file, "<p>含文本部分</p>");
-                        foreach (var i in data.words_result) {
-                            string str = i.words.Replace(" ", " \\ ");
-                            str = i.words.Replace("\\\\ \\ ", "\\\\ ");
-                            await FileIO.AppendTextAsync(file, outLineleftBrace + str + outLineRightBrace);
-                        }
-                        break;
-                }
-                await FileIO.AppendTextAsync(file, suf);
-            }catch(Exception ex) {
-                throw ex;
+            result = pre;
+            switch (option) {
+                case Data.FomulaWordsSeparateOption.fomula:
+                    foreach (var i in data.formula_result) {
+                        result += "<p>" + outLineleftBrace + i.words + outLineRightBrace + "/p";
+                    }
+                    break;
+                case Data.FomulaWordsSeparateOption.words:
+                    foreach (var i in data.words_result) {
+                        string str = i.words.Replace(" ", " \\ ");
+                        str = i.words.Replace("\\\\ \\ ", "\\\\ ");
+                        result += outLineleftBrace + str + outLineRightBrace;
+                    }
+                    break;
+                case Data.FomulaWordsSeparateOption.bothFomulaAndWords:
+                    result += "<p>纯公式部分</p>";
+                    foreach (var i in data.formula_result) {
+                        result += outLineleftBrace + i.words + outLineRightBrace;
+                    }
+                    result += "<p>含文本部分</p>";
+                    foreach (var i in data.words_result) {
+                        string str = i.words.Replace(" ", " \\ ");
+                        str = i.words.Replace("\\\\ \\ ", "\\\\ ");
+                        result += outLineleftBrace + str + outLineRightBrace;
+                    }
+                    break;
             }
+            return result;
         }
-        public static async Task<string> getServerHtmlAsync()
+        public static string getServerHtmlAsync()
         {
-            StorageFile file = await ApplicationData.Current.LocalFolder.GetFileAsync("webserver.html");
-            Stream stream = await file.OpenStreamForReadAsync();
-            StreamReader streamReader = new StreamReader(stream, Encoding.Default);
-            return streamReader.ReadToEnd();
+            return result;
         }
     }
 }
