@@ -30,13 +30,13 @@
     <AppXManifest Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-05-20T17:38:42.623</Modified>
+      <Modified>2020-05-20T18:06:42.409</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\snip2latex.exe">
       <PackagePath>entrypoint\snip2latex.exe</PackagePath>
-      <Modified>2020-05-20T17:38:41.355</Modified>
+      <Modified>2020-05-20T18:06:41.762</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\.nuget\packages\microsoft.net.http\2.2.29\lib\win8\System.Net.Http.Extensions.dll">
       <PackagePath>System.Net.Http.Extensions.dll</PackagePath>
@@ -322,43 +322,39 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\snip2latex.xr.xml">
       <PackagePath>snip2latex.xr.xml</PackagePath>
-      <Modified>2020-05-20T16:57:52.973</Modified>
+      <Modified>2020-05-20T18:06:41.499</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-05-20T17:38:40.946</Modified>
+      <Modified>2020-05-20T18:06:41.528</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-05-20T17:38:40.946</Modified>
+      <Modified>2020-05-20T18:06:41.529</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\View\AboutPage.xbf">
       <PackagePath>View\AboutPage.xbf</PackagePath>
-      <Modified>2020-05-20T17:38:40.947</Modified>
+      <Modified>2020-05-20T18:02:06.262</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\View\ConvertPage.xbf">
       <PackagePath>View\ConvertPage.xbf</PackagePath>
-      <Modified>2020-05-20T17:38:40.947</Modified>
+      <Modified>2020-05-20T18:02:06.263</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\View\ErrorPage.xbf">
       <PackagePath>View\ErrorPage.xbf</PackagePath>
-      <Modified>2020-05-20T17:38:40.947</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\View\Setting.xbf">
-      <PackagePath>View\Setting.xbf</PackagePath>
-      <Modified>2020-05-20T17:38:40.948</Modified>
+      <Modified>2020-05-20T18:02:06.263</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\View\History.xbf">
       <PackagePath>View\History.xbf</PackagePath>
-      <Modified>2020-05-20T17:38:40.948</Modified>
+      <Modified>2020-05-20T18:02:06.263</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\View\Home.xbf">
       <PackagePath>View\Home.xbf</PackagePath>
-      <Modified>2020-05-20T17:38:40.948</Modified>
+      <Modified>2020-05-20T18:02:06.263</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\View\Settings.xbf">
       <PackagePath>View\Settings.xbf</PackagePath>
-      <Modified>2020-05-20T17:38:40.949</Modified>
+      <Modified>2020-05-20T18:02:06.264</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.18362.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -366,11 +362,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2020-05-20T16:43:44.359</Modified>
+      <Modified>2020-05-20T17:53:12.965</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\Core\snip2latex.exe">
       <PackagePath>snip2latex.exe</PackagePath>
-      <Modified>2020-05-20T17:38:42.583</Modified>
+      <Modified>2020-05-20T18:06:42.402</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

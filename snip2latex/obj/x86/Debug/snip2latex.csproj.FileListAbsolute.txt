@@ -3,7 +3,6 @@ C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\MainPage.xbf
 C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\View\AboutPage.xbf
 C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\View\ConvertPage.xbf
 C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\View\ErrorPage.xbf
-C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\View\Setting.xbf
 C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\View\History.xbf
 C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\View\Home.xbf
 C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\View\Settings.xbf
@@ -31,8 +30,6 @@ C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\View\ConvertPage
 C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\View\ConvertPage.g.cs
 C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\View\ErrorPage.g.i.cs
 C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\View\ErrorPage.g.cs
-C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\View\Setting.g.i.cs
-C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\View\Setting.g.cs
 C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\View\History.g.i.cs
 C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\View\History.g.cs
 C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\View\Home.g.i.cs
@@ -45,7 +42,6 @@ C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\MainPage.xaml
 C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\View\AboutPage.xaml
 C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\View\ConvertPage.xaml
 C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\View\ErrorPage.xaml
-C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\View\Setting.xaml
 C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\View\History.xaml
 C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\View\Home.xaml
 C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\View\Settings.xaml
@@ -54,7 +50,6 @@ C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\MainPage.xbf
 C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\View\AboutPage.xbf
 C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\View\ConvertPage.xbf
 C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\View\ErrorPage.xbf
-C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\View\Setting.xbf
 C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\View\History.xbf
 C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\View\Home.xbf
 C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\View\Settings.xbf

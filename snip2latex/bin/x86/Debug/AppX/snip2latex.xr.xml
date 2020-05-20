@@ -6,18 +6,24 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.ResourceDictionary" />
     <RootType FullName="Windows.UI.Color" />
+    <RootType FullName="Windows.UI.Xaml.Media.AcrylicBrush">
+      <RootProperty Name="BackgroundSource" />
+      <RootProperty Name="TintColor" />
+      <RootProperty Name="TintOpacity" />
+      <RootProperty Name="FallbackColor" />
+    </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Page">
       <RootProperty Name="Background" />
       <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.NavigationView">
+      <RootProperty Name="Background" />
       <RootProperty Name="IsSettingsVisible" />
       <RootProperty Name="IsTabStop" />
       <RootProperty Name="PaneDisplayMode" />
       <RootProperty Name="OpenPaneLength" />
       <RootProperty Name="IsBackButtonVisible" />
-      <RootProperty Name="Background" />
       <RootProperty Name="IsPaneOpen" />
       <RootProperty Name="MenuItems" />
       <RootProperty Name="Content" />
@@ -34,7 +40,6 @@
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Frame">
       <RootProperty Name="Name" />
-      <RootProperty Name="Background" />
     </RootType>
     <RootType FullName="snip2latex.MainPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
@@ -79,7 +84,6 @@
       <RootEvent Name="Click" />
     </RootType>
     <RootType FullName="snip2latex.View.ErrorPage" />
-    <RootType FullName="snip2latex.View.BlankPage2" />
     <RootType FullName="snip2latex.View.BlankPage3" />
     <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
       <RootProperty Name="Height" />

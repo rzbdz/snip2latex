@@ -270,9 +270,6 @@
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\View\ErrorPage.xbf">
       <PackagePath>View\ErrorPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\View\Setting.xbf">
-      <PackagePath>View\Setting.xbf</PackagePath>
-    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\View\History.xbf">
       <PackagePath>View\History.xbf</PackagePath>
     </AppxPackagedFile>

@@ -8,7 +8,7 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <NavigationView 
+    <NavigationView x:ConnectionId='2' 
         Background="{ThemeResource SystemControlBaseLowAcrylicWindowBrush}"
         x:Name="mainNav"
         IsSettingsVisible="true" 
@@ -16,13 +16,14 @@
         PaneDisplayMode="Left"
         OpenPaneLength="300"
         IsBackButtonVisible="Collapsed"
-        ItemInvoked="mainNav_ItemInvoked"
+                                         
         IsPaneOpen="False">
         <NavigationView.MenuItems>
             <NavigationViewItem Icon="Home"  Content="主页" Tag="SamplePage1" ToolTipService.ToolTip="1"/>
             <NavigationViewItem Icon="Clock"  Content="历史" Tag="SamplePage1" ToolTipService.ToolTip="1"/>
         </NavigationView.MenuItems>
-        <Frame Name="MainFrame" Background="{ThemeResource SystemControlAltLowAcrylicWindowBrush}">
+        <Frame x:ConnectionId='3' Name="MainFrame" >
         </Frame>
     </NavigationView>
 </Page>
+
