@@ -9,16 +9,37 @@
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
 
     <Grid>
-        <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="2*"/>
-        </Grid.RowDefinitions>
-        <!--<TextBlock Name="TextDemo" Grid.Row="0"/>-->
-        <TextBox TextWrapping="Wrap" Name="TextDemo" Grid.Row="0"/>
-        <Button Content="Open image!" Name="@imagebutton" Grid.Row="1" Click="Button_Click"/>
-        <Image Name="imagecontrol" Grid.Row="1" Height="300" Width="600" Source="Assets/Square150x150Logo.scale-200.png" />
-        <WebView Grid.Row="2" Name="WebDemo"/>
-        <ProgressRing Height="256" Width="256" Name="progresring" Visibility="Collapsed" Grid.RowSpan="3"/>
+
+        <NavigationView Grid.RowSpan="3" x:Name="nvAll" IsSettingsVisible="true" IsTabStop="False" Header="This is header text." >
+            <NavigationView.MenuItems>
+                <NavigationViewItemHeader Content="Main"/>
+                <NavigationViewItem Icon="Play"  Content="Menu Item1" Tag="SamplePage1" ToolTipService.ToolTip="1"/>
+                <NavigationViewItemSeparator/>
+                <NavigationViewItem Icon="Save" Content="Menu Item2" Tag="SamplePage2" />
+                <NavigationViewItem Icon="Refresh" Content="Menu Item3" Tag="SamplePage3" />
+            </NavigationView.MenuItems>
+            <NavigationView.AutoSuggestBox>
+                <AutoSuggestBox x:Name="ASB" PlaceholderText="Search" QueryIcon="Find" />
+            </NavigationView.AutoSuggestBox>
+            <NavigationView.PaneFooter>
+                <HyperlinkButton x:Name="MoreInfoBtn" Content="More"  Margin="12,0"/>
+            </NavigationView.PaneFooter>
+            <Frame x:Name="contentFrame">
+                <Grid>
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="2*"/>
+                        <RowDefinition Height="2*"/>
+                    </Grid.RowDefinitions>
+                    <Grid Background="{ThemeResource SystemControlAcrylicWindowBrush}" Grid.Row="1">
+                        <Button Content="Open image!" Name="@imagebutton" Click="Button_Click"/>
+                        <Image Name="imagecontrol" Height="300" Width="600" Source="Assets/Square150x150Logo.scale-200.png" />
+                    </Grid>
+                    <TextBox TextWrapping="Wrap" Name="TextDemo" Grid.Row="0"/>
+                    <WebView Grid.Row="2" Name="WebDemo"/>
+                    <ProgressRing Height="256" Width="256" Name="progresring" Visibility="Collapsed" Grid.RowSpan="3"/>
+                </Grid>
+            </Frame>
+        </NavigationView>
     </Grid>
 </Page>

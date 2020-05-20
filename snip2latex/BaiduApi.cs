@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
+using System.Net;
 using System.Net.Http;
 using System.Text;
 using System.Threading.Tasks;
@@ -30,8 +31,12 @@ namespace com.baidu.api
             paraList.Add(new KeyValuePair<string, string>("grant_type", "client_credentials"));
             paraList.Add(new KeyValuePair<string, string>("client_id", clientId));
             paraList.Add(new KeyValuePair<string, string>("client_secret", clientSecret));
-            HttpResponseMessage response = client.PostAsync(authHost, new FormUrlEncodedContent(paraList)).Result;
-            String result = response.Content.ReadAsStringAsync().Result;
+            String result;
+            try {
+                HttpResponseMessage response = client.PostAsync(authHost, new FormUrlEncodedContent(paraList)).Result;
+                 result = response.Content.ReadAsStringAsync().Result;
+            }
+            catch (WebException ex) { result = ""; throw ex;  }
             JsonSerializer json = JsonSerializer.Create();
             Token tk = json.Deserialize<Token>(new JsonTextReader(new StringReader(result)));
             return tk.access_token;

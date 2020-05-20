@@ -43,9 +43,14 @@ C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\qualifiers.txt.i
 C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\MultipleQualifiersPerDimensionFound.txt
 C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\ProjectArchitectures.txt
 C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_636885022160000000.json
-C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\snip2latex.csprojAssemblyReference.cache
 C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\System.Drawing.Common.dll
 C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\FxResources.System.Drawing.Common.SR.resw
 C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\resources.en-us.resfiles
 C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\resources.en-us.resfiles.intermediate
 C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\Newtonsoft.Json.dll
+C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\View\BlankPage1.xbf
+C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\View\BlankPage1.g.i.cs
+C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\View\BlankPage1.g.cs
+C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\View\BlankPage1.xaml
+C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\View\BlankPage1.xbf
+C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\snip2latex.csprojAssemblyReference.cache

@@ -8,12 +8,46 @@
     </RootType>
     <RootType FullName="Microsoft.Xaml.DirectUI.ProxyTypes.ThemeResourceExtension" />
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
-      <RootProperty Name="RowDefinitions" />
       <RootProperty Name="Children" />
-      <RootMethod Name="GetRow" />
-      <RootMethod Name="SetRow" />
+      <RootProperty Name="RowDefinitions" />
+      <RootProperty Name="Background" />
       <RootMethod Name="GetRowSpan" />
       <RootMethod Name="SetRowSpan" />
+      <RootMethod Name="GetRow" />
+      <RootMethod Name="SetRow" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.NavigationView">
+      <RootProperty Name="IsSettingsVisible" />
+      <RootProperty Name="IsTabStop" />
+      <RootProperty Name="Header" />
+      <RootProperty Name="MenuItems" />
+      <RootProperty Name="AutoSuggestBox" />
+      <RootProperty Name="PaneFooter" />
+      <RootProperty Name="Content" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.NavigationViewItemHeader">
+      <RootProperty Name="Content" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.NavigationViewItem">
+      <RootProperty Name="Icon" />
+      <RootProperty Name="Content" />
+      <RootProperty Name="Tag" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ToolTipService">
+      <RootMethod Name="GetToolTip" />
+      <RootMethod Name="SetToolTip" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.NavigationViewItemSeparator" />
+    <RootType FullName="Windows.UI.Xaml.Controls.AutoSuggestBox">
+      <RootProperty Name="PlaceholderText" />
+      <RootProperty Name="QueryIcon" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.HyperlinkButton">
+      <RootProperty Name="Content" />
+      <RootProperty Name="Margin" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.Frame">
+      <RootProperty Name="Content" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
       <RootProperty Name="Height" />
@@ -21,6 +55,15 @@
     <RootType FullName="Windows.UI.Xaml.Controls.TextBox">
       <RootProperty Name="Name" />
       <RootProperty Name="TextWrapping" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.WebView">
+      <RootProperty Name="Name" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ProgressRing">
+      <RootProperty Name="Name" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Visibility" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.Button">
       <RootProperty Name="Name" />
@@ -33,15 +76,7 @@
       <RootProperty Name="Width" />
       <RootProperty Name="Source" />
     </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.WebView">
-      <RootProperty Name="Name" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ProgressRing">
-      <RootProperty Name="Name" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="Visibility" />
-    </RootType>
     <RootType FullName="snip2latex.MainPage" />
+    <RootType FullName="snip2latex.View.BlankPage1" />
   </Roots.RootTypes>
 </Roots>

@@ -62,8 +62,9 @@ namespace snip2latex
                     BitmapImage bmp = new BitmapImage();
                     await bmp.SetSourceAsync(await file.OpenAsync(FileAccessMode.Read));
                     imagecontrol.Source = bmp;
-                    String str = await LatexFacade.PostAsync(file);
+                    String str = await LatexFacade.PostNewAsync(file);
                     Model.DataWrapperReturn data = Model.Data.wrapper(str);
+                    if (data == null) throw new Exception("Json didn't deserialize anything");
                     Model.Data.restoreWords(data);
                     TextDemo.Text = data.formula_result_num + "\n";
                     await MathJaxServer.initAsync();
@@ -83,9 +84,11 @@ namespace snip2latex
                     var res = (HttpWebResponse)ex.Response;
                     StreamReader streamReader = new StreamReader(res.GetResponseStream());
                     TextDemo.Text = streamReader.ReadToEnd();
+                    initalize();
                 }
                 catch (Exception ex) {
                     TextDemo.Text = ex.ToString();
+                    initalize();
                 }
             }
 
