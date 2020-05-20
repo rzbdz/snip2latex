@@ -17,7 +17,8 @@ Project Structure:
 - MyToken.cs : const pool, please don't use the Key in the file
 - WebServer.cs : to build a MathJax redering page 
 
+Current preview (0.1.2): 
 
-Current preview: (row is the latex code after recognized and converted, row2 is the input image, row3 is the rendered latex preview page )
+(row is the latex code after recognized and converted, row2 is the input image, row3 is the rendered latex preview page, complete Navigation view and other pages will be added soon)
 
-![](project_info/v0.1.png)
+![](project_info/v0.1.2png.png)
