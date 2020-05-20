@@ -19,24 +19,24 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>C2B593505638CA8C174B3075AAE0AA1ED5FD2BA038404251BC5AEC1EDC3C5D79</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>c541e8ce-0f4d-4d14-83ef-984949e15a53_1.0.0.0_x86__85em8m0yavevc</RegisteredPackageMoniker>
-    <RegisteredUserModeAppID>c541e8ce-0f4d-4d14-83ef-984949e15a53_85em8m0yavevc!App</RegisteredUserModeAppID>
-    <RegisteredPackageID>c541e8ce-0f4d-4d14-83ef-984949e15a53</RegisteredPackageID>
+    <RegisteredManifestChecksum>4DB6F53202B64711F8A6712C04952BFBD456DD2C39787D7CFA620975478F1DF3</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>c541e8ce-rzbulldozer-4d14-snip2latex-984949e15a53_0.1.2.0_x86__85em8m0yavevc</RegisteredPackageMoniker>
+    <RegisteredUserModeAppID>c541e8ce-rzbulldozer-4d14-snip2latex-984949e15a53_85em8m0yavevc!App</RegisteredUserModeAppID>
+    <RegisteredPackageID>c541e8ce-rzbulldozer-4d14-snip2latex-984949e15a53</RegisteredPackageID>
     <RegisteredPackagePublisher>CN=A1134</RegisteredPackagePublisher>
-    <RegisteredVersion>1.0.0.0</RegisteredVersion>
+    <RegisteredVersion>0.1.2.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-05-19T17:36:07.404</Modified>
+      <Modified>2020-05-20T06:18:27.912</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\snip2latex.exe">
       <PackagePath>entrypoint\snip2latex.exe</PackagePath>
-      <Modified>2020-05-19T17:36:06.816</Modified>
+      <Modified>2020-05-20T06:18:27.272</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\.nuget\packages\microsoft.net.http\2.2.29\lib\win8\System.Net.Http.Extensions.dll">
       <PackagePath>System.Net.Http.Extensions.dll</PackagePath>
@@ -62,9 +62,230 @@
       <PackagePath>Microsoft.UI.Xaml.Markup.winmd</PackagePath>
       <Modified>2019-03-18T10:36:56.000</Modified>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Properties\Default.rd.xml">
-      <PackagePath>Properties\Default.rd.xml</PackagePath>
-      <Modified>2020-05-19T02:44:24.613</Modified>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\LargeTile.scale-100.png">
+      <PackagePath>Assets\LargeTile.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:17.522</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\LargeTile.scale-125.png">
+      <PackagePath>Assets\LargeTile.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:17.564</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\LargeTile.scale-150.png">
+      <PackagePath>Assets\LargeTile.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:17.616</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\LargeTile.scale-200.png">
+      <PackagePath>Assets\LargeTile.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:17.693</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\LargeTile.scale-400.png">
+      <PackagePath>Assets\LargeTile.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:17.911</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\SmallTile.scale-100.png">
+      <PackagePath>Assets\SmallTile.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:16.920</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\SmallTile.scale-125.png">
+      <PackagePath>Assets\SmallTile.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:16.947</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\SmallTile.scale-150.png">
+      <PackagePath>Assets\SmallTile.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:16.974</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\SmallTile.scale-200.png">
+      <PackagePath>Assets\SmallTile.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:17.002</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\SmallTile.scale-400.png">
+      <PackagePath>Assets\SmallTile.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:17.042</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\SplashScreen.scale-100.png">
+      <PackagePath>Assets\SplashScreen.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:18.501</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\SplashScreen.scale-125.png">
+      <PackagePath>Assets\SplashScreen.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:18.562</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\SplashScreen.scale-150.png">
+      <PackagePath>Assets\SplashScreen.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:18.639</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\SplashScreen.scale-400.png">
+      <PackagePath>Assets\SplashScreen.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:19.115</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\Square150x150Logo.scale-100.png">
+      <PackagePath>Assets\Square150x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:17.068</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\Square150x150Logo.scale-125.png">
+      <PackagePath>Assets\Square150x150Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:17.097</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\Square150x150Logo.scale-150.png">
+      <PackagePath>Assets\Square150x150Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:17.125</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\Square150x150Logo.scale-400.png">
+      <PackagePath>Assets\Square150x150Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:17.234</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png">
+      <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-16.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:18.345</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png">
+      <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-24.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:18.368</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png">
+      <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-256.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:18.457</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png">
+      <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-32.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:18.389</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png">
+      <PackagePath>Assets\Square44x44Logo.altform-lightunplated_targetsize-48.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:18.412</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\Square44x44Logo.altform-unplated_targetsize-16.png">
+      <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-16.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:18.214</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\Square44x44Logo.altform-unplated_targetsize-256.png">
+      <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-256.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:18.322</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\Square44x44Logo.altform-unplated_targetsize-32.png">
+      <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-32.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:18.257</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\Square44x44Logo.altform-unplated_targetsize-48.png">
+      <PackagePath>Assets\Square44x44Logo.altform-unplated_targetsize-48.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:18.279</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\Square44x44Logo.scale-100.png">
+      <PackagePath>Assets\Square44x44Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:17.938</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\Square44x44Logo.scale-125.png">
+      <PackagePath>Assets\Square44x44Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:17.961</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\Square44x44Logo.scale-150.png">
+      <PackagePath>Assets\Square44x44Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:17.986</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\Square44x44Logo.scale-400.png">
+      <PackagePath>Assets\Square44x44Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:18.055</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\Square44x44Logo.targetsize-16.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-16.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:18.081</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\Square44x44Logo.targetsize-24.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-24.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:18.107</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\Square44x44Logo.targetsize-256.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-256.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:18.191</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\Square44x44Logo.targetsize-32.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-32.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:18.130</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\Square44x44Logo.targetsize-48.png">
+      <PackagePath>Assets\Square44x44Logo.targetsize-48.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:18.152</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\StoreLogo.scale-100.png">
+      <PackagePath>Assets\StoreLogo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:19.143</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\StoreLogo.scale-125.png">
+      <PackagePath>Assets\StoreLogo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:19.169</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\StoreLogo.scale-150.png">
+      <PackagePath>Assets\StoreLogo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:19.197</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\StoreLogo.scale-200.png">
+      <PackagePath>Assets\StoreLogo.scale-200.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:19.224</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\StoreLogo.scale-400.png">
+      <PackagePath>Assets\StoreLogo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:19.260</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\Wide310x150Logo.scale-100.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-100.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:17.262</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\Wide310x150Logo.scale-125.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-125.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:17.294</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\Wide310x150Logo.scale-150.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-150.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:17.331</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\Wide310x150Logo.scale-400.png">
+      <PackagePath>Assets\Wide310x150Logo.scale-400.png</PackagePath>
+      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
+      <Modified>2020-05-20T05:59:17.487</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\LockScreenLogo.scale-200.png">
       <PackagePath>Assets\LockScreenLogo.scale-200.png</PackagePath>
@@ -73,32 +294,31 @@
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\SplashScreen.scale-200.png">
       <PackagePath>Assets\SplashScreen.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-05-17T14:12:28.751</Modified>
+      <Modified>2020-05-20T05:59:18.752</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\Square150x150Logo.scale-200.png">
       <PackagePath>Assets\Square150x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-05-17T14:12:28.751</Modified>
+      <Modified>2020-05-20T05:59:17.162</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\Square44x44Logo.scale-200.png">
       <PackagePath>Assets\Square44x44Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-05-17T14:12:28.751</Modified>
+      <Modified>2020-05-20T05:59:18.014</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\Square44x44Logo.targetsize-24_altform-unplated.png">
       <PackagePath>Assets\Square44x44Logo.targetsize-24_altform-unplated.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-05-17T14:12:28.751</Modified>
-    </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\StoreLogo.png">
-      <PackagePath>Assets\StoreLogo.png</PackagePath>
-      <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-05-17T14:12:28.751</Modified>
+      <Modified>2020-05-20T05:59:18.236</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Assets\Wide310x150Logo.scale-200.png">
       <PackagePath>Assets\Wide310x150Logo.scale-200.png</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-05-17T14:12:28.751</Modified>
+      <Modified>2020-05-20T05:59:17.376</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\Properties\Default.rd.xml">
+      <PackagePath>Properties\Default.rd.xml</PackagePath>
+      <Modified>2020-05-19T02:44:24.613</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\snip2latex.xr.xml">
       <PackagePath>snip2latex.xr.xml</PackagePath>
@@ -106,11 +326,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-05-19T17:36:06.610</Modified>
+      <Modified>2020-05-20T06:16:34.177</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-05-19T17:36:06.610</Modified>
+      <Modified>2020-05-20T06:16:34.178</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.18362.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -118,11 +338,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2020-05-19T15:16:30.170</Modified>
+      <Modified>2020-05-20T06:02:28.088</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\Core\snip2latex.exe">
       <PackagePath>snip2latex.exe</PackagePath>
-      <Modified>2020-05-19T17:36:07.397</Modified>
+      <Modified>2020-05-20T06:18:27.905</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

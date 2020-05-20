@@ -7,7 +7,7 @@
 
   有关程序包清单文件的详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=241727
  -->
-  <Identity Name="c541e8ce-0f4d-4d14-83ef-984949e15a53" Publisher="CN=A1134" Version="1.0.0.0" ProcessorArchitecture="x86" />
+  <Identity Name="c541e8ce-rzbulldozer-4d14-snip2latex-984949e15a53" Publisher="CN=A1134" Version="0.1.2.0" ProcessorArchitecture="x86" />
   <mp:PhoneIdentity PhoneProductId="c541e8ce-0f4d-4d14-83ef-984949e15a53" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>snip2latex</DisplayName>
@@ -25,9 +25,15 @@
   </Resources>
   <Applications>
     <Application Id="App" Executable="snip2latex.exe" EntryPoint="snip2latex.App">
-      <uap:VisualElements DisplayName="snip2latex" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="snip2latex" BackgroundColor="transparent">
-        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" />
-        <uap:SplashScreen Image="Assets\SplashScreen.png" />
+      <uap:VisualElements DisplayName="Snip to LaTeX" Square150x150Logo="Assets\Square150x150Logo.png" Square44x44Logo="Assets\Square44x44Logo.png" Description="Snip to LaTeX, 轻松把图片识转换 LaTeX 公式代码" BackgroundColor="#404040">
+        <uap:DefaultTile Wide310x150Logo="Assets\Wide310x150Logo.png" ShortName="Snip to LaTeX" Square71x71Logo="Assets\SmallTile.png" Square310x310Logo="Assets\LargeTile.png">
+          <uap:ShowNameOnTiles>
+            <uap:ShowOn Tile="square150x150Logo" />
+            <uap:ShowOn Tile="wide310x150Logo" />
+            <uap:ShowOn Tile="square310x310Logo" />
+          </uap:ShowNameOnTiles>
+        </uap:DefaultTile>
+        <uap:SplashScreen Image="Assets\SplashScreen.png" BackgroundColor="#404040" />
       </uap:VisualElements>
     </Application>
   </Applications>

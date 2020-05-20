@@ -10,6 +10,7 @@ using Windows.Foundation.Collections;
 using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.Storage.Streams;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -31,8 +32,22 @@ namespace snip2latex
         public MainPage()
         {
             this.InitializeComponent();
+            setTitleBarColor(Windows.UI.Color.FromArgb(1, 73, 73, 73), Windows.UI.Color.FromArgb(1, 100, 100, 100));
+            
+        }
+        private void setTitleBarColor(Windows.UI.Color bgColor, Windows.UI.Color btnHoverColor)
+        {
+            var titleBar = ApplicationView.GetForCurrentView().TitleBar;
+            titleBar.BackgroundColor = bgColor;
+            titleBar.ButtonBackgroundColor =bgColor;
+            titleBar.ButtonHoverBackgroundColor = btnHoverColor;
         }
 
+        private void initalize()
+        {
+            progresring.Visibility = Visibility.Collapsed;
+            imagecontrol.Source = new BitmapImage(new Uri("ms-appx:///Assets/Square150x150Logo.scale-200.png"));
+        }
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
             progresring.Visibility = Visibility.Visible;
@@ -53,7 +68,7 @@ namespace snip2latex
                     TextDemo.Text = data.formula_result_num + "\n";
                     await MathJaxServer.initAsync();
                     foreach (var i in data.formula_result) {
-                        TextDemo.Text += i.words+"\n";
+                        TextDemo.Text += i.words + "\n";
                     }
                     TextDemo.Text += "including words:\n";
                     foreach (var i in data.words_result) {
@@ -65,10 +80,11 @@ namespace snip2latex
                     progresring.Visibility = Visibility.Collapsed;
                 }
                 catch (WebException ex) {
-                    var res= (HttpWebResponse)ex.Response;
+                    var res = (HttpWebResponse)ex.Response;
                     StreamReader streamReader = new StreamReader(res.GetResponseStream());
                     TextDemo.Text = streamReader.ReadToEnd();
-                }catch(Exception ex) {
+                }
+                catch (Exception ex) {
                     TextDemo.Text = ex.ToString();
                 }
             }
