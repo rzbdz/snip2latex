@@ -7,17 +7,25 @@ The viewing render is using mathjax online javascript and based on a local html 
 
 Current version is only a demo since there were many bugs reveal during coding. More function and features would be added. Complete User Interface would be completed soon.
 
-Project Structure:
+Project Structure (I would try to obey MVC or MVVM pattern):
 
 - Model/
   - DataWrapper.cs : JsonDeSerializer and model for the  json returned from api
+- View/
+  - AboutPage.xaml/.cs : About page
+  - ConverPage.xaml/.cs : a page on the Home Page
+  - ErrorPage.xaml/.cs : showing error message
+  - History.xaml/.cs : read the history data and show
+  - Home.xaml/.cs : Home page
+  - Settings.xaml/.cs : a page
+- MainPage.xaml/.cs : Main page UI 
 - BaiduApi.cs : use HttpClient to send POST request to baidu to get token
 - LatexFacade.cs : A facade design pattern to due with the relation between image file and Model class
-- MainPage.xaml/MainPage.cs : UI and event handlers
 - MyToken.cs : const pool, please don't use the Key in the file
 - WebServer.cs : to build a MathJax redering page 
+(The .cs files in the Root folder could be treated as Controller module)
 
-To import the project, make sure your visual studio have intallled at least the Windows Universal Platform SDK 1809. 
+To import the project, make sure your visual studio have intallled at least the Windows Universal Platform SDK ~~1809~~ 1903 (5.21 updated for fluent design api). 
 
 Current preview (0.1.2): 
 
