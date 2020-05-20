@@ -20,47 +20,60 @@ namespace snip2latex
         private readonly static String outLineRightBrace = "\\]";
         public static async Task initAsync()
         {
-            StorageFolder storageFolder = ApplicationData.Current.LocalFolder;
-            StorageFile storageFile = await storageFolder.CreateFileAsync("webserver.html", CreationCollisionOption.ReplaceExisting);
+            try {
+                StorageFolder storageFolder = ApplicationData.Current.LocalFolder;
+                StorageFile storageFile = await storageFolder.CreateFileAsync("webserver.html", CreationCollisionOption.ReplaceExisting);
+            }catch(Exception ex) {
+                throw ex;
+            }
         }
         public static async Task singleOutlineFomula(string fomulaString)
         {
-            StorageFile file = await ApplicationData.Current.LocalFolder.GetFileAsync("webserver.html");
-            await FileIO.WriteTextAsync(file, pre);
-            await FileIO.AppendTextAsync(file, "<p>"+outLineleftBrace + fomulaString + outLineRightBrace+"</p>");
-            await FileIO.AppendTextAsync(file, suf);
+            try {
+                StorageFile file = await ApplicationData.Current.LocalFolder.GetFileAsync("webserver.html");
+                await FileIO.WriteTextAsync(file, pre);
+                await FileIO.AppendTextAsync(file, "<p>" + outLineleftBrace + fomulaString + outLineRightBrace + "</p>");
+                await FileIO.AppendTextAsync(file, suf);
+            }
+            catch(Exception ex) {
+                throw ex;
+            }
         }
         public static async Task multiOutlineFomulas(Model.DataWrapperReturn data,Model.Data.FomulaWordsSeparateOption option)
         {
-            StorageFile file = await ApplicationData.Current.LocalFolder.GetFileAsync("webserver.html");
-            await FileIO.WriteTextAsync(file, pre);
-            switch (option) {
-                case Data.FomulaWordsSeparateOption.fomula:
-                    foreach(var i in data.formula_result) {
-                        await FileIO.AppendTextAsync(file,"<p>"+ outLineleftBrace + i.words + outLineRightBrace+"/p");
-                    }
-                    break;
-                case Data.FomulaWordsSeparateOption.words:
-                    foreach (var i in data.words_result) {
-                        string str = i.words.Replace(" ", " \\ ");
-                        str = i.words.Replace("\\\\ \\ ", "\\\\ ");
-                        await FileIO.AppendTextAsync(file, outLineleftBrace + str + outLineRightBrace);
-                    }
-                    break;
-                case Data.FomulaWordsSeparateOption.bothFomulaAndWords:
-                    await FileIO.AppendTextAsync(file, "<p>纯公式部分</p>");
-                    foreach (var i in data.formula_result) {
-                        await FileIO.AppendTextAsync(file, outLineleftBrace + i.words + outLineRightBrace);
-                    }
-                    await FileIO.AppendTextAsync(file, "<p>含文本部分</p>");
-                    foreach (var i in data.words_result) {
-                        string str = i.words.Replace(" ", " \\ ");
-                        str = i.words.Replace("\\\\ \\ ", "\\\\ ");
-                        await FileIO.AppendTextAsync(file, outLineleftBrace + str + outLineRightBrace);
-                    }
-                    break;
+            try {
+                StorageFile file = await ApplicationData.Current.LocalFolder.GetFileAsync("webserver.html");
+                await FileIO.WriteTextAsync(file, pre);
+                switch (option) {
+                    case Data.FomulaWordsSeparateOption.fomula:
+                        foreach (var i in data.formula_result) {
+                            await FileIO.AppendTextAsync(file, "<p>" + outLineleftBrace + i.words + outLineRightBrace + "/p");
+                        }
+                        break;
+                    case Data.FomulaWordsSeparateOption.words:
+                        foreach (var i in data.words_result) {
+                            string str = i.words.Replace(" ", " \\ ");
+                            str = i.words.Replace("\\\\ \\ ", "\\\\ ");
+                            await FileIO.AppendTextAsync(file, outLineleftBrace + str + outLineRightBrace);
+                        }
+                        break;
+                    case Data.FomulaWordsSeparateOption.bothFomulaAndWords:
+                        await FileIO.AppendTextAsync(file, "<p>纯公式部分</p>");
+                        foreach (var i in data.formula_result) {
+                            await FileIO.AppendTextAsync(file, outLineleftBrace + i.words + outLineRightBrace);
+                        }
+                        await FileIO.AppendTextAsync(file, "<p>含文本部分</p>");
+                        foreach (var i in data.words_result) {
+                            string str = i.words.Replace(" ", " \\ ");
+                            str = i.words.Replace("\\\\ \\ ", "\\\\ ");
+                            await FileIO.AppendTextAsync(file, outLineleftBrace + str + outLineRightBrace);
+                        }
+                        break;
+                }
+                await FileIO.AppendTextAsync(file, suf);
+            }catch(Exception ex) {
+                throw ex;
             }
-            await FileIO.AppendTextAsync(file, suf);
         }
         public static async Task<string> getServerHtmlAsync()
         {

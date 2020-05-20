@@ -1,4 +1,5 @@
-﻿using System;
+﻿using snip2latex.View;
+using System;
 using System.Collections.Generic;
 using System.Drawing;
 using System.IO;
@@ -29,70 +30,42 @@ namespace snip2latex
     /// </summary>
     public sealed partial class MainPage : Page
     {
+        public static MainPage Current;
+
         public MainPage()
         {
             this.InitializeComponent();
+            Current = this;
             setTitleBarColor(Windows.UI.Color.FromArgb(1, 73, 73, 73), Windows.UI.Color.FromArgb(1, 100, 100, 100));
-            
+            MainFrame.Navigate(typeof(Home));
+
         }
         private void setTitleBarColor(Windows.UI.Color bgColor, Windows.UI.Color btnHoverColor)
         {
             var titleBar = ApplicationView.GetForCurrentView().TitleBar;
             titleBar.BackgroundColor = bgColor;
-            titleBar.ButtonBackgroundColor =bgColor;
+            titleBar.ButtonBackgroundColor = bgColor;
             titleBar.ButtonHoverBackgroundColor = btnHoverColor;
         }
 
-        private void initalize()
+        private void mainNav_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
         {
-            progresring.Visibility = Visibility.Collapsed;
-            imagecontrol.Source = new BitmapImage(new Uri("ms-appx:///Assets/Square150x150Logo.scale-200.png"));
-        }
-        private async void Button_Click(object sender, RoutedEventArgs e)
-        {
-            progresring.Visibility = Visibility.Visible;
-            progresring.IsActive = true;
-            FileOpenPicker picker = new FileOpenPicker();
-            picker.FileTypeFilter.Add(".png");
-            picker.FileTypeFilter.Add(".jpg");
-            picker.FileTypeFilter.Add(".jpeg");
-            var file = await picker.PickSingleFileAsync();
-            if (file != null) {
-                try {
-                    BitmapImage bmp = new BitmapImage();
-                    await bmp.SetSourceAsync(await file.OpenAsync(FileAccessMode.Read));
-                    imagecontrol.Source = bmp;
-                    String str = await LatexFacade.PostNewAsync(file);
-                    Model.DataWrapperReturn data = Model.Data.wrapper(str);
-                    if (data == null) throw new Exception("Json didn't deserialize anything");
-                    Model.Data.restoreWords(data);
-                    TextDemo.Text = data.formula_result_num + "\n";
-                    await MathJaxServer.initAsync();
-                    foreach (var i in data.formula_result) {
-                        TextDemo.Text += i.words + "\n";
-                    }
-                    TextDemo.Text += "including words:\n";
-                    foreach (var i in data.words_result) {
-                        TextDemo.Text += i.words + "\n";
-                    }
-                    await MathJaxServer.multiOutlineFomulas(data, Model.Data.FomulaWordsSeparateOption.bothFomulaAndWords);
-                    string htmlString = await MathJaxServer.getServerHtmlAsync();
-                    WebDemo.NavigateToString(htmlString);
-                    progresring.Visibility = Visibility.Collapsed;
-                }
-                catch (WebException ex) {
-                    var res = (HttpWebResponse)ex.Response;
-                    StreamReader streamReader = new StreamReader(res.GetResponseStream());
-                    TextDemo.Text = streamReader.ReadToEnd();
-                    initalize();
-                }
-                catch (Exception ex) {
-                    TextDemo.Text = ex.ToString();
-                    initalize();
-                }
+            if (args.IsSettingsInvoked) {
             }
-
         }
 
+        public void goBack()
+        {
+            if (MainFrame.CanGoBack) {
+                MainFrame.GoBack();
+            }
+            else {
+                MainFrame.Navigate(typeof(Home));
+            }
+        }
+        public void toNavigate(Type sourcePageType)
+        {
+            this.MainFrame.Navigate(sourcePageType);
+        }
     }
 }

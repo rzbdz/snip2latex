@@ -17,6 +17,8 @@ Project Structure:
 - MyToken.cs : const pool, please don't use the Key in the file
 - WebServer.cs : to build a MathJax redering page 
 
+To import the project, make sure your visual studio have intallled at least the Windows Universal Platform SDK 1809. 
+
 Current preview (0.1.2): 
 
 (row is the latex code after recognized and converted, row2 is the input image, row3 is the rendered latex preview page, complete Navigation view and other pages will be added soon)

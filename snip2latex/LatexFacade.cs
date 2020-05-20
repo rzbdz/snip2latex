@@ -21,6 +21,7 @@ namespace snip2latex
         {
 
         }
+
         public static async Task<string> PostAsync(StorageFile image)
         {
             string result;
@@ -48,6 +49,7 @@ namespace snip2latex
             response.Close();
             return result;
         }
+
         public static async Task<string> PostNewAsync(StorageFile image)
         {
             string result;

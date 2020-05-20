@@ -7,40 +7,21 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    <Grid>
-
-        <NavigationView x:ConnectionId='2' Grid.RowSpan="3" x:Name="nvAll" IsSettingsVisible="true" IsTabStop="False" Header="This is header text." >
-            <NavigationView.MenuItems>
-                <NavigationViewItemHeader Content="Main"/>
-                <NavigationViewItem Icon="Play"  Content="Menu Item1" Tag="SamplePage1" ToolTipService.ToolTip="1"/>
-                <NavigationViewItemSeparator/>
-                <NavigationViewItem Icon="Save" Content="Menu Item2" Tag="SamplePage2" />
-                <NavigationViewItem Icon="Refresh" Content="Menu Item3" Tag="SamplePage3" />
-            </NavigationView.MenuItems>
-            <NavigationView.AutoSuggestBox>
-                <AutoSuggestBox x:ConnectionId='3' x:Name="ASB" PlaceholderText="Search" QueryIcon="Find" />
-            </NavigationView.AutoSuggestBox>
-            <NavigationView.PaneFooter>
-                <HyperlinkButton x:ConnectionId='4' x:Name="MoreInfoBtn" Content="More"  Margin="12,0"/>
-            </NavigationView.PaneFooter>
-            <Frame x:ConnectionId='5' x:Name="contentFrame">
-                <Grid>
-                    <Grid.RowDefinitions>
-                        <RowDefinition Height="2*"/>
-                        <RowDefinition Height="2*"/>
-                        <RowDefinition Height="2*"/>
-                    </Grid.RowDefinitions>
-                    <Grid Background="{ThemeResource SystemControlAcrylicWindowBrush}" Grid.Row="1">
-                        <Button x:ConnectionId='9' Content="Open image!" Name="@imagebutton"                     />
-                        <Image x:ConnectionId='10' Name="imagecontrol" Height="300" Width="600" Source="Assets/Square150x150Logo.scale-200.png" />
-                    </Grid>
-                    <TextBox x:ConnectionId='6' TextWrapping="Wrap" Name="TextDemo" Grid.Row="0"/>
-                    <WebView x:ConnectionId='7' Grid.Row="2" Name="WebDemo"/>
-                    <ProgressRing x:ConnectionId='8' Height="256" Width="256" Name="progresring" Visibility="Collapsed" Grid.RowSpan="3"/>
-                </Grid>
-            </Frame>
-        </NavigationView>
-    </Grid>
+    <NavigationView x:ConnectionId='2' 
+        x:Name="mainNav"
+        IsSettingsVisible="true" 
+        IsTabStop="False" 
+        PaneDisplayMode="LeftCompact"
+        OpenPaneLength="300"
+        IsBackButtonVisible="Collapsed"
+        Background="{ThemeResource SystemControlChromeHighAcrylicWindowMediumBrush}"
+                                         >
+        <NavigationView.MenuItems>
+            <NavigationViewItem Icon="Home"  Content="主页" Tag="SamplePage1" ToolTipService.ToolTip="1"/>
+            <NavigationViewItem Icon="Clock"  Content="历史" Tag="SamplePage1" ToolTipService.ToolTip="1"/>
+        </NavigationView.MenuItems>
+        <Frame x:ConnectionId='3' Name="MainFrame">
+        </Frame>
+    </NavigationView>
 </Page>
 

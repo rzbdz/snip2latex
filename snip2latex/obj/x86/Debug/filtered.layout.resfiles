@@ -53,5 +53,11 @@ Assets\Wide310x150Logo.scale-400.png
 App.xbf
 MainPage.xbf
 snip2latex.xr.xml
-View\BlankPage1.xbf
+View\AboutPage.xbf
+View\ConvertPage.xbf
+View\ErrorPage.xbf
+View\History.xbf
+View\Home.xbf
+View\Setting.xbf
+View\Settings.xbf
 Properties\Default.rd.xml
