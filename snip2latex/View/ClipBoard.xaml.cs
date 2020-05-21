@@ -41,15 +41,17 @@ namespace snip2latex.View
         {
             progresring.Visibility = Visibility.Collapsed;
             TextDemo.Text = "";
-            ImageControl.Source = new BitmapImage(new Uri("ms-appx:///Assets/Square150x150Logo.scale-200.png"));
+            ImageControl.Source = new BitmapImage();
         }
 
 
         private void fixWebButton_Click(object sender, RoutedEventArgs e)
         {
+            progresring.Visibility = Visibility.Visible;
             string boxStr = this.TextDemo.Text;
             boxStr = MathJaxServer.fixFomulashtml(boxStr);
             WebDemo.NavigateToString(boxStr);
+            progresring.Visibility = Visibility.Collapsed;
         }
 
 
@@ -168,9 +170,8 @@ namespace snip2latex.View
         {
             ImageButton.IsEnabled = false;
             initalize();
-
             progresring.Visibility = Visibility.Visible;
-            progresring.IsActive = true;
+            //progresring.IsActive = true;
             await pasteImageAndDeSerAsync();
             progresring.Visibility = Visibility.Collapsed;
             ImageButton.IsEnabled = true;

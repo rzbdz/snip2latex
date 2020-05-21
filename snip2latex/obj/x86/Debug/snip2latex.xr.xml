@@ -50,21 +50,15 @@
     <RootType FullName="Windows.UI.Xaml.Controls.Grid">
       <RootProperty Name="RowDefinitions" />
       <RootProperty Name="Children" />
-      <RootMethod Name="GetRowSpan" />
-      <RootMethod Name="SetRowSpan" />
+      <RootProperty Name="Name" />
       <RootMethod Name="GetRow" />
       <RootMethod Name="SetRow" />
+      <RootMethod Name="GetRowSpan" />
+      <RootMethod Name="SetRowSpan" />
     </RootType>
     <RootType FullName="snip2latex.View.AboutPage" />
     <RootType FullName="Windows.UI.Xaml.Controls.RowDefinition">
       <RootProperty Name="Height" />
-    </RootType>
-    <RootType FullName="Windows.UI.Xaml.Controls.ProgressRing">
-      <RootProperty Name="Name" />
-      <RootProperty Name="IsActive" />
-      <RootProperty Name="Height" />
-      <RootProperty Name="Width" />
-      <RootProperty Name="Visibility" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.RelativePanel">
       <RootProperty Name="Padding" />
@@ -85,6 +79,15 @@
       <RootMethod Name="SetAlignHorizontalCenterWithPanel" />
       <RootMethod Name="GetAlignVerticalCenterWithPanel" />
       <RootMethod Name="SetAlignVerticalCenterWithPanel" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Shapes.Rectangle">
+      <RootProperty Name="Fill" />
+    </RootType>
+    <RootType FullName="Windows.UI.Xaml.Controls.ProgressRing">
+      <RootProperty Name="IsActive" />
+      <RootProperty Name="Height" />
+      <RootProperty Name="Width" />
+      <RootProperty Name="Visibility" />
     </RootType>
     <RootType FullName="Windows.UI.Xaml.Controls.TextBlock">
       <RootProperty Name="Name" />

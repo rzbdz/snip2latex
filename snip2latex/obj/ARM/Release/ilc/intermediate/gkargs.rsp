@@ -1,0 +1,10 @@
+﻿"C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\ARM\Release\ilc\in\Microsoft.Graphics.Canvas.winmd"
+"C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\ARM\Release\ilc\in\Newtonsoft.Json.dll"
+"C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\ARM\Release\ilc\in\snip2latex.exe"
+"C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\ARM\Release\ilc\in\System.Net.Http.Extensions.dll"
+/Lib:"C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\ARM\Release\ilc\in"
+/Lib:"C:\Program Files (x86)\Microsoft SDKs\UWPNuGetPackages\runtime.win10-arm.microsoft.net.native.compiler\2.2.7-rel-27913-00\tools\ARM\ilc\lib\Private"
+/WinMD:"C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\ARM\Release\ilc\in\WinMetadata\Windows.winmd"
+/VSTelemetrySessionSettings:"{"IsOptedIn":true,"HostName":"Dev14","AppInsightsInstrumentationKey":"f144292e-e3b2-4011-ac90-20e5c03fbce5","AsimovInstrumentationKey":"AIF-312cbd79-9dbb-4c48-a7da-3cc2a931cb70","AppId":1001,"UserId":"1f9a79e3-3696-4f76-b3d1-651600d6c9ff","Id":"08331dbd-c13d-40c8-af77-4211d67260b7","ProcessStartTime":637256851944396910}"
+/RdXmlPath:"C:\Program Files (x86)\Microsoft SDKs\UWPNuGetPackages\microsoft.net.native.compiler\2.2.7-rel-27913-00\tools\LibraryXML"
+/RunOnlyPreDR

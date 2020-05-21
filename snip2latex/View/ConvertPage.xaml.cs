@@ -33,17 +33,18 @@ namespace snip2latex.View
         {
             progresring.Visibility = Visibility.Collapsed;
             TextDemo.Text = "";
-            ImageControl.Source = new BitmapImage(new Uri("ms-appx:///Assets/Square150x150Logo.scale-200.png"));
+            ImageControl.Source = new BitmapImage();
         }
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
             ImageButton.IsEnabled = false;
             initalize();
             progresring.Visibility = Visibility.Visible;
-            progresring.IsActive = true;
+            //progresring.IsActive = true;
             await chooseImageAndDeSerAsync();
             ImageButton.IsEnabled = true;
-            initalize();
+            progresring.Visibility = Visibility.Collapsed;
+
         }
 
 

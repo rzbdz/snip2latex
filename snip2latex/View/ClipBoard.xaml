@@ -13,7 +13,6 @@
             <RowDefinition Height="4*"/>
         </Grid.RowDefinitions>
         <!--<ProgressRing Height="128" Width="128" Name="web_progresring" Visibility="Visible" Grid.Row="2"/>-->
-        <ProgressRing IsActive="True" Height="128" Width="128" Name="progresring" Visibility="Visible" Grid.RowSpan="3"/>
         <RelativePanel Grid.Row="0" Padding="20,20,20,20">
             <TextBlock Margin="0,0,0,10" RelativePanel.AlignTopWithPanel="True" Text="识别参数" Name="TitleBlock" Style="{StaticResource TitleTextBlockStyle}"/>
             <CheckBox Margin="5,0,0,0" RelativePanel.Below="TitleBlock" Name="recognizeWordsCheck"  Content="同时识别文字"/>
@@ -70,6 +69,13 @@
                      Name="WebDemo"
                      DefaultBackgroundColor="Transparent"/>
         </RelativePanel>
-
+        <Grid  Name="progresring"  Grid.RowSpan="3">
+            
+            <Rectangle Fill="{ThemeResource SystemControlAltHighAcrylicElementBrush}"/>
+            <ProgressRing IsActive="True" 
+                          Height="128" 
+                          Width="128" 
+                          Visibility="Visible" />
+        </Grid>
     </Grid>
 </Page>
