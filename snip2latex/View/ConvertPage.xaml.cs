@@ -24,22 +24,32 @@ namespace snip2latex.View
             ApplicationView.GetForCurrentView().Title = "开始导入图片文件识别吧!";
             this.InitializeComponent();
             convertPage = this;
+            this.WebDemo.NavigateToString("<html><body><center><p>请点击开始识别进行识别</p></center></body></html>");
             MainPage.Current.showBackButton();
         }
 
         private void initalize()
         {
             progresring.Visibility = Visibility.Collapsed;
-            imagecontrol.Source = new BitmapImage(new Uri("ms-appx:///Assets/Square150x150Logo.scale-200.png"));
+            TextDemo.Text = "";
+            ImageControl.Source = new BitmapImage(new Uri("ms-appx:///Assets/Square150x150Logo.scale-200.png"));
         }
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
             progresring.Visibility = Visibility.Visible;
             progresring.IsActive = true;
-            imagebutton.IsEnabled = false;
+            ImageButton.IsEnabled = false;
             await chooseImageAndDeSerAsync();
-            imagebutton.IsEnabled = true;
+            ImageButton.IsEnabled = true;
+        }
 
+
+
+        private void fixWebButton_Click(object sender, RoutedEventArgs e)
+        {
+            string boxStr = this.TextDemo.Text;
+            boxStr =  MathJaxServer.fixFomulashtml(boxStr);
+            WebDemo.NavigateToString(boxStr);
         }
 
         private async System.Threading.Tasks.Task chooseImageAndDeSerAsync()
@@ -53,19 +63,11 @@ namespace snip2latex.View
                 try {
                     BitmapImage bmp = new BitmapImage();
                     await bmp.SetSourceAsync(await file.OpenAsync(FileAccessMode.Read));
-                    imagecontrol.Source = bmp;
+                    ImageControl.Source = bmp;
                     String str = await LatexFacade.PostNewAsync(file);
                     Model.DataWrapperReturn data = Model.Data.wrapper(str);
                     if (data == null) throw new Exception("Json didn't deserialize anything");
                     Model.Data.restoreWords(data);
-                    TextDemo.Text = data.formula_result_num + "\n";
-                    foreach (var i in data.formula_result) {
-                        TextDemo.Text += i.words + "\n";
-                    }
-                    TextDemo.Text += "including words:\n";
-                    foreach (var i in data.words_result) {
-                        TextDemo.Text += i.words + "\n";
-                    }
                     //string htmlString;
                     HtmlResult htmlResult;
                     try {
@@ -79,11 +81,16 @@ namespace snip2latex.View
                         //htmlString = MathJaxServer.WebServerErrorHandle(e);
                         htmlResult = MathJaxServer.WebServerErrorHandles(e);
                     }
-                    if (check.IsChecked == true) {
+                    if (recognizeWordsCheck.IsChecked == true) {
+                        foreach (var i in data.words_result) {
+                            TextDemo.Text += i.words + "\n";
+                        }
                         WebDemo.NavigateToString(htmlResult.result_w);
-
                     }
-                    else if (check.IsChecked == false) {
+                    else if (recognizeWordsCheck.IsChecked == false) {
+                        foreach (var i in data.formula_result) {
+                            TextDemo.Text += i.words + "\n";
+                        }
                         WebDemo.NavigateToString(htmlResult.result_f);
                     }
                     else {
@@ -98,7 +105,8 @@ namespace snip2latex.View
                     try {
                         var res = (HttpWebResponse)ex.Response;
                         StreamReader streamReader = new StreamReader(res.GetResponseStream());
-                        TextDemo.Text = streamReader.ReadToEnd();
+                        ErrorPage.errorPage.showError(ex.Message + streamReader.ReadToEnd());
+                        
                         initalize();
                     }
                     catch (Exception e) {
@@ -126,7 +134,7 @@ namespace snip2latex.View
                 Title = "额......",
                 Content = "你没有选择任何图片!",
                 PrimaryButtonText = "重新选择",
-                CloseButtonText = "我不搞了"
+                CloseButtonText = "取消"
             };
 
             ContentDialogResult result = await noFileDialog.ShowAsync();
@@ -134,5 +142,6 @@ namespace snip2latex.View
                 await chooseImageAndDeSerAsync();
             }
         }
+
     }
 }

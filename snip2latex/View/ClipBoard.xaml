@@ -5,11 +5,70 @@
     xmlns:local="using:snip2latex.View"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
-    mc:Ignorable="d"
-    Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <StackPanel Orientation="Horizontal">
-        <Button Content=" Click me " Click="Button_Click"/>
-        <TextBox x:Name="box" Text="ashflkhgsadkh" TextWrapping="Wrap" Width="1000"/>
-        <Image x:Name="ImageControl"/>
-    </StackPanel>
+    mc:Ignorable="d">
+    <Grid>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="4*"/>
+        </Grid.RowDefinitions>
+        <ProgressRing Height="128" Width="128" Name="web_progresring" Visibility="Visible" Grid.Row="2"/>
+        <ProgressRing Height="128" Width="128" Name="progresring" Visibility="Visible" Grid.RowSpan="3"/>
+        <RelativePanel Grid.Row="0" Padding="20,20,20,20">
+            <TextBlock Margin="0,0,0,10" RelativePanel.AlignTopWithPanel="True" Text="识别参数" Name="TitleBlock" Style="{StaticResource TitleTextBlockStyle}"/>
+            <CheckBox Margin="5,0,0,0" RelativePanel.Below="TitleBlock" Name="recognizeWordsCheck"  Content="同时识别文字"/>
+            <CheckBox Margin="5,0,0,0" RelativePanel.Below="recognizeWordsCheck" Name="separateCheck"  Content="分开显示代码(开发中)" IsEnabled="False"/>
+            <Button  Margin="5,0,0,0" RelativePanel.AlignBottomWithPanel="True" CornerRadius="2" Content="开始识别" Name="ImageButton" Click="ImageButton_Click">
+                <Button.Resources>
+                    <SolidColorBrush x:Key="ButtonBackground" Color="{ThemeResource SystemAccentColor}"/>
+                    <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="{ThemeResource HoverPurple}"/>
+                    <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="{ThemeResource SystemAccentColor}"/>
+                    <SolidColorBrush x:Key="ButtonForeground" Color="White"/>
+                    <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
+                    <SolidColorBrush x:Key="ButtonForegroundPointerPressed" Color="White"/>
+                </Button.Resources>
+            </Button>
+            <StackPanel Orientation="Vertical"  RelativePanel.Below="separateCheck" Padding="5,5,0,0">
+                <Image Name="ImageControl"  Stretch="Uniform" MinHeight="32" MinWidth="32" MaxWidth="720" MaxHeight="128" Source="Assets/Square150x150Logo.scale-200.png" />
+                <TextBlock Text="图片预览" Name="imageCaption" HorizontalAlignment="Right" Visibility="Collapsed"/>
+            </StackPanel>
+        </RelativePanel>
+        <RelativePanel Padding="20,20,20,20" Grid.Row="1">
+            <TextBlock  Margin="0,0,0,20" RelativePanel.AlignTopWithPanel="True" Text="代码" Name="TextBoxTitle" Style="{StaticResource TitleTextBlockStyle}"/>
+            <TextBox Padding="5,5,5,5" 
+                     Margin="5,5,5,5" 
+                     TextWrapping="Wrap"  
+                     Name="TextDemo" 
+                     RelativePanel.AlignLeftWithPanel="True" 
+                     RelativePanel.AlignRightWithPanel="True" 
+                     RelativePanel.Below="TextBoxTitle"
+                     RelativePanel.Above="fixWebButton"/>
+            <Button Margin="5,10,5,0" 
+                    RelativePanel.AlignBottomWithPanel="True" 
+                    CornerRadius="2" 
+                    Content="修正预览" 
+                    Name="fixWebButton" 
+                    Click="fixWebButton_Click" >
+                <Button.Resources>
+                    <SolidColorBrush x:Key="ButtonForeground" Color="White"/>
+                    <SolidColorBrush x:Key="ButtonBackground" Color="{ThemeResource SystemAccentColor}"/>
+                    <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="{ThemeResource HoverPurple}"/>
+                    <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="{ThemeResource SystemAccentColor}"/>
+                </Button.Resources>
+            </Button>
+        </RelativePanel>
+        <RelativePanel Padding="20,20,20,20" Grid.Row="2">
+            <TextBlock  Margin="0,0,0,10" RelativePanel.AlignTopWithPanel="True" Text="预览" Name="jaxBoxTitle" Style="{StaticResource TitleTextBlockStyle}"/>
+            <WebView Margin="5,10,0,0"
+                     ScrollViewer.HorizontalScrollBarVisibility="Hidden" 
+                     ScrollViewer.VerticalScrollBarVisibility="Hidden" 
+                     RelativePanel.AlignLeftWithPanel="True" 
+                     RelativePanel.AlignRightWithPanel="True" 
+                     RelativePanel.AlignBottomWithPanel="True"  
+                     RelativePanel.Below="jaxBoxTitle" 
+                     Name="WebDemo"
+                     DefaultBackgroundColor="Transparent"/>
+        </RelativePanel>
+
+    </Grid>
 </Page>

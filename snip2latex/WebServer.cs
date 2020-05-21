@@ -33,7 +33,7 @@ namespace snip2latex
         public static HtmlResult WebServerErrorHandles(Exception ex)
         {
             string errsuf = "</p></body></html>";
-            return new HtmlResult(errpre + ex.Message + errsuf ,errpre + ex.Message + errsuf);
+            return new HtmlResult(errpre + ex.Message + errsuf, errpre + ex.Message + errsuf);
         }
         public static string singleOutlineFomula(string fomulaString)
         {
@@ -69,7 +69,21 @@ namespace snip2latex
                     }
                     break;
             }
-            return result;
+            return result+suf;
+        }
+        public static string fixFomulashtml(String box)
+        {
+            return pre + fixFomulas(box) + suf;
+        }
+        public static string fixFomulas(String boxInput)
+        {
+            //string str = boxInput.Replace(" ", " \\ ");
+            string str =boxInput;
+            str = str.Replace("\\\\ \\ ", "\\\\ ");
+            //str = str.Replace("\n", " \\\\ ");
+            
+            str = outLineleftBrace + str + outLineRightBrace;
+            return str;
         }
         public static void multiOutlineFomulas(Model.DataWrapperReturn data)
         {
@@ -90,7 +104,6 @@ namespace snip2latex
                 result += cache;
                 result_w += cache;
             }
-
         }
         public static string getServerHtmlAsync()
         {

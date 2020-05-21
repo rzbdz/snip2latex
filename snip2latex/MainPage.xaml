@@ -21,7 +21,7 @@
         IsPaneOpen="False"
         IsBackEnabled="True">
         <NavigationView.MenuItems>
-            <NavigationViewItem Icon="Home"  Content="开始识别吧 !" Tag="Home" ToolTipService.ToolTip="1"/>
+            <NavigationViewItem Icon="Home"  Content="开始识别吧 !" Tag="Home" IsSelected="True" ToolTipService.ToolTip="1"/>
             <NavigationViewItem Icon="Clock"  Content="识别记录..." Tag="History" ToolTipService.ToolTip="1"/>
         </NavigationView.MenuItems>
         <Frame Name="MainFrame" Background="{ThemeResource SystemControlAltLowAcrylicWindowBrush}">

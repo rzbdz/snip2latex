@@ -25,7 +25,7 @@
                        MinWidth="75"
                        MaxWidth="150"
                        Stretch="Uniform"/>
-            <TextBlock x:ConnectionId='7' x:Name="chooseTaskBlock" Text="请选择一项任务!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"  FontWeight="ExtraLight"/>
+            <TextBlock x:ConnectionId='7' x:Name="chooseTaskBlock" Text="选择一项任务吧!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"  FontWeight="ExtraLight"/>
         </StackPanel >
         <ScrollViewer Grid.Row="1" Background="White" VerticalScrollBarVisibility="Hidden" >
             <Grid>
@@ -34,8 +34,8 @@
                                 HorizontalAlignment="Center"
                                 Background="White"
                                 >
-                        <StackPanel Orientation="Vertical" VerticalAlignment="Center" Padding="50,50,50,50">
-                            <Button x:ConnectionId='5' VerticalContentAlignment="Center"
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" Padding="50,50,50,50">
+                        <Button x:ConnectionId='5' VerticalContentAlignment="Center"
                                     Name="getFromfileButton"
                                                                    
                                     Background="{ThemeResource MyBrush}"
@@ -48,16 +48,19 @@
                                     Width="140" 
                                     Height="140"
                                     >
-                                <Button.Resources>
-                                    <SolidColorBrush x:Key="ButtonBackground" Color="{ThemeResource SystemAccentColor}"/>
-                                    <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="{ThemeResource HoverPurple}"/>
-                                    <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="{ThemeResource SystemAccentColor}"/>
-                                </Button.Resources>
-                            </Button>
-                            <TextBlock Padding="0,20,0,0" Text="从文件识别" FontSize="18" HorizontalAlignment="Center"/>
-                        </StackPanel>
-                        <StackPanel Orientation="Vertical" VerticalAlignment="Center" Padding="50,50,50,50">
-                            <Button x:ConnectionId='4' VerticalContentAlignment="Center"
+                            <Button.Resources>
+                                <SolidColorBrush x:Key="ButtonBackground" Color="{ThemeResource SystemAccentColor}"/>
+                                <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="{ThemeResource HoverPurple}"/>
+                                <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="{ThemeResource SystemAccentColor}"/>
+                                <SolidColorBrush x:Key="ButtonForeground" Color="White"/>
+                                <SolidColorBrush x:Key="ButtonForegroundPointerOver" Color="White"/>
+                                <SolidColorBrush x:Key="ButtonForegroundPointerPressed" Color="White"/>
+                            </Button.Resources>
+                        </Button>
+                        <TextBlock Padding="0,20,0,0" Text="从文件识别" FontSize="18" HorizontalAlignment="Center"/>
+                    </StackPanel>
+                    <StackPanel Orientation="Vertical" VerticalAlignment="Center" Padding="50,50,50,50">
+                        <Button x:ConnectionId='4' VerticalContentAlignment="Center"
                                     Name="getFromSnipButton"
                                                                    
                                     Background="{ThemeResource MyBrush}"
@@ -70,17 +73,17 @@
                                     Width="140" 
                                     Height="140"
                                     >
-                                <Button.Resources>
-                                    <SolidColorBrush x:Key="ButtonBackground" Color="{ThemeResource SystemAccentColor}"/>
-                                    <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="{ThemeResource HoverPurple}"/>
-                                    <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="{ThemeResource SystemAccentColor}"/>
-                                </Button.Resources>
-                            </Button>
-                            <TextBlock Padding="0,20,0,0" Text="从剪贴板识别" FontSize="18" HorizontalAlignment="Center" />
-                        </StackPanel>
+                            <Button.Resources>
+                                <SolidColorBrush x:Key="ButtonBackground" Color="{ThemeResource SystemAccentColor}"/>
+                                <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="{ThemeResource HoverPurple}"/>
+                                <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="{ThemeResource SystemAccentColor}"/>
+                            </Button.Resources>
+                        </Button>
+                        <TextBlock Padding="0,20,0,0" Text="从剪贴板识别" FontSize="18" HorizontalAlignment="Center" />
                     </StackPanel>
-                </Grid>
-            </ScrollViewer>
+                </StackPanel>
+            </Grid>
+        </ScrollViewer>
         <VisualStateManager.VisualStateGroups>
             <VisualStateGroup>
                 <VisualState>

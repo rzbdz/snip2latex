@@ -9,6 +9,7 @@ using Windows.ApplicationModel.DataTransfer;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Storage.Streams;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -29,9 +30,53 @@ namespace snip2latex.View
     {
         public ClipBoard()
         {
+            ApplicationView.GetForCurrentView().Title = "复制好图片之后识别吧!";
             this.InitializeComponent();
+            this.WebDemo.NavigateToString("<html><body><center><p>请点击开始识别进行识别</p></center></body></html>");
+            MainPage.Current.showBackButton();
         }
-        private async System.Threading.Tasks.Task chooseImageAndDeSerAsync(RandomAccessStreamReference imageStream)
+
+        private void initalize()
+        {
+            progresring.Visibility = Visibility.Collapsed;
+            TextDemo.Text = "";
+            ImageControl.Source = new BitmapImage(new Uri("ms-appx:///Assets/Square150x150Logo.scale-200.png"));
+        }
+
+
+        private void fixWebButton_Click(object sender, RoutedEventArgs e)
+        {
+            string boxStr = this.TextDemo.Text;
+            boxStr = MathJaxServer.fixFomulashtml(boxStr);
+            WebDemo.NavigateToString(boxStr);
+        }
+
+
+
+        private async System.Threading.Tasks.Task pasteImageAndDeSerAsync()
+        {
+            var dp = Clipboard.GetContent();
+            IReadOnlyList<string> f = dp.AvailableFormats;
+            foreach (string format in f) {
+                Debug.WriteLine(format);
+            }
+            if (f.Contains(StandardDataFormats.Bitmap)) {
+                RandomAccessStreamReference file = await dp.GetBitmapAsync();
+
+                BitmapImage image = new BitmapImage();
+                await image.SetSourceAsync(await file.OpenReadAsync());
+                ImageControl.Source = image;
+                await pasteImageAndDeSerAsync(file);
+            }
+            else if (f.Contains(StandardDataFormats.StorageItems)) {
+                DisplayErrorDialog("你复制的是文件不是图片");
+            }
+            else {
+                DisplayErrorDialog("剪切板没有图片");
+            }
+        }
+
+        private async System.Threading.Tasks.Task pasteImageAndDeSerAsync(RandomAccessStreamReference imageStream)
         {
             if (imageStream != null) {
                 try {
@@ -42,20 +87,36 @@ namespace snip2latex.View
                     Model.DataWrapperReturn data = Model.Data.wrapper(str);
                     if (data == null) throw new Exception("Json didn't deserialize anything");
                     Model.Data.restoreWords(data);
-                    box.Text = data.formula_result_num + "\n";
-                    foreach (var i in data.formula_result) {
-                        box.Text += i.words + "\n";
+                    HtmlResult htmlResult;
+                    try {
+                        MathJaxServer.init();
+                        htmlResult = MathJaxServer.getServerHtmls(data);
                     }
-                    box.Text += "including words:\n";
-                    foreach (var i in data.words_result) {
-                        box.Text += i.words + "\n";
+                    catch (Exception e) {
+                        htmlResult = MathJaxServer.WebServerErrorHandles(e);
                     }
+                    if (recognizeWordsCheck.IsChecked == true) {
+                        foreach (var i in data.words_result) {
+                            TextDemo.Text += i.words + "\n";
+                        }
+                        WebDemo.NavigateToString(htmlResult.result_w);
+                    }
+                    else if (recognizeWordsCheck.IsChecked == false) {
+                        foreach (var i in data.formula_result) {
+                            TextDemo.Text += i.words + "\n";
+                        }
+                        WebDemo.NavigateToString(htmlResult.result_f);
+                    }
+                    else {
+                        WebDemo.NavigateToString(MathJaxServer.WebServerErrorHandle(new Exception("wrong option")));
+                    }
+                    progresring.Visibility = Visibility.Collapsed;
                 }
                 catch (WebException ex) {
                     try {
                         var res = (HttpWebResponse)ex.Response;
                         StreamReader streamReader = new StreamReader(res.GetResponseStream());
-                        box.Text = streamReader.ReadToEnd();
+                        ErrorPage.errorPage.showError(ex.Message + streamReader.ReadToEnd());
                     }
                     catch (Exception e) {
                         MainPage.Current.toNavigate(typeof(ErrorPage));
@@ -68,38 +129,32 @@ namespace snip2latex.View
                 }
             }
             else {
+                ErrorPage.errorPage.showError("读取剪切板图片失败!检查剪切板内容");
             }
         }
 
-        private async void Button_Click(object sender, RoutedEventArgs e)
+
+
+        private async void DisplayErrorDialog(String content)
         {
-            var dp = Clipboard.GetContent();
-            IReadOnlyList<string>f = dp.AvailableFormats;
-            foreach(string format in f) {
-                Debug.WriteLine(format);
+            ContentDialog errorDialog = new ContentDialog
+            {
+                Title = "额......",
+                Content = content + "(请重新截图复制或进行其他图片复制操作)",
+                PrimaryButtonText = "重新粘贴",
+                CloseButtonText = "取消"
+            };
+
+            ContentDialogResult result = await errorDialog.ShowAsync();
+            if (result == ContentDialogResult.Primary) {
+                await pasteImageAndDeSerAsync();
             }
-            if (f.Contains("Text")) {
-                string str = await dp.GetTextAsync();
-                box.Text += str;
-            }else if (f.Contains(StandardDataFormats.Bitmap)) {
-                RandomAccessStreamReference file = await dp.GetBitmapAsync();
-                
-                BitmapImage image = new BitmapImage();
-                await image.SetSourceAsync(await file.OpenReadAsync());
-                ImageControl.Source = image;
-                await chooseImageAndDeSerAsync(file); 
-            }else if (f.Contains(StandardDataFormats.StorageItems)) {
-                ContentDialog contentDialog = new ContentDialog
-                {
-                    Title = "dont give file",
-                    CloseButtonText = "close",
-                    PrimaryButtonText = "yes",
+        }
 
-
-                };
-                contentDialog.ShowAsync();
-
-            }
+        private async void ImageButton_Click(object sender, RoutedEventArgs e)
+        {
+            progresring.Visibility = Visibility.Visible;
+            await pasteImageAndDeSerAsync();
         }
     }
 }

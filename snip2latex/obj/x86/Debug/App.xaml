@@ -8,7 +8,7 @@
         <ResourceDictionary>
             <Color x:Key="SystemAccentColor">#6b69d6</Color>
             <Color x:Key="HoverPurple">#D2C3FF</Color>
-                <AcrylicBrush x:Key="NavigationViewExpandedPaneBackground"
+            <AcrylicBrush x:Key="NavigationViewExpandedPaneBackground"
                   BackgroundSource="HostBackdrop"
                   TintColor="#E6E6FA"
                   TintOpacity="0.8"

@@ -13,6 +13,7 @@ using System.Threading.Tasks;
 using Windows.Graphics.DirectX;
 using Windows.Graphics.DirectX.Direct3D11;
 using Microsoft.Graphics.Canvas;
+using snip2latex;
 
 // https://go.microsoft.com/fwlink/?LinkId=234238 上介绍了“空白页”项模板
 
@@ -38,6 +39,8 @@ namespace snip2latex.View
 
         private void getFromSnipButton_Click(object sender, RoutedEventArgs e)
         {
+            MainPage.Current.toNavigate(typeof(ClipBoard));
+
         }
         private async void DisplayNoCopydDialog()
         {
