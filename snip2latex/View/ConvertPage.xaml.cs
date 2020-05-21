@@ -21,7 +21,7 @@ namespace snip2latex.View
         public static ConvertPage convertPage;
         public ConvertPage()
         {
-            ApplicationView.GetForCurrentView().Title = "开始识别吧!";
+            ApplicationView.GetForCurrentView().Title = "开始导入图片文件识别吧!";
             this.InitializeComponent();
             convertPage = this;
             MainPage.Current.showBackButton();

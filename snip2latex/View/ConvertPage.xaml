@@ -10,27 +10,31 @@
 
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="3*"/>
+            <RowDefinition Height="4*"/>
+            <RowDefinition Height="1*"/>
         </Grid.RowDefinitions>
-        <Grid  Grid.Row="1">
-            <RelativePanel>
-                <Button Margin="5,0,0,0" CornerRadius="2" Content="Open image!" Name="imagebutton" Click="Button_Click"/>
-                <CheckBox Margin="5,0,0,0" Name="check" RelativePanel.Below="imagebutton" Content="convert text"/>
-            </RelativePanel>
-            <Image Name="imagecontrol" Stretch="Uniform" Width="600" Source="Assets/Square150x150Logo.scale-200.png" />
-        </Grid>
-        <TextBox TextWrapping="Wrap" Name="TextDemo" Grid.Row="0"/>
-        <!--<Grid Grid.Row="2">
-            <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="2*"/>
-                <ColumnDefinition Width="2*"/>
-            </Grid.ColumnDefinitions>
-            <WebView Grid.Column="0" Name="WebDemo_w"/>
-            <WebView Grid.Column="1" Name="WebDemo_f"/>
-        </Grid>-->
-        <WebView Grid.Row="2" Name="WebDemo"/>
-        <ProgressRing Height="256" Width="256" Name="progresring" Visibility="Collapsed" Grid.RowSpan="3"/>
+        <RelativePanel Grid.Row="0" Padding="20,20,20,20">
+            <TextBlock Margin="0,0,0,10" RelativePanel.AlignTopWithPanel="True" Text="识别参数" Name="TitleBlock" Style="{StaticResource TitleTextBlockStyle}"/>
+            <CheckBox Margin="5,0,0,0" RelativePanel.Below="TitleBlock" Name="recognizeWordsCheck"  Content="同时识别文字"/>
+            <CheckBox Margin="5,0,0,0" RelativePanel.Below="recognizeWordsCheck" Name="separateCheck"  Content="分开显示代码(开发中)" IsEnabled="False"/>
+            <Button  Margin="5,0,0,0" RelativePanel.AlignBottomWithPanel="True" CornerRadius="2" Content="开始识别" Name="ImageButton" Click="Button_Click"/>
+            <StackPanel Orientation="Vertical" RelativePanel.AlignHorizontalCenterWithPanel="True" RelativePanel.AlignVerticalCenterWithPanel="True">
+                <Image Name="ImageControl"  Stretch="Uniform" MinHeight="256" MinWidth="256" MaxWidth="1024" MaxHeight="400" Source="Assets/Square150x150Logo.scale-200.png" />
+                <TextBlock Text="图片预览" Name="imageCaption" HorizontalAlignment="Right" Visibility="Collapsed"/>
+            </StackPanel>
+        </RelativePanel>
+        <RelativePanel Padding="20,20,20,20" Grid.Row="1">
+            <TextBlock  Margin="0,0,0,20" RelativePanel.AlignTopWithPanel="True" Text="代码复制处" Name="TextBoxTitle" Style="{StaticResource TitleTextBlockStyle}"/>
+            <TextBox Margin="15,5,15,20" TextWrapping="Wrap"  Name="TextDemo" RelativePanel.AlignBottomWithPanel="True" RelativePanel.AlignLeftWithPanel="True" RelativePanel.AlignRightWithPanel="True" RelativePanel.Below="TextBoxTitle"/>
+        </RelativePanel>
+        <RelativePanel Padding="20,20,20,20" Grid.Row="2">
+            <TextBlock  Margin="0,0,0,10" RelativePanel.AlignTopWithPanel="True" Text="代码预览处" Name="jaxBoxTitle" Style="{StaticResource TitleTextBlockStyle}"/>
+            <WebView  ScrollViewer.HorizontalScrollBarVisibility="Hidden" ScrollViewer.VerticalScrollBarVisibility="Hidden" Grid.Row="2" Name="WebDemo"/>
+        </RelativePanel>
+        
+        <ProgressRing Height="128" Width="128" Name="web_progresring" Visibility="Visible" Grid.Row="2"/>
+        <ProgressRing Height="128" Width="128" Name="progresring" Visibility="Visible" Grid.RowSpan="3"/>
     </Grid>
 </Page>

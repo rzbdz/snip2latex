@@ -32,7 +32,5 @@ To import the project, make sure your visual studio have intallled at least the 
 current mainpage(013)
 ![](project_info/v0.1.3.png)
 
-old version preview (012): 
-(row is the latex code after recognized and converted, row2 is the input image, row3 is the rendered latex preview page, complete Navigation view and other pages will be added soon)
-
-![](project_info/v0.1.2png.png)
+old version preview (010): 
+![](project_info/v0.1.png)
