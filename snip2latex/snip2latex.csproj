@@ -130,12 +130,13 @@
     <Compile Include="View\AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Capture.xaml.cs">
-      <DependentUpon>Capture.xaml</DependentUpon>
+    <Compile Include="View\ClipBoard.xaml.cs">
+      <DependentUpon>ClipBoard.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ConvertPage.xaml.cs">
       <DependentUpon>ConvertPage.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\DataPakageView.cs" />
     <Compile Include="View\ErrorPage.xaml.cs">
       <DependentUpon>ErrorPage.xaml</DependentUpon>
     </Compile>
@@ -145,6 +146,7 @@
     <Compile Include="View\Home.xaml.cs">
       <DependentUpon>Home.xaml</DependentUpon>
     </Compile>
+    <Compile Include="View\IteadOnlyList.cs" />
     <Compile Include="View\Settings.xaml.cs">
       <DependentUpon>Settings.xaml</DependentUpon>
     </Compile>
@@ -222,7 +224,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Capture.xaml">
+    <Page Include="View\ClipBoard.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

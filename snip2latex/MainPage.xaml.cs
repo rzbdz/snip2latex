@@ -39,7 +39,7 @@ namespace snip2latex
             this.InitializeComponent();
             Current = this;
             setTitleBarColor(Windows.UI.Color.FromArgb(1, 107, 105, 214), Windows.UI.Color.FromArgb(1, 210, 195, 255));
-            MainFrame.Navigate(typeof(Capture));
+            MainFrame.Navigate(typeof(ClipBoard));
             mainNav.IsPaneOpen = false;
             hideBackButton();
         }

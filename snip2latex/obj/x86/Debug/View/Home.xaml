@@ -12,11 +12,11 @@
             <RowDefinition Height="2*"/>
             <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
-        <StackPanel Grid.Row="0" x:Name="greetStack"
+        <StackPanel x:ConnectionId='2' Grid.Row="0" x:Name="greetStack"
                         Orientation="Vertical" 
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center">
-            <Image Source="ms-appx:///Assets/StoreLogo.scale-400.png" 
+            <Image x:ConnectionId='6' Source="ms-appx:///Assets/StoreLogo.scale-400.png" 
                    x:Name="Icon"
                    VerticalAlignment="Center"
                     Margin="20,20,20,0"
@@ -25,19 +25,19 @@
                        MinWidth="75"
                        MaxWidth="150"
                        Stretch="Uniform"/>
-            <TextBlock x:Name="chooseTaskBlock" Text="请选择一项任务!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"  FontWeight="ExtraLight"/>
+            <TextBlock x:ConnectionId='7' x:Name="chooseTaskBlock" Text="请选择一项任务!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"  FontWeight="ExtraLight"/>
         </StackPanel >
         <ScrollViewer Grid.Row="1" Background="White" VerticalScrollBarVisibility="Hidden" >
             <Grid>
-                <StackPanel x:Name="taskPanel" 
+                <StackPanel x:ConnectionId='3' x:Name="taskPanel" 
                                 Orientation="Vertical" 
                                 HorizontalAlignment="Center"
                                 Background="White"
                                 >
                         <StackPanel Orientation="Vertical" VerticalAlignment="Center" Padding="50,50,50,50">
-                            <Button VerticalContentAlignment="Center"
+                            <Button x:ConnectionId='5' VerticalContentAlignment="Center"
                                     Name="getFromfileButton"
-                                    Click="getFromfileButton_Click"
+                                                                   
                                     Background="{ThemeResource MyBrush}"
                                     VerticalAlignment="Center" 
                                     Foreground="White" 
@@ -57,9 +57,9 @@
                             <TextBlock Padding="0,20,0,0" Text="从文件识别" FontSize="18" HorizontalAlignment="Center"/>
                         </StackPanel>
                         <StackPanel Orientation="Vertical" VerticalAlignment="Center" Padding="50,50,50,50">
-                            <Button VerticalContentAlignment="Center"
+                            <Button x:ConnectionId='4' VerticalContentAlignment="Center"
                                     Name="getFromSnipButton"
-                                    Click="getFromSnipButton_Click"
+                                                                   
                                     Background="{ThemeResource MyBrush}"
                                     VerticalAlignment="Center" 
                                     Foreground="White" 
@@ -118,3 +118,4 @@
         </VisualStateManager.VisualStateGroups>
     </Grid>
 </Page>
+

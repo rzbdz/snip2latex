@@ -270,8 +270,8 @@
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\View\AboutPage.xbf">
       <PackagePath>View\AboutPage.xbf</PackagePath>
     </AppxPackagedFile>
-    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\View\Capture.xbf">
-      <PackagePath>View\Capture.xbf</PackagePath>
+    <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\View\ClipBoard.xbf">
+      <PackagePath>View\ClipBoard.xbf</PackagePath>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\View\ConvertPage.xbf">
       <PackagePath>View\ConvertPage.xbf</PackagePath>
