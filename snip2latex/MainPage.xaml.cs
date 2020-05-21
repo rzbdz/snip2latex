@@ -19,6 +19,7 @@ using Windows.UI.Xaml.Controls.Primitives;
 using Windows.UI.Xaml.Data;
 using Windows.UI.Xaml.Input;
 using Windows.UI.Xaml.Media;
+using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 
@@ -39,7 +40,8 @@ namespace snip2latex
             Current = this;
             setTitleBarColor(Windows.UI.Color.FromArgb(1, 107, 105, 214), Windows.UI.Color.FromArgb(1, 210, 195, 255));
             MainFrame.Navigate(typeof(Home));
-
+            mainNav.IsPaneOpen = false;
+            hideBackButton();
         }
         private void setTitleBarColor(Windows.UI.Color bgColor, Windows.UI.Color btnHoverColor)
         {
@@ -49,11 +51,41 @@ namespace snip2latex
             titleBar.ButtonHoverBackgroundColor = btnHoverColor;
         }
 
+        private readonly List<(string Tag, Type Page)> _pages = new List<(string Tag, Type Page)>
+        {
+            ("Home", typeof(Home)),
+            ("History", typeof(History)),
+        };
+
         private void mainNav_ItemInvoked(NavigationView sender, NavigationViewItemInvokedEventArgs args)
         {
             if (args.IsSettingsInvoked) {
-                toNavigate(typeof(ErrorPage));
+                toNavigate(typeof(Settings));
             }
+            else if (args.InvokedItemContainer != null) {
+                var navItemTag = args.InvokedItemContainer.Tag.ToString();
+                NavView_Navigate(navItemTag, args.RecommendedNavigationTransitionInfo);
+            }
+        }
+
+        private void NavView_Navigate(string navItemTag, NavigationTransitionInfo transitionInfo)
+        {
+            Type _page = null;
+            if (navItemTag == "settings") {
+                _page = typeof(Settings);
+            }
+            else {
+                var item = _pages.FirstOrDefault(p => p.Tag.Equals(navItemTag));
+                _page = item.Page;
+            }
+            // 获取当前type(不重复)
+            var preNavPageType = MainFrame.CurrentSourcePageType;
+
+            // 更新,不重复
+            if (!(_page is null) && !Type.Equals(preNavPageType, _page)) {
+                MainFrame.Navigate(_page, null, transitionInfo);
+            }
+
         }
 
         public void goBack()
@@ -68,6 +100,39 @@ namespace snip2latex
         public void toNavigate(Type sourcePageType)
         {
             this.MainFrame.Navigate(sourcePageType);
+        }
+        public void showBackButton()
+        {
+            this.mainNav.IsBackButtonVisible = NavigationViewBackButtonVisible.Visible;
+        }
+        public void hideBackButton()
+        {
+            this.mainNav.IsBackButtonVisible = NavigationViewBackButtonVisible.Collapsed;
+        }
+        private void BackInvoked(KeyboardAccelerator sender,
+                         KeyboardAcceleratorInvokedEventArgs args)
+        {
+            On_BackRequested();
+            args.Handled = true;
+        }
+        private void NavView_BackRequested(NavigationView sender,
+                                   NavigationViewBackRequestedEventArgs args)
+        {
+            On_BackRequested();
+        }
+        private bool On_BackRequested()
+        {
+            if (!MainFrame.CanGoBack)
+                return false;
+
+            // Don't go back if the nav pane is overlayed.
+            if (mainNav.IsPaneOpen &&
+                (mainNav.DisplayMode == NavigationViewDisplayMode.Compact ||
+                 mainNav.DisplayMode == NavigationViewDisplayMode.Minimal))
+                return false;
+
+            MainFrame.GoBack();
+            return true;
         }
     }
 }

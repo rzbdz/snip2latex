@@ -13,7 +13,7 @@ Project Structure (I would try to obey MVC or MVVM pattern):
   - DataWrapper.cs : JsonDeSerializer and model for the  json returned from api
 - View/
   - AboutPage.xaml/.cs : About page
-  - ConverPage.xaml/.cs : a page on the Home Page
+  - ConvertPage.xaml/.cs : a page on the Home Page
   - ErrorPage.xaml/.cs : showing error message
   - History.xaml/.cs : read the history data and show
   - Home.xaml/.cs : Home page
@@ -27,8 +27,12 @@ Project Structure (I would try to obey MVC or MVVM pattern):
 
 To import the project, make sure your visual studio have intallled at least the Windows Universal Platform SDK ~~1809~~ 1903 (5.21 updated for fluent design api). 
 
-Current preview (0.1.2): 
 
+
+current mainpage(013)
+![](project_info/v0.1.3.png)
+
+old version preview (012): 
 (row is the latex code after recognized and converted, row2 is the input image, row3 is the rendered latex preview page, complete Navigation view and other pages will be added soon)
 
 ![](project_info/v0.1.2png.png)

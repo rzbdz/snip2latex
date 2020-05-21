@@ -6,20 +6,123 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-    <!--Background="{ThemeResource ApplicationPageBackgroundThemeBrush}"-->
+
     <Grid>
         <Grid.RowDefinitions>
             <RowDefinition Height="2*"/>
-            <RowDefinition Height="2*"/>
-            <RowDefinition Height="2*"/>
+            <RowDefinition Height="3*"/>
         </Grid.RowDefinitions>
-        <Grid  Grid.Row="1">
-            <Button x:ConnectionId='5' CornerRadius="3" Content="Open image!" Name="@imagebutton"                     />
-            <Image x:ConnectionId='6' Name="imagecontrol" Stretch="Uniform" Width="600" Source="Assets/Square150x150Logo.scale-200.png" />
+        <VisualStateManager.VisualStateGroups>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="720" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="greetStack.Orientation" Value="Horizontal" />
+                        <Setter Target="Icon.Padding" Value="20,20,20,20" />
+                        <Setter Target="chooseTaskBlock.Padding" Value="20,0,0,0" />
+                        <Setter Target="chooseTaskBlock.FontSize" Value="70" />
+                        <Setter Target="chooseTaskBlock.FontFamily" Value="等线" />
+                    </VisualState.Setters>
+                </VisualState>
+                <VisualState>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowHeight="400" />
+                    </VisualState.StateTriggers>
+                    <VisualState.Setters>
+                        <Setter Target="chooseTaskBlock.FontSize" Value="30" />
+                    </VisualState.Setters>
+                </VisualState>
+            </VisualStateGroup>
+            <VisualStateGroup>
+                <VisualState>
+                    <VisualState.Setters>
+                        <Setter Target="taskPanel.(StackPanel.Orientation)" Value="Horizontal" />
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="720" />
+                    </VisualState.StateTriggers>
+                </VisualState>
+                <VisualState>
+                    <VisualState.Setters>
+                        <Setter Target="taskPanel.(StackPanel.Orientation)" Value="Vertical" />
+                    </VisualState.Setters>
+                    <VisualState.StateTriggers>
+                        <AdaptiveTrigger MinWindowWidth="0" />
+                    </VisualState.StateTriggers>
+                </VisualState>
+            </VisualStateGroup>
+        </VisualStateManager.VisualStateGroups>
+        <StackPanel x:ConnectionId='2' Grid.Row="0" x:Name="greetStack"
+                        Orientation="Vertical" 
+                    HorizontalAlignment="Center"
+                    VerticalAlignment="Center">
+            <Image x:ConnectionId='6' Source="ms-appx:///Assets/StoreLogo.scale-400.png" 
+                   x:Name="Icon"
+                   VerticalAlignment="Center"
+                    Margin="20,20,20,0"
+                       MinHeight="75"
+                       MaxHeight="150"
+                       MinWidth="75"
+                       MaxWidth="150"
+                       Stretch="Uniform"/>
+            <TextBlock x:ConnectionId='7' x:Name="chooseTaskBlock" Text="请选择一项任务!" HorizontalAlignment="Center" VerticalAlignment="Center" FontSize="32"  FontWeight="ExtraLight"/>
+        </StackPanel >
+        <ScrollViewer Grid.Row="1" Background="White" VerticalScrollBarVisibility="Hidden" >
+            <Grid>
+                <StackPanel x:ConnectionId='3' x:Name="taskPanel" 
+                                Orientation="Vertical" 
+                                HorizontalAlignment="Center"
+                                Background="White"
+                                >
+                        <StackPanel Orientation="Vertical" VerticalAlignment="Center" Padding="50,50,50,50">
+                            <Button x:ConnectionId='5' VerticalContentAlignment="Center"
+                                    Name="getFromfileButton"
+                                                                   
+                                    Background="{ThemeResource MyBrush}"
+                                    VerticalAlignment="Center" 
+                                    Foreground="White" 
+                                    CornerRadius="4" 
+                                    FontFamily="Segoe MDL2 Assets"
+                                    Content="&#xE8C8;" 
+                                    FontSize="60"  
+                                    Width="180" 
+                                    Height="180"
+                                    >
+                                <Button.Resources>
+                                    <SolidColorBrush x:Key="ButtonBackground" Color="{ThemeResource SystemAccentColor}"/>
+                                    <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="{ThemeResource HoverPurple}"/>
+                                    <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="{ThemeResource SystemAccentColor}"/>
+                                </Button.Resources>
+                            </Button>
+                            <TextBlock Padding="0,20,0,0" Text="从文件识别" FontSize="18" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                        <StackPanel Orientation="Vertical" VerticalAlignment="Center" Padding="50,50,50,50">
+                            <Button x:ConnectionId='4' VerticalContentAlignment="Center"
+                                    Name="getFromSnipButton"
+                                                                   
+                                    Background="{ThemeResource MyBrush}"
+                                    VerticalAlignment="Center" 
+                                    Foreground="White" 
+                                    CornerRadius="4" 
+                                    FontFamily="Segoe MDL2 Assets"
+                                    Content="&#xE8C6;" 
+                                    FontSize="60"  
+                                    Width="180" 
+                                    Height="180"
+                                    >
+                                <Button.Resources>
+                                    <SolidColorBrush x:Key="ButtonBackground" Color="{ThemeResource SystemAccentColor}"/>
+                                    <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="{ThemeResource HoverPurple}"/>
+                                    <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="{ThemeResource SystemAccentColor}"/>
+                                </Button.Resources>
+                            </Button>
+                            <TextBlock Padding="0,20,0,0" Text="从截图识别" FontSize="18" HorizontalAlignment="Center"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Grid>
+            </ScrollViewer>
         </Grid>
-        <TextBox x:ConnectionId='2' TextWrapping="Wrap" Name="TextDemo" Grid.Row="0"/>
-        <WebView x:ConnectionId='3' Grid.Row="2" Name="WebDemo"/>
-        <ProgressRing x:ConnectionId='4' Height="256" Width="256" Name="progresring" Visibility="Collapsed" Grid.RowSpan="3"/>
-    </Grid>
 </Page>
 

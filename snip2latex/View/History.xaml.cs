@@ -5,6 +5,7 @@ using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
 using Windows.UI.Xaml.Controls.Primitives;
@@ -20,11 +21,13 @@ namespace snip2latex.View
     /// <summary>
     /// 可用于自身或导航至 Frame 内部的空白页。
     /// </summary>
-    public sealed partial class BlankPage3 : Page
+    public sealed partial class History : Page
     {
-        public BlankPage3()
+        public History()
         {
+            ApplicationView.GetForCurrentView().Title = "识别记录...";
             this.InitializeComponent();
+            MainPage.Current.hideBackButton();
         }
     }
 }

@@ -9,20 +9,22 @@
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <NavigationView x:ConnectionId='2' 
-        Background="{ThemeResource SystemControlBaseLowAcrylicWindowBrush}"
+        Background="{ThemeResource SystemControlAltLowAcrylicWindowBrush}"
         x:Name="mainNav"
         IsSettingsVisible="true" 
         IsTabStop="False" 
         PaneDisplayMode="Left"
-        OpenPaneLength="300"
+        OpenPaneLength="240"
         IsBackButtonVisible="Collapsed"
                                          
-        IsPaneOpen="False">
+                                             
+        IsPaneOpen="False"
+        IsBackEnabled="True">
         <NavigationView.MenuItems>
-            <NavigationViewItem Icon="Home"  Content="主页" Tag="SamplePage1" ToolTipService.ToolTip="1"/>
-            <NavigationViewItem Icon="Clock"  Content="历史" Tag="SamplePage1" ToolTipService.ToolTip="1"/>
+            <NavigationViewItem Icon="Home"  Content="开始识别吧 !" Tag="Home" ToolTipService.ToolTip="1"/>
+            <NavigationViewItem Icon="Clock"  Content="识别记录..." Tag="History" ToolTipService.ToolTip="1"/>
         </NavigationView.MenuItems>
-        <Frame x:ConnectionId='3' Name="MainFrame" >
+        <Frame x:ConnectionId='3' Name="MainFrame" Background="{ThemeResource SystemControlAltLowAcrylicWindowBrush}">
         </Frame>
     </NavigationView>
 </Page>
