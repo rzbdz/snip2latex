@@ -85,7 +85,7 @@
                                     Foreground="White" 
                                     CornerRadius="4" 
                                     FontFamily="Segoe MDL2 Assets"
-                                    Content="&#xE8C8;" 
+                                    Content="&#xEC50;" 
                                     FontSize="60"  
                                     Width="180" 
                                     Height="180"
@@ -107,7 +107,7 @@
                                     Foreground="White" 
                                     CornerRadius="4" 
                                     FontFamily="Segoe MDL2 Assets"
-                                    Content="&#xE8C6;" 
+                                    Content="&#xE8C8;" 
                                     FontSize="60"  
                                     Width="180" 
                                     Height="180"
@@ -118,7 +118,7 @@
                                     <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="{ThemeResource SystemAccentColor}"/>
                                 </Button.Resources>
                             </Button>
-                            <TextBlock Padding="0,20,0,0" Text="从截图识别" FontSize="18" HorizontalAlignment="Center"/>
+                            <TextBlock Padding="0,20,0,0" Text="从剪贴板识别" FontSize="18" HorizontalAlignment="Center" SelectionChanged="TextBlock_SelectionChanged"/>
                         </StackPanel>
                     </StackPanel>
                 </Grid>

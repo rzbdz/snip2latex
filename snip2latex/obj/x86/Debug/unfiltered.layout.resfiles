@@ -54,6 +54,7 @@ App.xbf
 MainPage.xbf
 snip2latex.xr.xml
 View\AboutPage.xbf
+View\Capture.xbf
 View\ConvertPage.xbf
 View\ErrorPage.xbf
 View\History.xbf

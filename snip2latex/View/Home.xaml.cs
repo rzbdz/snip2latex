@@ -8,6 +8,11 @@ using Windows.Storage.Pickers;
 using Windows.UI.Xaml.Media.Imaging;
 using snip2latex.View;
 using Windows.UI.ViewManagement;
+using Windows.Graphics.Capture;
+using System.Threading.Tasks;
+using Windows.Graphics.DirectX;
+using Windows.Graphics.DirectX.Direct3D11;
+using Microsoft.Graphics.Canvas;
 
 // https://go.microsoft.com/fwlink/?LinkId=234238 上介绍了“空白页”项模板
 
@@ -33,7 +38,17 @@ namespace snip2latex.View
 
         private void getFromSnipButton_Click(object sender, RoutedEventArgs e)
         {
+        }
+        private async void DisplayNoCopydDialog()
+        {
+            ContentDialog noFileDialog = new ContentDialog
+            {
+                Title = "警告!",
+                Content = "你的剪切板没有图片!",
+                CloseButtonText = "确定"
+            };
 
+            ContentDialogResult result = await noFileDialog.ShowAsync();
         }
     }
 }
