@@ -21,10 +21,11 @@ namespace snip2latex.View
         public static ConvertPage convertPage;
         public ConvertPage()
         {
-            ApplicationView.GetForCurrentView().Title = "开始导入图片文件识别吧!";
             this.InitializeComponent();
+            initalize();
+            ApplicationView.GetForCurrentView().Title = "开始导入图片文件识别吧!";
             convertPage = this;
-            this.WebDemo.NavigateToString("<html><body><center><p>请点击开始识别进行识别</p></center></body></html>");
+            this.WebDemo.NavigateToString(MathJaxServer.hint());
             MainPage.Current.showBackButton();
         }
 
@@ -36,11 +37,13 @@ namespace snip2latex.View
         }
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
+            ImageButton.IsEnabled = false;
+            initalize();
             progresring.Visibility = Visibility.Visible;
             progresring.IsActive = true;
-            ImageButton.IsEnabled = false;
             await chooseImageAndDeSerAsync();
             ImageButton.IsEnabled = true;
+            initalize();
         }
 
 
@@ -48,7 +51,7 @@ namespace snip2latex.View
         private void fixWebButton_Click(object sender, RoutedEventArgs e)
         {
             string boxStr = this.TextDemo.Text;
-            boxStr =  MathJaxServer.fixFomulashtml(boxStr);
+            boxStr = MathJaxServer.fixFomulashtml(boxStr);
             WebDemo.NavigateToString(boxStr);
         }
 
@@ -99,14 +102,15 @@ namespace snip2latex.View
                     //WebDemo.NavigateToString(htmlString);
                     //WebDemo_f.NavigateToString(htmlResult.result_f);
                     //WebDemo_w.NavigateToString(htmlResult.result_w);
-                    progresring.Visibility = Visibility.Collapsed;
                 }
                 catch (WebException ex) {
                     try {
                         var res = (HttpWebResponse)ex.Response;
                         StreamReader streamReader = new StreamReader(res.GetResponseStream());
+                        MainPage.Current.toNavigate(typeof(ErrorPage));
+
                         ErrorPage.errorPage.showError(ex.Message + streamReader.ReadToEnd());
-                        
+
                         initalize();
                     }
                     catch (Exception e) {

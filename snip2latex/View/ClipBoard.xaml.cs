@@ -30,9 +30,10 @@ namespace snip2latex.View
     {
         public ClipBoard()
         {
-            ApplicationView.GetForCurrentView().Title = "复制好图片之后识别吧!";
             this.InitializeComponent();
-            this.WebDemo.NavigateToString("<html><body><center><p>请点击开始识别进行识别</p></center></body></html>");
+            initalize();
+            ApplicationView.GetForCurrentView().Title = "复制好图片之后识别吧!";
+            this.WebDemo.NavigateToString(MathJaxServer.hint());
             MainPage.Current.showBackButton();
         }
 
@@ -110,26 +111,30 @@ namespace snip2latex.View
                     else {
                         WebDemo.NavigateToString(MathJaxServer.WebServerErrorHandle(new Exception("wrong option")));
                     }
-                    progresring.Visibility = Visibility.Collapsed;
                 }
                 catch (WebException ex) {
                     try {
                         var res = (HttpWebResponse)ex.Response;
                         StreamReader streamReader = new StreamReader(res.GetResponseStream());
+                        MainPage.Current.toNavigate(typeof(ErrorPage));
                         ErrorPage.errorPage.showError(ex.Message + streamReader.ReadToEnd());
                     }
                     catch (Exception e) {
                         MainPage.Current.toNavigate(typeof(ErrorPage));
                         ErrorPage.errorPage.showError(e.Message + "(Probably network problem)");
+                        initalize();
                     }
                 }
                 catch (Exception ex) {
                     MainPage.Current.toNavigate(typeof(ErrorPage));
                     ErrorPage.errorPage.showError(ex.Message);
+                    initalize();
                 }
             }
             else {
+                MainPage.Current.toNavigate(typeof(ErrorPage));
                 ErrorPage.errorPage.showError("读取剪切板图片失败!检查剪切板内容");
+                initalize();
             }
         }
 
@@ -144,8 +149,16 @@ namespace snip2latex.View
                 PrimaryButtonText = "重新粘贴",
                 CloseButtonText = "取消"
             };
-
-            ContentDialogResult result = await errorDialog.ShowAsync();
+            ImageButton.IsEnabled = false;
+            ContentDialogResult result;
+            try {
+                result = await errorDialog.ShowAsync();
+            }
+            catch (Exception e) {
+                MainPage.Current.toNavigate(typeof(ErrorPage));
+                ErrorPage.errorPage.showError(e.Message);
+                result = ContentDialogResult.None;
+            }
             if (result == ContentDialogResult.Primary) {
                 await pasteImageAndDeSerAsync();
             }
@@ -153,8 +166,14 @@ namespace snip2latex.View
 
         private async void ImageButton_Click(object sender, RoutedEventArgs e)
         {
+            ImageButton.IsEnabled = false;
+            initalize();
+
             progresring.Visibility = Visibility.Visible;
+            progresring.IsActive = true;
             await pasteImageAndDeSerAsync();
+            progresring.Visibility = Visibility.Collapsed;
+            ImageButton.IsEnabled = true;
         }
     }
 }

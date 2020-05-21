@@ -22,6 +22,10 @@ namespace snip2latex
         private static string result = "";
         private static string result_f = "";
         private static string result_w = "";
+        public static string hint()
+        {
+            return "<html><body><center><p>请点击开始识别进行识别</p></center></body></html>";
+        }
         public static void init()
         {
             result = "";
@@ -73,7 +77,13 @@ namespace snip2latex
         }
         public static string fixFomulashtml(String box)
         {
-            return pre + fixFomulas(box) + suf;
+            if (box != "") {
+                return pre + fixFomulas(box) + suf;
+
+            }
+            else {
+                return hint();
+            }
         }
         public static string fixFomulas(String boxInput)
         {
