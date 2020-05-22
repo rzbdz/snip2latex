@@ -7,7 +7,7 @@ The viewing render is using mathjax online javascript and based on a local html 
 
 Current version is only a demo since there were many bugs reveal during coding. More function and features would be added. Complete User Interface would be completed soon.
 
-Project Structure (I would try to obey MVC or MVVM pattern):
+Project Structure (MVVM):
 
 - Model/
   - DataWrapper.cs : JsonDeSerializer and model for the  json returned from api
