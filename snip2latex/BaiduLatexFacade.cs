@@ -15,7 +15,7 @@ using System.Web;
 
 namespace snip2latex
 {
-    public static class LatexFacade
+    public static class BaiduLatexFacade
     {
         public static void GetData()
         {

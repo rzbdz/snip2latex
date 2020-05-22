@@ -4,13 +4,13 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using Windows.Storage;
-using snip2latex.Model;
+using snip2latex.Model.Baidu;
 using System.IO;
 using Windows.Storage.Streams;
 
 namespace snip2latex
 {
-    public static class MathJaxServer
+    public static class MathJaxServerForBaidu
     {
         private readonly static String pre = "<!DOCTYPE html><html><head><meta charset=\"utf-8\"><meta name=\"viewport\" content=\"width=device-width\"><title>Math Jax example</title><script src=\"https://polyfill.io/v3/polyfill.min.js?features=es6\"></script><script id=\"MathJax-script\" async src=\"https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js\"></script></head><body>";
         private readonly static String suf = "</body></html>";
@@ -44,23 +44,23 @@ namespace snip2latex
             result = pre + "<p>" + outLineleftBrace + fomulaString + outLineRightBrace + "</p>" + suf;
             return result;
         }
-        public static string multiOutlineFomulas(Model.DataWrapperReturn data, Model.Data.FomulaWordsSeparateOption option)
+        public static string multiOutlineFomulas(DataWrapperReturn data, BaiduData.FomulaWordsSeparateOption option)
         {
             result = pre;
             switch (option) {
-                case Data.FomulaWordsSeparateOption.fomula:
+                case BaiduData.FomulaWordsSeparateOption.fomula:
                     foreach (var i in data.formula_result) {
                         result += "<p>" + outLineleftBrace + i.words + outLineRightBrace + "/p";
                     }
                     break;
-                case Data.FomulaWordsSeparateOption.words:
+                case BaiduData.FomulaWordsSeparateOption.words:
                     foreach (var i in data.words_result) {
                         string str = i.words.Replace(" ", " \\ ");
                         str = i.words.Replace("\\\\ \\ ", "\\\\ ");
                         result += outLineleftBrace + str + outLineRightBrace;
                     }
                     break;
-                case Data.FomulaWordsSeparateOption.bothFomulaAndWords:
+                case BaiduData.FomulaWordsSeparateOption.bothFomulaAndWords:
                     result += "<p>纯公式部分</p>";
                     foreach (var i in data.formula_result) {
                         result += outLineleftBrace + i.words + outLineRightBrace;
@@ -95,7 +95,7 @@ namespace snip2latex
             str = outLineleftBrace + str + outLineRightBrace;
             return str;
         }
-        public static void multiOutlineFomulas(Model.DataWrapperReturn data)
+        public static void multiOutlineFomulas(DataWrapperReturn data)
         {
             result = pre;
             result_f = pre;

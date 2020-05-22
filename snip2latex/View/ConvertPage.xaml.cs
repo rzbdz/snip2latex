@@ -68,10 +68,10 @@ namespace snip2latex.View
                     BitmapImage bmp = new BitmapImage();
                     await bmp.SetSourceAsync(await file.OpenAsync(FileAccessMode.Read));
                     ImageControl.Source = bmp;
-                    String str = await LatexFacade.PostNewAsync(file);
-                    Model.DataWrapperReturn data = Model.Data.wrapper(str);
+                    String str = await BaiduLatexFacade.PostNewAsync(file);
+                    Model.DataWrapperReturn data = Model.BaiduData.wrapper(str);
                     if (data == null) throw new Exception("Json didn't deserialize anything");
-                    Model.Data.restoreWords(data);
+                    Model.BaiduData.restoreWords(data);
                     //string htmlString;
                     HtmlResult htmlResult;
                     try {

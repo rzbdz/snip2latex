@@ -86,10 +86,10 @@ namespace snip2latex.View
                     BitmapImage bmp = new BitmapImage();
                     await bmp.SetSourceAsync(await imageStream.OpenReadAsync());
                     ImageControl.Source = bmp;
-                    String str = await LatexFacade.PostNewAsync(imageStream);
-                    Model.DataWrapperReturn data = Model.Data.wrapper(str);
+                    String str = await BaiduLatexFacade.PostNewAsync(imageStream);
+                    Model.DataWrapperReturn data = Model.BaiduData.wrapper(str);
                     if (data == null) throw new Exception("Json didn't deserialize anything");
-                    Model.Data.restoreWords(data);
+                    Model.BaiduData.restoreWords(data);
                     HtmlResult htmlResult;
                     try {
                         MathJaxServer.init();

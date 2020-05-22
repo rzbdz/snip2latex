@@ -6,9 +6,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace snip2latex.Model
+namespace snip2latex.Model.Baidu
 {
-    public static class Data
+    public static class BaiduData
     {
         public static DataWrapperReturn wrapper(String json)
         {

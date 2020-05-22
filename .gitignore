@@ -1,4 +1,5 @@
 /.vs/
 *.exe
-snip2latex/bin/*
-snip2latex/obj/*
+/snip2latex/bin/
+/snip2latex/obj/
+/snip2latex/MyBaiduToken.cs
