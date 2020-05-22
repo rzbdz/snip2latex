@@ -2,6 +2,19 @@
   "version": 3,
   "targets": {
     "UAP,Version=v10.0.18362": {
+      "Microsoft.AspNet.WebApi.Client/5.2.4": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "10.0.1",
+          "Newtonsoft.Json.Bson": "1.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
+        }
+      },
       "Microsoft.Bcl/1.1.10": {
         "type": "package",
         "dependencies": {
@@ -257,6 +270,31 @@
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
         }
       },
+      "Newtonsoft.Json.Bson/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "10.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
+        }
+      },
+      "Pathoschild.Http.FluentClient/3.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Client": "5.2.4"
+        },
+        "compile": {
+          "lib/netstandard2.0/Pathoschild.Http.Client.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Pathoschild.Http.Client.dll": {}
+        }
+      },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
         "type": "package",
         "dependencies": {
@@ -355,6 +393,29 @@
           "lib/netstandard2.0/System.Drawing.Common.dll": {}
         }
       },
+      "System.Text.Encodings.Web/4.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
+        }
+      },
+      "TencentCloudSDK/3.0.65": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.1",
+          "Pathoschild.Http.FluentClient": "3.2.0",
+          "System.Text.Encodings.Web": "4.4.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/TencentCloud.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/TencentCloud.dll": {}
+        }
+      },
       "Win2D.uwp/1.25.0": {
         "type": "package",
         "compile": {
@@ -387,6 +448,19 @@
       }
     },
     "UAP,Version=v10.0.18362/win10-arm": {
+      "Microsoft.AspNet.WebApi.Client/5.2.4": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "10.0.1",
+          "Newtonsoft.Json.Bson": "1.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
+        }
+      },
       "Microsoft.Bcl/1.1.10": {
         "type": "package",
         "dependencies": {
@@ -641,6 +715,31 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "10.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
+        }
+      },
+      "Pathoschild.Http.FluentClient/3.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Client": "5.2.4"
+        },
+        "compile": {
+          "lib/netstandard2.0/Pathoschild.Http.Client.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Pathoschild.Http.Client.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
@@ -919,6 +1018,29 @@
           "lib/netstandard2.0/System.Drawing.Common.dll": {}
         }
       },
+      "System.Text.Encodings.Web/4.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
+        }
+      },
+      "TencentCloudSDK/3.0.65": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.1",
+          "Pathoschild.Http.FluentClient": "3.2.0",
+          "System.Text.Encodings.Web": "4.4.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/TencentCloud.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/TencentCloud.dll": {}
+        }
+      },
       "Win2D.uwp/1.25.0": {
         "type": "package",
         "compile": {
@@ -936,6 +1058,19 @@
       }
     },
     "UAP,Version=v10.0.18362/win10-arm-aot": {
+      "Microsoft.AspNet.WebApi.Client/5.2.4": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "10.0.1",
+          "Newtonsoft.Json.Bson": "1.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
+        }
+      },
       "Microsoft.Bcl/1.1.10": {
         "type": "package",
         "dependencies": {
@@ -1190,6 +1325,31 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "10.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
+        }
+      },
+      "Pathoschild.Http.FluentClient/3.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Client": "5.2.4"
+        },
+        "compile": {
+          "lib/netstandard2.0/Pathoschild.Http.Client.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Pathoschild.Http.Client.dll": {}
         }
       },
       "runtime.win10-arm-aot.Microsoft.NETCore.UniversalWindowsPlatform/6.2.9": {
@@ -1469,6 +1629,29 @@
           "lib/netstandard2.0/System.Drawing.Common.dll": {}
         }
       },
+      "System.Text.Encodings.Web/4.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
+        }
+      },
+      "TencentCloudSDK/3.0.65": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.1",
+          "Pathoschild.Http.FluentClient": "3.2.0",
+          "System.Text.Encodings.Web": "4.4.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/TencentCloud.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/TencentCloud.dll": {}
+        }
+      },
       "Win2D.uwp/1.25.0": {
         "type": "package",
         "compile": {
@@ -1486,6 +1669,19 @@
       }
     },
     "UAP,Version=v10.0.18362/win10-arm64-aot": {
+      "Microsoft.AspNet.WebApi.Client/5.2.4": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "10.0.1",
+          "Newtonsoft.Json.Bson": "1.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
+        }
+      },
       "Microsoft.Bcl/1.1.10": {
         "type": "package",
         "dependencies": {
@@ -1740,6 +1936,31 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "10.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
+        }
+      },
+      "Pathoschild.Http.FluentClient/3.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Client": "5.2.4"
+        },
+        "compile": {
+          "lib/netstandard2.0/Pathoschild.Http.Client.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Pathoschild.Http.Client.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
@@ -2019,6 +2240,29 @@
           "lib/netstandard2.0/System.Drawing.Common.dll": {}
         }
       },
+      "System.Text.Encodings.Web/4.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
+        }
+      },
+      "TencentCloudSDK/3.0.65": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.1",
+          "Pathoschild.Http.FluentClient": "3.2.0",
+          "System.Text.Encodings.Web": "4.4.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/TencentCloud.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/TencentCloud.dll": {}
+        }
+      },
       "Win2D.uwp/1.25.0": {
         "type": "package",
         "compile": {
@@ -2036,6 +2280,19 @@
       }
     },
     "UAP,Version=v10.0.18362/win10-x64": {
+      "Microsoft.AspNet.WebApi.Client/5.2.4": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "10.0.1",
+          "Newtonsoft.Json.Bson": "1.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
+        }
+      },
       "Microsoft.Bcl/1.1.10": {
         "type": "package",
         "dependencies": {
@@ -2290,6 +2547,31 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "10.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
+        }
+      },
+      "Pathoschild.Http.FluentClient/3.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Client": "5.2.4"
+        },
+        "compile": {
+          "lib/netstandard2.0/Pathoschild.Http.Client.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Pathoschild.Http.Client.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
@@ -2568,6 +2850,29 @@
           "lib/netstandard2.0/System.Drawing.Common.dll": {}
         }
       },
+      "System.Text.Encodings.Web/4.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
+        }
+      },
+      "TencentCloudSDK/3.0.65": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.1",
+          "Pathoschild.Http.FluentClient": "3.2.0",
+          "System.Text.Encodings.Web": "4.4.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/TencentCloud.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/TencentCloud.dll": {}
+        }
+      },
       "Win2D.uwp/1.25.0": {
         "type": "package",
         "compile": {
@@ -2585,6 +2890,19 @@
       }
     },
     "UAP,Version=v10.0.18362/win10-x64-aot": {
+      "Microsoft.AspNet.WebApi.Client/5.2.4": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "10.0.1",
+          "Newtonsoft.Json.Bson": "1.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
+        }
+      },
       "Microsoft.Bcl/1.1.10": {
         "type": "package",
         "dependencies": {
@@ -2839,6 +3157,31 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "10.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
+        }
+      },
+      "Pathoschild.Http.FluentClient/3.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Client": "5.2.4"
+        },
+        "compile": {
+          "lib/netstandard2.0/Pathoschild.Http.Client.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Pathoschild.Http.Client.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
@@ -3118,6 +3461,29 @@
           "lib/netstandard2.0/System.Drawing.Common.dll": {}
         }
       },
+      "System.Text.Encodings.Web/4.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
+        }
+      },
+      "TencentCloudSDK/3.0.65": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.1",
+          "Pathoschild.Http.FluentClient": "3.2.0",
+          "System.Text.Encodings.Web": "4.4.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/TencentCloud.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/TencentCloud.dll": {}
+        }
+      },
       "Win2D.uwp/1.25.0": {
         "type": "package",
         "compile": {
@@ -3135,6 +3501,19 @@
       }
     },
     "UAP,Version=v10.0.18362/win10-x86": {
+      "Microsoft.AspNet.WebApi.Client/5.2.4": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "10.0.1",
+          "Newtonsoft.Json.Bson": "1.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
+        }
+      },
       "Microsoft.Bcl/1.1.10": {
         "type": "package",
         "dependencies": {
@@ -3389,6 +3768,31 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "10.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
+        }
+      },
+      "Pathoschild.Http.FluentClient/3.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Client": "5.2.4"
+        },
+        "compile": {
+          "lib/netstandard2.0/Pathoschild.Http.Client.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Pathoschild.Http.Client.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
@@ -3667,6 +4071,29 @@
           "lib/netstandard2.0/System.Drawing.Common.dll": {}
         }
       },
+      "System.Text.Encodings.Web/4.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
+        }
+      },
+      "TencentCloudSDK/3.0.65": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.1",
+          "Pathoschild.Http.FluentClient": "3.2.0",
+          "System.Text.Encodings.Web": "4.4.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/TencentCloud.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/TencentCloud.dll": {}
+        }
+      },
       "Win2D.uwp/1.25.0": {
         "type": "package",
         "compile": {
@@ -3684,6 +4111,19 @@
       }
     },
     "UAP,Version=v10.0.18362/win10-x86-aot": {
+      "Microsoft.AspNet.WebApi.Client/5.2.4": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "10.0.1",
+          "Newtonsoft.Json.Bson": "1.0.1"
+        },
+        "compile": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Net.Http.Formatting.dll": {}
+        }
+      },
       "Microsoft.Bcl/1.1.10": {
         "type": "package",
         "dependencies": {
@@ -3938,6 +4378,31 @@
         },
         "runtime": {
           "lib/netstandard2.0/Newtonsoft.Json.dll": {}
+        }
+      },
+      "Newtonsoft.Json.Bson/1.0.1": {
+        "type": "package",
+        "dependencies": {
+          "NETStandard.Library": "1.6.1",
+          "Newtonsoft.Json": "10.0.1"
+        },
+        "compile": {
+          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard1.3/Newtonsoft.Json.Bson.dll": {}
+        }
+      },
+      "Pathoschild.Http.FluentClient/3.2.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.AspNet.WebApi.Client": "5.2.4"
+        },
+        "compile": {
+          "lib/netstandard2.0/Pathoschild.Http.Client.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/Pathoschild.Http.Client.dll": {}
         }
       },
       "runtime.win10-arm.Microsoft.Net.Native.Compiler/2.2.7-rel-27913-00": {
@@ -4217,6 +4682,29 @@
           "lib/netstandard2.0/System.Drawing.Common.dll": {}
         }
       },
+      "System.Text.Encodings.Web/4.4.0": {
+        "type": "package",
+        "compile": {
+          "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/System.Text.Encodings.Web.dll": {}
+        }
+      },
+      "TencentCloudSDK/3.0.65": {
+        "type": "package",
+        "dependencies": {
+          "Newtonsoft.Json": "11.0.1",
+          "Pathoschild.Http.FluentClient": "3.2.0",
+          "System.Text.Encodings.Web": "4.4.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/TencentCloud.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/TencentCloud.dll": {}
+        }
+      },
       "Win2D.uwp/1.25.0": {
         "type": "package",
         "compile": {
@@ -4235,6 +4723,23 @@
     }
   },
   "libraries": {
+    "Microsoft.AspNet.WebApi.Client/5.2.4": {
+      "sha512": "OdBVC2bQWkf9qDd7Mt07ev4SwIdu6VmLBMTWC0D5cOP/HWSXyv/77otwtXVrAo42duNjvXOjzjP5oOI9m1+DTQ==",
+      "type": "package",
+      "path": "microsoft.aspnet.webapi.client/5.2.4",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/System.Net.Http.Formatting.dll",
+        "lib/net45/System.Net.Http.Formatting.xml",
+        "lib/netstandard2.0/System.Net.Http.Formatting.dll",
+        "lib/netstandard2.0/System.Net.Http.Formatting.xml",
+        "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.dll",
+        "lib/portable-wp8+netcore45+net45+wp81+wpa81/System.Net.Http.Formatting.xml",
+        "microsoft.aspnet.webapi.client.5.2.4.nupkg.sha512",
+        "microsoft.aspnet.webapi.client.nuspec"
+      ]
+    },
     "Microsoft.Bcl/1.1.10": {
       "sha512": "+tTqoh/M1pyL8El3qLy30EcwnAtyvFoDZJtdG9Cbg/WdFbh4N8kyrq198XHuEL7lnJbeD0DRO8jcX5IIOh05cQ==",
       "type": "package",
@@ -4957,6 +5462,38 @@
         "newtonsoft.json.12.0.3.nupkg.sha512",
         "newtonsoft.json.nuspec",
         "packageIcon.png"
+      ]
+    },
+    "Newtonsoft.Json.Bson/1.0.1": {
+      "sha512": "5PYT/IqQ+UK31AmZiSS102R6EsTo+LGTSI8bp7WAUqDKaF4wHXD8U9u4WxTI1vc64tYi++8p3dk3WWNqPFgldw==",
+      "type": "package",
+      "path": "newtonsoft.json.bson/1.0.1",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Newtonsoft.Json.Bson.dll",
+        "lib/net45/Newtonsoft.Json.Bson.xml",
+        "lib/netstandard1.3/Newtonsoft.Json.Bson.dll",
+        "lib/netstandard1.3/Newtonsoft.Json.Bson.xml",
+        "newtonsoft.json.bson.1.0.1.nupkg.sha512",
+        "newtonsoft.json.bson.nuspec"
+      ]
+    },
+    "Pathoschild.Http.FluentClient/3.2.0": {
+      "sha512": "DLivarfAfeo3XBEdseclcDgqCUb0WokEADtooGuel0TXo3xo8M3lvm/XC/lOYC3YMCaxeQBVSjMDIugPcPDH+g==",
+      "type": "package",
+      "path": "pathoschild.http.fluentclient/3.2.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/Pathoschild.Http.Client.dll",
+        "lib/net45/Pathoschild.Http.Client.xml",
+        "lib/netstandard1.3/Pathoschild.Http.Client.dll",
+        "lib/netstandard1.3/Pathoschild.Http.Client.xml",
+        "lib/netstandard2.0/Pathoschild.Http.Client.dll",
+        "lib/netstandard2.0/Pathoschild.Http.Client.xml",
+        "pathoschild.http.fluentclient.3.2.0.nupkg.sha512",
+        "pathoschild.http.fluentclient.nuspec"
       ]
     },
     "runtime.win10-arm-aot.Microsoft.NETCore.UniversalWindowsPlatform/6.2.9": {
@@ -8916,6 +9453,38 @@
         "version.txt"
       ]
     },
+    "System.Text.Encodings.Web/4.4.0": {
+      "sha512": "l/tYeikqMHX2MD2jzrHDfR9ejrpTTF7wvAEbR51AMvzip1wSJgiURbDik4iv/w7ZgytmTD/hlwpplEhF9bmFNw==",
+      "type": "package",
+      "path": "system.text.encodings.web/4.4.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "LICENSE.TXT",
+        "THIRD-PARTY-NOTICES.TXT",
+        "lib/netstandard1.0/System.Text.Encodings.Web.dll",
+        "lib/netstandard1.0/System.Text.Encodings.Web.xml",
+        "lib/netstandard2.0/System.Text.Encodings.Web.dll",
+        "lib/netstandard2.0/System.Text.Encodings.Web.xml",
+        "system.text.encodings.web.4.4.0.nupkg.sha512",
+        "system.text.encodings.web.nuspec",
+        "useSharedDesignerContext.txt",
+        "version.txt"
+      ]
+    },
+    "TencentCloudSDK/3.0.65": {
+      "sha512": "O140JMVV6tVYo3OKrrbgz1Xcn2O9tmqL410u4Tj5VP/qI/mr6yyy0YrwSd5/qnlaypCYF6zmmsJgf4aozmUtEQ==",
+      "type": "package",
+      "path": "tencentcloudsdk/3.0.65",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "lib/net45/TencentCloud.dll",
+        "lib/netstandard2.0/TencentCloud.dll",
+        "tencentcloudsdk.3.0.65.nupkg.sha512",
+        "tencentcloudsdk.nuspec"
+      ]
+    },
     "Win2D.uwp/1.25.0": {
       "sha512": "Gll0bGN1DvRpRf2PsxPtrFECfLel2BJhRwSiBaG6GQH+2RypCaR7e9lZXasN5d1ppUlqmza1OiexJ34QBPl5RA==",
       "type": "package",
@@ -8952,6 +9521,7 @@
       "Microsoft.Net.Http >= 2.2.29",
       "Newtonsoft.Json >= 12.0.3",
       "System.Drawing.Common >= 4.7.0",
+      "TencentCloudSDK >= 3.0.65",
       "Win2D.uwp >= 1.25.0"
     ]
   },
@@ -9007,6 +9577,10 @@
           "System.Drawing.Common": {
             "target": "Package",
             "version": "[4.7.0, )"
+          },
+          "TencentCloudSDK": {
+            "target": "Package",
+            "version": "[3.0.65, )"
           },
           "Win2D.uwp": {
             "target": "Package",

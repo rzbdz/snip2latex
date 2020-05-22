@@ -53,6 +53,10 @@
               "target": "Package",
               "version": "[4.7.0, )"
             },
+            "TencentCloudSDK": {
+              "target": "Package",
+              "version": "[3.0.65, )"
+            },
             "Win2D.uwp": {
               "target": "Package",
               "version": "[1.25.0, )"
