@@ -1,3 +1,4 @@
 /.vs/
 *.exe
 snip2latex/bin/
+snip2latex/obj/
