@@ -28,7 +28,6 @@ namespace snip2latex.View
             ApplicationView.GetForCurrentView().Title = "设置!";
             this.InitializeComponent();
             MainPage.Current.hideBackButton(); 
-               
         }
     }
 }
