@@ -29,5 +29,21 @@ namespace snip2latex.View
             this.InitializeComponent();
             MainPage.Current.hideBackButton(); 
         }
+
+
+        private void newApiBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
+
+        private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            if(((ComboBox)sender).SelectedIndex == 0) {
+                this.apiBoxAndBtn.Visibility = Visibility.Collapsed;
+            }
+            else {
+                this.apiBoxAndBtn.Visibility = Visibility.Visible;
+            }
+        }
     }
 }

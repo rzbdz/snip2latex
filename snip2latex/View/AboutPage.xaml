@@ -7,8 +7,23 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d"
     Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-
-    <Grid>
-
-    </Grid>
+    <StackPanel Orientation="Vertical" Margin="20,20,20,20">
+        <TextBlock Text="关于" Style="{ThemeResource TitleTextBlockStyle}"/>
+        <StackPanel Orientation="Vertical">
+            <Image Margin="5,5,5,5"
+               HorizontalAlignment="Left"
+               Height="100" 
+               Width="100" 
+               Source="ms-appx:///Assets/StoreLogo.scale-400.png"/>
+            <TextBlock Style="{ThemeResource CaptionTextBlockStyle}" 
+                       Text="版本:1.0.2#Tencent-API"
+                       Margin="5,5,5,5"/>
+            <TextBlock Margin="5,5,5,0"><Span xml:space="preserve"><Run Text="开发者: "/><Hyperlink NavigateUri="www.github.com/panjunzhong/snip2latex"><Run Text="我"/></Hyperlink></Span></TextBlock>
+            <TextBlock Margin="5,10,0,0" Text="使用第三方服务:"/>
+            <HyperlinkButton NavigateUri="cloud.tencent.com/document/product/866/38293"  Margin="15,0,0,0" Content="Tencent OCR API"/>
+            <TextBlock Margin="5,0,0,0" Text="开源代码许可:"/>
+            <HyperlinkButton NavigateUri="cloud.tencent.com/document/product/866/38293"  Margin="15,0,0,0" Content="Tencent Cloud API 3.0 SDK for .NET"/>
+            <TextBlock Margin="15,0,0,0" Foreground="Gray" Text=" Apache-2.0" Style="{ThemeResource CaptionTextBlockStyle}"/>
+        </StackPanel>
+    </StackPanel>
 </Page>

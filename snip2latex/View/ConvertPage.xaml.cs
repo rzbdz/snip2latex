@@ -50,8 +50,6 @@ namespace snip2latex.View
 
         }
 
-
-
         private void fixWebButton_Click(object sender, RoutedEventArgs e)
         {
             string boxStr = this.TextDemo.Text;
@@ -141,5 +139,9 @@ namespace snip2latex.View
             }
         }
 
+        private void refreshCodeButton_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
