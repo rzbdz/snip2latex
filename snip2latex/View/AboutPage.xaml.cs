@@ -27,6 +27,7 @@ namespace snip2latex.View
         {
             ApplicationView.GetForCurrentView().Title = "关于...";
             this.InitializeComponent();
+            MainPage.Current.showBackButton();
         }
     }
 }

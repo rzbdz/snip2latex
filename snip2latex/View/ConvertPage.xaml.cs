@@ -21,6 +21,7 @@ namespace snip2latex.View
     {
         public static ConvertPage convertPage;
         MathJaxServerForTencent tencentServer;
+        public static string saveStringTorefresh;
         public ConvertPage()
         {
             this.InitializeComponent();
@@ -69,7 +70,13 @@ namespace snip2latex.View
                     BitmapImage bmp = new BitmapImage();
                     await bmp.SetSourceAsync(await file.OpenAsync(FileAccessMode.Read));
                     ImageControl.Source = bmp;
-                    List<String> data = await TencentData.getLatexStringArrayAsync(file);
+                    List<String> data;
+                    if (this.recognizeWordsCheck.IsChecked == true) {
+                        data = await TencentPaperData.getPaperStringArrayAsync(file);
+                    }
+                    else {
+                        data = await TencentData.getLatexStringArrayAsync(file);
+                    }
                     if (data == null) throw new Exception("Json didn't deserialize anything");
                     HtmlResult htmlResult;
                     try {
@@ -121,6 +128,7 @@ namespace snip2latex.View
                 DisplayNoFileDialog();
                 initalizeProgressringAndImage();
             }
+            saveStringTorefresh = TextDemo.Text;
         }
 
         private async void DisplayNoFileDialog()
@@ -141,7 +149,9 @@ namespace snip2latex.View
 
         private void refreshCodeButton_Click(object sender, RoutedEventArgs e)
         {
-
+            if (saveStringTorefresh != null) {
+                this.TextDemo.Text = saveStringTorefresh;
+            }
         }
     }
 }

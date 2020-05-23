@@ -49,7 +49,7 @@
                     <TextBlock RelativePanel.AlignVerticalCenterWithPanel="True" 
                            Style="{ThemeResource BodyTextBlockStyle}" 
                            Text="Tencent API"/>
-                    <ComboBox SelectedIndex="0" 
+                    <ComboBox x:Name="apiCombo"
                               RelativePanel.AlignRightWithPanel="True"
                               SelectionChanged="ComboBox_SelectionChanged">
                         <ComboBox.Items>
@@ -74,13 +74,7 @@
                     </Button>
                 </StackPanel>
             </StackPanel>
-            <Image Margin="0,100,0,0" VerticalAlignment="Bottom" 
-               Height="100" 
-               Width="100" 
-               Source="ms-appx:///Assets/StoreLogo.scale-400.png"/>
-            <TextBlock Foreground="Gray" Style="{ThemeResource CaptionTextBlockStyle}" HorizontalAlignment="Center" VerticalAlignment="Bottom" 
-                       Text="snip2latex@v1.0.2#tencent-api"/>
         </StackPanel>
-        
+        <HyperlinkButton Click="HyperlinkButton_Click" Margin="0,0,0,10"  HorizontalAlignment="Center" VerticalAlignment="Bottom">snip2latex@v1.0.2#tencent-api</HyperlinkButton>
     </Grid>
 </Page>

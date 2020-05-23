@@ -18,7 +18,7 @@
             <TextBlock Margin="0,0,0,10" RelativePanel.AlignTopWithPanel="True" Text="识别参数" Name="TitleBlock" Style="{StaticResource TitleTextBlockStyle}"/>
             <CheckBox Margin="5,0,0,0" RelativePanel.Below="TitleBlock" Name="recognizeWordsCheck"  Content="同时识别文字"/>
             <CheckBox Margin="5,0,0,0" RelativePanel.Below="recognizeWordsCheck" Name="separateCheck"  Content="分开显示代码(开发中)" IsEnabled="False"/>
-            <Button  Margin="5,0,0,0" RelativePanel.AlignBottomWithPanel="True" CornerRadius="2" Content="开始识别" Name="ImageButton" Click="Button_Click">
+            <Button  Margin="5,0,0,0" RelativePanel.AlignBottomWithPanel="True" CornerRadius="2" Content="打开图片" Name="ImageButton" Click="Button_Click">
                 <Button.Resources>
                     <SolidColorBrush x:Key="ButtonBackground" Color="{ThemeResource SystemAccentColor}"/>
                     <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="{ThemeResource HoverPurple}"/>

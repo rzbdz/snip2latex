@@ -13,15 +13,15 @@ using Windows.Storage.Streams;
 
 namespace snip2latex
 {
-    public static class TencentData
+    public static class TencentPaperData
     {
 
-        public static async Task<List<String>> getLatexStringArrayAsync(RandomAccessStreamReference imageStream)
+        public static async Task<List<String>> getPaperStringArrayAsync(RandomAccessStreamReference imageStream)
         {
             return await getReturnStringArrayAsync(await toBase64Async(imageStream));
         }
 
-        public static async Task<List<String>> getLatexStringArrayAsync(StorageFile file)
+        public static async Task<List<String>> getPaperStringArrayAsync(StorageFile file)
         {
             return await getReturnStringArrayAsync(await toBase64Async(file));
         }
@@ -36,11 +36,11 @@ namespace snip2latex
             ClientProfile profile = new ClientProfile();
             profile.SignMethod = "TC3-HMAC-SHA256";
             OcrClient client = new OcrClient(cred, "ap-guangzhou",profile);
-            FormulaOCRRequest request = new FormulaOCRRequest();
+            EduPaperOCRRequest request = new EduPaperOCRRequest();
             request.ImageBase64 = imageBase64;
-            FormulaOCRResponse response = await client.FormulaOCR(request);
+            EduPaperOCRResponse response = await client.EduPaperOCR(request);
             List<String> result = new List<string>();
-            foreach (var i in response.FormulaInfos) {
+            foreach (var i in response.EduPaperInfos) {
                 result.Add(i.DetectedText);
             }
             return result;

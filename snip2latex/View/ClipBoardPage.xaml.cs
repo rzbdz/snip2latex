@@ -29,7 +29,7 @@ namespace snip2latex.View
     public sealed partial class ClipBoard : Page
     {
         MathJaxServerForTencent tencentServer;
-
+        public static string saveStringTorefresh;
         public ClipBoard()
         {
             this.InitializeComponent();
@@ -90,7 +90,13 @@ namespace snip2latex.View
                     BitmapImage bmp = new BitmapImage();
                     await bmp.SetSourceAsync(await imageStream.OpenReadAsync());
                     ImageControl.Source = bmp;
-                    List<String> data = await TencentData.getLatexStringArrayAsync(imageStream);
+                    List<string> data;
+                    if (this.recognizeWordsCheck.IsChecked == true) {
+                        data = await TencentPaperData.getPaperStringArrayAsync(imageStream);
+                    }
+                    else {
+                        data = await TencentData.getLatexStringArrayAsync(imageStream);
+                    }
                     if (data == null) throw new Exception("Json didn't deserialize anything");
                     HtmlResult htmlResult;
                     try {
@@ -140,6 +146,7 @@ namespace snip2latex.View
                 ErrorPage.errorPage.showError("读取剪切板图片失败!检查剪切板内容");
                 initalizeProgressringAndImage();
             }
+            saveStringTorefresh = TextDemo.Text;
         }
 
 
@@ -177,6 +184,13 @@ namespace snip2latex.View
             await pasteImageAndDeSerAsync();
             progresring.Visibility = Visibility.Collapsed;
             ImageButton.IsEnabled = true;
+        }
+
+        private void refreshCodeButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (saveStringTorefresh != null) {
+                this.TextDemo.Text = saveStringTorefresh;
+            }
         }
     }
 }

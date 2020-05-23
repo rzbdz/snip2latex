@@ -25,9 +25,10 @@ namespace snip2latex.View
     {
         public Settings()
         {
-            ApplicationView.GetForCurrentView().Title = "设置!";
+            ApplicationView.GetForCurrentView().Title = "设置";
             this.InitializeComponent();
-            MainPage.Current.hideBackButton(); 
+            MainPage.Current.hideBackButton();
+            this.apiCombo.SelectedIndex = 0;
         }
 
 
@@ -44,6 +45,11 @@ namespace snip2latex.View
             else {
                 this.apiBoxAndBtn.Visibility = Visibility.Visible;
             }
+        }
+
+        private void HyperlinkButton_Click(object sender, RoutedEventArgs e)
+        {
+            MainPage.Current.toNavigate(typeof(AboutPage));
         }
     }
 }

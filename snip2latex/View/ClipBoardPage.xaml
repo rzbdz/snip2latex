@@ -56,6 +56,21 @@
                     <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="{ThemeResource SystemAccentColor}"/>
                 </Button.Resources>
             </Button>
+            <Button Height="31.3333"
+                    Name="refreshCodeButton"
+                    RelativePanel.AlignBottomWithPanel="True" 
+                    RelativePanel.RightOf="fixWebButton" 
+                    CornerRadius="2"
+                    FontFamily="Segoe MDL2 Assets" 
+                    Content="&#xE72C;"
+                    Click="refreshCodeButton_Click">
+                <Button.Resources>
+                    <SolidColorBrush x:Key="ButtonForeground" Color="White"/>
+                    <SolidColorBrush x:Key="ButtonBackground" Color="{ThemeResource SystemAccentColor}"/>
+                    <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="{ThemeResource HoverPurple}"/>
+                    <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="{ThemeResource SystemAccentColor}"/>
+                </Button.Resources>
+            </Button>
         </RelativePanel>
         <RelativePanel Padding="20,20,20,20" Grid.Row="2">
             <TextBlock  Margin="0,0,0,10" RelativePanel.AlignTopWithPanel="True" Text="预览" Name="jaxBoxTitle" Style="{StaticResource TitleTextBlockStyle}"/>
@@ -69,7 +84,7 @@
                      Name="WebDemo"
                      DefaultBackgroundColor="Transparent"/>
         </RelativePanel>
-        <Grid  Name="progresring"  Grid.RowSpan="3">
+        <Grid  Name="progresring" Visibility="Collapsed"  Grid.RowSpan="3">
             
             <Rectangle Fill="{ThemeResource SystemControlAltHighAcrylicElementBrush}"/>
             <ProgressRing IsActive="True" 
