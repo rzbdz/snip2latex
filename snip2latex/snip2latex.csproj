@@ -143,8 +143,8 @@
     <Compile Include="View\AboutPage.xaml.cs">
       <DependentUpon>AboutPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\ClipBoard.xaml.cs">
-      <DependentUpon>ClipBoard.xaml</DependentUpon>
+    <Compile Include="View\ClipBoardPage.xaml.cs">
+      <DependentUpon>ClipBoardPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\ConvertPage.xaml.cs">
       <DependentUpon>ConvertPage.xaml</DependentUpon>
@@ -152,14 +152,14 @@
     <Compile Include="View\ErrorPage.xaml.cs">
       <DependentUpon>ErrorPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\History.xaml.cs">
-      <DependentUpon>History.xaml</DependentUpon>
+    <Compile Include="View\HistoryPage.xaml.cs">
+      <DependentUpon>HistoryPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Home.xaml.cs">
-      <DependentUpon>Home.xaml</DependentUpon>
+    <Compile Include="View\HomePage.xaml.cs">
+      <DependentUpon>HomePage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\Settings.xaml.cs">
-      <DependentUpon>Settings.xaml</DependentUpon>
+    <Compile Include="View\SettingsPage.xaml.cs">
+      <DependentUpon>SettingsPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="MathJaxServerForBaidu.cs" />
   </ItemGroup>
@@ -235,7 +235,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\ClipBoard.xaml">
+    <Page Include="View\ClipBoardPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -247,15 +247,15 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\History.xaml">
+    <Page Include="View\HistoryPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Home.xaml">
+    <Page Include="View\HomePage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\Settings.xaml">
+    <Page Include="View\SettingsPage.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

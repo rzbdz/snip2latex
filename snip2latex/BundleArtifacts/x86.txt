@@ -1,2 +1,0 @@
-MainPackage=C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Release\snip2latex_0.1.3.0_x86.msix
-SymbolPackage=C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Release\Symbols\snip2latex_0.1.3.0_x86.appxsym
