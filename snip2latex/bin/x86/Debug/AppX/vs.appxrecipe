@@ -19,24 +19,28 @@
     <DeployOptionalPackages>false</DeployOptionalPackages>
     <WindowsSdkPath>C:\Program Files %28x86%29\Windows Kits\10\</WindowsSdkPath>
     <LayoutDir>C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\AppX</LayoutDir>
-    <RegisteredManifestChecksum>2ADF47E58A78CA86760A0CB42214F4614F3861980138E5FCC7210F69804023A3</RegisteredManifestChecksum>
-    <RegisteredPackageMoniker>c541e8ce-rzbulldozer-4d14-snip2latex-984949e15a53_0.1.2.0_x86__85em8m0yavevc</RegisteredPackageMoniker>
+    <RegisteredManifestChecksum>1B9CEA32F7EDC24CE50E4E7D3999E2FC30CD6AE2383ADB23292F720B257C2288</RegisteredManifestChecksum>
+    <RegisteredPackageMoniker>c541e8ce-rzbulldozer-4d14-snip2latex-984949e15a53_0.1.3.0_x86__85em8m0yavevc</RegisteredPackageMoniker>
     <RegisteredUserModeAppID>c541e8ce-rzbulldozer-4d14-snip2latex-984949e15a53_85em8m0yavevc!App</RegisteredUserModeAppID>
     <RegisteredPackageID>c541e8ce-rzbulldozer-4d14-snip2latex-984949e15a53</RegisteredPackageID>
     <RegisteredPackagePublisher>CN=A1134</RegisteredPackagePublisher>
-    <RegisteredVersion>0.1.2.0</RegisteredVersion>
+    <RegisteredVersion>0.1.3.0</RegisteredVersion>
   </PropertyGroup>
   <ItemGroup>
     <AppXManifest Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\Core\AppxManifest.xml">
       <PackagePath>AppxManifest.xml</PackagePath>
       <ReRegisterAppIfChanged>true</ReRegisterAppIfChanged>
-      <Modified>2020-05-21T19:28:40.882</Modified>
+      <Modified>2020-05-22T16:27:21.594</Modified>
     </AppXManifest>
   </ItemGroup>
   <ItemGroup>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\snip2latex.exe">
       <PackagePath>entrypoint\snip2latex.exe</PackagePath>
-      <Modified>2020-05-21T19:28:40.270</Modified>
+      <Modified>2020-05-22T16:27:20.906</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\.nuget\packages\microsoft.aspnet.webapi.client\5.2.4\lib\netstandard2.0\System.Net.Http.Formatting.dll">
+      <PackagePath>System.Net.Http.Formatting.dll</PackagePath>
+      <Modified>2018-02-01T04:17:18.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\.nuget\packages\microsoft.net.http\2.2.29\lib\win8\System.Net.Http.Extensions.dll">
       <PackagePath>System.Net.Http.Extensions.dll</PackagePath>
@@ -50,6 +54,14 @@
       <PackagePath>Newtonsoft.Json.dll</PackagePath>
       <Modified>2019-11-08T16:56:44.000</Modified>
     </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\.nuget\packages\newtonsoft.json.bson\1.0.1\lib\netstandard1.3\Newtonsoft.Json.Bson.dll">
+      <PackagePath>Newtonsoft.Json.Bson.dll</PackagePath>
+      <Modified>2017-03-22T03:01:20.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\.nuget\packages\pathoschild.http.fluentclient\3.2.0\lib\netstandard2.0\Pathoschild.Http.Client.dll">
+      <PackagePath>Pathoschild.Http.Client.dll</PackagePath>
+      <Modified>2018-04-18T07:54:34.000</Modified>
+    </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Microsoft SDKs\UWPNuGetPackages\runtime.win10-x86.microsoft.netcore.universalwindowsplatform\6.2.9\runtimes\win10-x86\lib\uap10.0.15138\System.Runtime.dll">
       <PackagePath>System.Runtime.dll</PackagePath>
       <Modified>2019-07-22T06:01:14.000</Modified>
@@ -57,6 +69,14 @@
     <AppxPackagedFile Include="C:\Users\A1134\.nuget\packages\system.drawing.common\4.7.0\lib\netstandard2.0\System.Drawing.Common.dll">
       <PackagePath>System.Drawing.Common.dll</PackagePath>
       <Modified>2018-09-18T11:38:14.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\.nuget\packages\system.text.encodings.web\4.4.0\lib\netstandard2.0\System.Text.Encodings.Web.dll">
+      <PackagePath>System.Text.Encodings.Web.dll</PackagePath>
+      <Modified>2017-07-19T02:01:30.000</Modified>
+    </AppxPackagedFile>
+    <AppxPackagedFile Include="C:\Users\A1134\.nuget\packages\tencentcloudsdk\3.0.65\lib\netstandard2.0\TencentCloud.dll">
+      <PackagePath>TencentCloud.dll</PackagePath>
+      <Modified>2020-05-19T22:20:18.000</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\.nuget\packages\win2d.uwp\1.25.0\runtimes\win10-x86\native\Microsoft.Graphics.Canvas.dll">
       <PackagePath>Microsoft.Graphics.Canvas.dll</PackagePath>
@@ -330,43 +350,43 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\snip2latex.xr.xml">
       <PackagePath>snip2latex.xr.xml</PackagePath>
-      <Modified>2020-05-21T19:28:39.954</Modified>
+      <Modified>2020-05-22T09:13:25.516</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\App.xbf">
       <PackagePath>App.xbf</PackagePath>
-      <Modified>2020-05-21T19:28:39.985</Modified>
+      <Modified>2020-05-22T16:27:20.606</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\MainPage.xbf">
       <PackagePath>MainPage.xbf</PackagePath>
-      <Modified>2020-05-21T19:28:39.986</Modified>
+      <Modified>2020-05-22T16:27:20.607</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\View\AboutPage.xbf">
       <PackagePath>View\AboutPage.xbf</PackagePath>
-      <Modified>2020-05-21T19:28:39.987</Modified>
+      <Modified>2020-05-22T16:27:20.607</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\View\ClipBoard.xbf">
       <PackagePath>View\ClipBoard.xbf</PackagePath>
-      <Modified>2020-05-21T19:28:39.987</Modified>
+      <Modified>2020-05-22T16:27:20.607</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\View\ConvertPage.xbf">
       <PackagePath>View\ConvertPage.xbf</PackagePath>
-      <Modified>2020-05-21T19:28:39.987</Modified>
+      <Modified>2020-05-22T16:27:20.607</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\View\ErrorPage.xbf">
       <PackagePath>View\ErrorPage.xbf</PackagePath>
-      <Modified>2020-05-21T19:28:39.987</Modified>
+      <Modified>2020-05-22T16:27:20.607</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\View\History.xbf">
       <PackagePath>View\History.xbf</PackagePath>
-      <Modified>2020-05-21T19:28:39.987</Modified>
+      <Modified>2020-05-22T16:27:20.607</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\View\Home.xbf">
       <PackagePath>View\Home.xbf</PackagePath>
-      <Modified>2020-05-21T19:28:39.989</Modified>
+      <Modified>2020-05-22T16:27:20.607</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\View\Settings.xbf">
       <PackagePath>View\Settings.xbf</PackagePath>
-      <Modified>2020-05-21T19:28:39.989</Modified>
+      <Modified>2020-05-22T16:27:20.608</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Program Files %28x86%29\Windows Kits\10\UnionMetadata\10.0.18362.0\Windows.winmd">
       <PackagePath>WinMetadata\Windows.winmd</PackagePath>
@@ -374,11 +394,11 @@
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\resources.pri">
       <PackagePath>resources.pri</PackagePath>
-      <Modified>2020-05-21T18:02:17.770</Modified>
+      <Modified>2020-05-22T16:20:54.330</Modified>
     </AppxPackagedFile>
     <AppxPackagedFile Include="C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\Core\snip2latex.exe">
       <PackagePath>snip2latex.exe</PackagePath>
-      <Modified>2020-05-21T19:28:40.875</Modified>
+      <Modified>2020-05-22T16:27:21.587</Modified>
     </AppxPackagedFile>
   </ItemGroup>
   <ItemGroup>

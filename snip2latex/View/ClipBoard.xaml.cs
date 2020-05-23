@@ -28,16 +28,20 @@ namespace snip2latex.View
     /// </summary>
     public sealed partial class ClipBoard : Page
     {
+        MathJaxServerForTencent tencentServer;
+
         public ClipBoard()
         {
             this.InitializeComponent();
-            initalize();
-            ApplicationView.GetForCurrentView().Title = "复制好图片之后识别吧!";
-            this.WebDemo.NavigateToString(MathJaxServer.hint());
+            ApplicationView.GetForCurrentView().Title = "粘贴图片文件识别吧!";
+            initalizeProgressringAndImage();
+            tencentServer = new MathJaxServerForTencent();
+            tencentServer.init();
             MainPage.Current.showBackButton();
+            this.WebDemo.NavigateToString(tencentServer.hint());
         }
 
-        private void initalize()
+        private void initalizeProgressringAndImage()
         {
             progresring.Visibility = Visibility.Collapsed;
             TextDemo.Text = "";
@@ -49,7 +53,7 @@ namespace snip2latex.View
         {
             progresring.Visibility = Visibility.Visible;
             string boxStr = this.TextDemo.Text;
-            boxStr = MathJaxServer.fixFomulashtml(boxStr);
+            boxStr = tencentServer.fixFomulashtml(boxStr);
             WebDemo.NavigateToString(boxStr);
             progresring.Visibility = Visibility.Collapsed;
         }
@@ -86,32 +90,30 @@ namespace snip2latex.View
                     BitmapImage bmp = new BitmapImage();
                     await bmp.SetSourceAsync(await imageStream.OpenReadAsync());
                     ImageControl.Source = bmp;
-                    String str = await BaiduLatexFacade.PostNewAsync(imageStream);
-                    Model.DataWrapperReturn data = Model.BaiduData.wrapper(str);
+                    List<String> data = await TencentData.getLatexStringArrayAsync(imageStream);
                     if (data == null) throw new Exception("Json didn't deserialize anything");
-                    Model.BaiduData.restoreWords(data);
                     HtmlResult htmlResult;
                     try {
-                        MathJaxServer.init();
-                        htmlResult = MathJaxServer.getServerHtmls(data);
+                        tencentServer.init();
+                        htmlResult = tencentServer.getServerHtmls(data);
                     }
                     catch (Exception e) {
-                        htmlResult = MathJaxServer.WebServerErrorHandles(e);
+                        htmlResult = tencentServer.WebServerErrorHandles(e);
                     }
                     if (recognizeWordsCheck.IsChecked == true) {
-                        foreach (var i in data.words_result) {
-                            TextDemo.Text += i.words + "\n";
+                        foreach (var i in data) {
+                            TextDemo.Text += i + "\n";
                         }
                         WebDemo.NavigateToString(htmlResult.result_w);
                     }
                     else if (recognizeWordsCheck.IsChecked == false) {
-                        foreach (var i in data.formula_result) {
-                            TextDemo.Text += i.words + "\n";
+                        foreach (var i in data) {
+                            TextDemo.Text += i + "\n";
                         }
                         WebDemo.NavigateToString(htmlResult.result_f);
                     }
                     else {
-                        WebDemo.NavigateToString(MathJaxServer.WebServerErrorHandle(new Exception("wrong option")));
+                        WebDemo.NavigateToString(tencentServer.WebServerErrorHandle(new Exception("wrong option")));
                     }
                 }
                 catch (WebException ex) {
@@ -124,19 +126,19 @@ namespace snip2latex.View
                     catch (Exception e) {
                         MainPage.Current.toNavigate(typeof(ErrorPage));
                         ErrorPage.errorPage.showError(e.Message + "(Probably network problem)");
-                        initalize();
+                        initalizeProgressringAndImage();
                     }
                 }
                 catch (Exception ex) {
                     MainPage.Current.toNavigate(typeof(ErrorPage));
                     ErrorPage.errorPage.showError(ex.Message);
-                    initalize();
+                    initalizeProgressringAndImage();
                 }
             }
             else {
                 MainPage.Current.toNavigate(typeof(ErrorPage));
                 ErrorPage.errorPage.showError("读取剪切板图片失败!检查剪切板内容");
-                initalize();
+                initalizeProgressringAndImage();
             }
         }
 
@@ -169,7 +171,7 @@ namespace snip2latex.View
         private async void ImageButton_Click(object sender, RoutedEventArgs e)
         {
             ImageButton.IsEnabled = false;
-            initalize();
+            initalizeProgressringAndImage();
             progresring.Visibility = Visibility.Visible;
             //progresring.IsActive = true;
             await pasteImageAndDeSerAsync();

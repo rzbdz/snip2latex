@@ -71,7 +71,7 @@
                      Name="WebDemo"
                      DefaultBackgroundColor="Transparent"/>
         </RelativePanel>
-        <Grid  Name="progresring"  Grid.RowSpan="3">
+        <Grid  Name="progressring"  Grid.RowSpan="3">
 
             <Rectangle Fill="{ThemeResource SystemControlAltHighAcrylicElementBrush}"/>
             <ProgressRing IsActive="True" 

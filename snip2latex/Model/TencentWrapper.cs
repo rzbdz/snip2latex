@@ -8,5 +8,6 @@ namespace snip2latex.Model
 {
     class TencentWrapper
     {
+
     }
 }

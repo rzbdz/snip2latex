@@ -87,3 +87,10 @@ C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\ProjectArchitect
 C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\.winmd_cache\$Microsoft.Graphics.Canvas.winmd_637214246760000000.json
 C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\.winmd_cache\$Microsoft.UI.Xaml.Markup.winmd_636885022160000000.json
 C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\snip2latex.csprojAssemblyReference.cache
+C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\System.Net.Http.Formatting.dll
+C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\Newtonsoft.Json.Bson.dll
+C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\Pathoschild.Http.Client.dll
+C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\System.Text.Encodings.Web.dll
+C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Debug\TencentCloud.dll
+C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\System.Net.Http.Formatting\en-US\System.Net.Http.Properties.CommonWebApiResources.resw
+C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Debug\System.Net.Http.Formatting\en-US\System.Net.Http.Properties.Resources.resw

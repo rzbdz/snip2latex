@@ -7,7 +7,7 @@
 
   有关程序包清单文件的详细信息，请参阅 http://go.microsoft.com/fwlink/?LinkID=241727
  -->
-  <Identity Name="c541e8ce-rzbulldozer-4d14-snip2latex-984949e15a53" Publisher="CN=A1134" Version="0.1.2.0" ProcessorArchitecture="x86" />
+  <Identity Name="c541e8ce-rzbulldozer-4d14-snip2latex-984949e15a53" Publisher="CN=A1134" Version="0.1.3.0" ProcessorArchitecture="x86" />
   <mp:PhoneIdentity PhoneProductId="c541e8ce-0f4d-4d14-83ef-984949e15a53" PhonePublisherId="00000000-0000-0000-0000-000000000000" />
   <Properties>
     <DisplayName>snip2latex</DisplayName>
