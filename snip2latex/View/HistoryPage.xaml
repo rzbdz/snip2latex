@@ -8,12 +8,12 @@
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
     <Grid>
-        <GridView>
-            <GridView.ItemTemplate >
+        <GridView ItemsSource="{x:Bind HistoryCollection}">
+            <GridView.ItemTemplate>
                 <DataTemplate x:DataType="data:recognizedData">
-                    <StackPanel Orientation="Vertical">
-                        <Image Height="40" Width="60" Source="{x:Bind bitmapImage}"/>
-                        <TextBlock Text="date"/>
+                    <StackPanel Height="150" Width="260" Padding="10,10,10,10"  Orientation="Vertical">
+                        <Image Stretch="UniformToFill" Height="100" Width="240" Source="{x:Bind bitmapImage}"/>
+                        <TextBlock HorizontalAlignment="Center" Text="{x:Bind date}"/>
                     </StackPanel>
                 </DataTemplate>
             </GridView.ItemTemplate>

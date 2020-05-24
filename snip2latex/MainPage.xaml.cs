@@ -24,6 +24,7 @@ using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
 using System.Threading.Tasks;
+using System.Collections.ObjectModel;
 
 // https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x804 上介绍了“空白页”项模板
 
@@ -35,7 +36,6 @@ namespace snip2latex
     public sealed partial class MainPage : Page
     {
         public static MainPage Current;
-
         public  MainPage()
         {
             this.InitializeComponent();

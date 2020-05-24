@@ -1,5 +1,7 @@
-﻿using System;
+﻿using snip2latex.Model;
+using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -23,11 +25,20 @@ namespace snip2latex.View
     /// </summary>
     public sealed partial class History : Page
     {
+        public static History history;
+        public  ObservableCollection<recognizedData> HistoryCollection;
         public History()
         {
             ApplicationView.GetForCurrentView().Title = "识别记录...";
             this.InitializeComponent();
+            init();
+            history = this;
             MainPage.Current.hideBackButton();
+            
+        }
+        public async void init()
+        {
+            HistoryCollection = await HistoryData.readAsync();
         }
     }
 }

@@ -15,30 +15,31 @@ namespace snip2latex.Model
 {
     public static class HistoryData
     {
-        public static ObservableCollection<recognizedData>HistoryCollection;
-        public static void init()
+        public static ObservableCollection<recognizedData> HistoryCollection;
+        public static void addHistory(recognizedData data)
         {
-            HistoryCollection = new ObservableCollection<recognizedData>();
-        }
-        public static void add(recognizedData data)
-        {
-            HistoryCollection.Add(data);
-        }
-        public static async Task readAsync()
-        {
-            try {
-                IRandomAccessStreamWithContentType stream = await (await ApplicationData.
-                    Current.LocalFolder.GetFileAsync("history.json")).OpenReadAsync();
-                JsonSerializer serializer = JsonSerializer.Create();
-                StreamReader streamReader = new StreamReader(stream.AsStreamForRead());
-                ObservableCollection<recognizedData> readInCollection =
-                    serializer.Deserialize<ObservableCollection<recognizedData>>(new JsonTextReader(streamReader));
-                HistoryCollection = readInCollection;
-            }
-            catch(Exception) {
+            if (HistoryCollection == null) {
                 HistoryCollection = new ObservableCollection<recognizedData>();
             }
-
+            HistoryCollection.Add(data);
+        }
+        public static async Task<ObservableCollection<recognizedData>> readAsync()
+        {
+            if (HistoryCollection == null) {
+                try {
+                    IRandomAccessStreamWithContentType stream = await (await ApplicationData.
+                        Current.LocalFolder.GetFileAsync("history.json")).OpenReadAsync();
+                    JsonSerializer serializer = JsonSerializer.Create();
+                    StreamReader streamReader = new StreamReader(stream.AsStreamForRead());
+                    ObservableCollection<recognizedData> readInCollection =
+                        serializer.Deserialize<ObservableCollection<recognizedData>>(new JsonTextReader(streamReader));
+                    HistoryCollection = readInCollection;
+                }
+                catch (Exception) {
+                    HistoryCollection = new ObservableCollection<recognizedData>();
+                }
+            }
+            return HistoryCollection;
         }
         public static async Task storeAsync()
         {
@@ -63,10 +64,12 @@ namespace snip2latex.Model
         {
             this.bitmapImage = bitmapImage;
             this.code = code;
-            this.htmlResult = htmlResult; 
+            this.htmlResult = htmlResult;
+            this.date = DateTime.Now.ToString("MM月dd日HH时mm分");
         }
         public BitmapImage bitmapImage { get; set; }
         public String code { get; set; }
         public HtmlResult htmlResult { get; set; }
+        public string date { get; set; }
     }
 }

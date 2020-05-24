@@ -38,7 +38,6 @@ namespace snip2latex.View
                     this.recognizeWordsCheck.IsChecked = true;
                 }
             }
-            HistoryData.init();
         }
 
         private void initalizeProgressringAndImage()
@@ -118,7 +117,8 @@ namespace snip2latex.View
                     else {
                         WebDemo.NavigateToString(tencentServer.WebServerErrorHandle(new Exception("wrong option")));
                     }
-                    HistoryData.add(new recognizedData(bmp,TextDemo.Text,htmlResult));
+                    HistoryData.addHistory(new recognizedData(bmp,TextDemo.Text,htmlResult));
+                    
                 }
                 catch (WebException ex) {
                     try {
