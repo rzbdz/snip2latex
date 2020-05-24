@@ -9,6 +9,7 @@ using Windows.Storage.Pickers;
 using Windows.UI.Xaml.Media.Imaging;
 using snip2latex;
 using System.Collections.Generic;
+using snip2latex.Model;
 
 // https://go.microsoft.com/fwlink/?LinkId=234238 上介绍了“空白页”项模板
 
@@ -32,12 +33,28 @@ namespace snip2latex.View
             MainPage.Current.showBackButton();
             this.WebDemo.NavigateToString(tencentServer.hint());
             convertPage = this;
+            if(App.currentApplicationSettings != null) {
+                if (App.currentApplicationSettings.isDefaultWords) {
+                    this.recognizeWordsCheck.IsChecked = true;
+                }
+            }
+            HistoryData.init();
         }
 
         private void initalizeProgressringAndImage()
         {
             progressring.Visibility = Visibility.Collapsed;
-            TextDemo.Text = "";
+            if (App.currentApplicationSettings != null) {
+                if (App.currentApplicationSettings.isNotClearRecognizedCode) {
+
+                }
+                else {
+                    TextDemo.Text = "";
+                }
+            }
+            else {
+                TextDemo.Text = "";
+            }
             ImageControl.Source = new BitmapImage();
         }
         private async void Button_Click(object sender, RoutedEventArgs e)
@@ -101,6 +118,7 @@ namespace snip2latex.View
                     else {
                         WebDemo.NavigateToString(tencentServer.WebServerErrorHandle(new Exception("wrong option")));
                     }
+                    HistoryData.add(new recognizedData(bmp,TextDemo.Text,htmlResult));
                 }
                 catch (WebException ex) {
                     try {

@@ -1,5 +1,6 @@
 ﻿<Page
     x:Class="snip2latex.View.History"
+    xmlns:data ="using:snip2latex.Model"
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
     xmlns:local="using:snip2latex.View"
@@ -8,10 +9,10 @@
     mc:Ignorable="d">
     <Grid>
         <GridView>
-            <GridView.ItemTemplate>
-                <DataTemplate>
+            <GridView.ItemTemplate >
+                <DataTemplate x:DataType="data:recognizedData">
                     <StackPanel Orientation="Vertical">
-                        <Image Height="40" Width="60" Source="ms-appx:///Assets/StoreLogo.scale-100.png"/>
+                        <Image Height="40" Width="60" Source="{x:Bind bitmapImage}"/>
                         <TextBlock Text="date"/>
                     </StackPanel>
                 </DataTemplate>

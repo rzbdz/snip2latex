@@ -135,6 +135,7 @@
     <Compile Include="MathJaxServerForTencent.cs" />
     <Compile Include="Model\Baidu\BaiduDataWrapper.cs" />
     <Compile Include="Model\HistoryData.cs" />
+    <Compile Include="Model\SaveSetting.cs" />
     <Compile Include="Model\TencentWrapper.cs" />
     <Compile Include="MyBaiduToken.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

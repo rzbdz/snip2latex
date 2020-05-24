@@ -14,6 +14,7 @@ using Windows.Graphics.DirectX;
 using Windows.Graphics.DirectX.Direct3D11;
 using Microsoft.Graphics.Canvas;
 using snip2latex;
+using snip2latex.Model;
 
 // https://go.microsoft.com/fwlink/?LinkId=234238 上介绍了“空白页”项模板
 
@@ -29,6 +30,7 @@ namespace snip2latex.View
             ApplicationView.GetForCurrentView().Title = "开始识别吧!";
             this.InitializeComponent();
             MainPage.Current.hideBackButton();
+            
         }
 
         private void getFromfileButton_Click(object sender, RoutedEventArgs e)

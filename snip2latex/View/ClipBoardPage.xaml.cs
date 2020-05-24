@@ -39,12 +39,27 @@ namespace snip2latex.View
             tencentServer.init();
             MainPage.Current.showBackButton();
             this.WebDemo.NavigateToString(tencentServer.hint());
+            if (App.currentApplicationSettings != null) {
+                if (App.currentApplicationSettings.isDefaultWords) {
+                    this.recognizeWordsCheck.IsChecked = true;
+                }
+            }
         }
 
         private void initalizeProgressringAndImage()
         {
             progresring.Visibility = Visibility.Collapsed;
-            TextDemo.Text = "";
+            if (App.currentApplicationSettings != null) {
+                if (App.currentApplicationSettings.isNotClearRecognizedCode) {
+
+                }
+                else {
+                    TextDemo.Text = "";
+                }
+            }
+            else {
+                TextDemo.Text = "";
+            }
             ImageControl.Source = new BitmapImage();
         }
 

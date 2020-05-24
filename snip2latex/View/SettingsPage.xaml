@@ -24,7 +24,8 @@
                            Text="同时识别文本"/>
                     <ToggleSwitch RelativePanel.AlignRightWithPanel="True"
                               Width="80" 
-                              x:Name="defaultWords"/>
+                              x:Name="defaultWordsToggle"
+                                  Toggled="defaultWordsToggle_Toggled"/>
                 </RelativePanel>
                 <RelativePanel Margin="0,5,0,5">
                     <TextBlock RelativePanel.AlignVerticalCenterWithPanel="True" 
@@ -41,9 +42,11 @@
                 <RelativePanel Margin="0,5,0,5">
                     <TextBlock RelativePanel.AlignVerticalCenterWithPanel="True" 
                            Style="{ThemeResource BodyTextBlockStyle}" 
-                           Text="不清空识别代码"/>
+                           Text="不清空识别代码"
+                               />
                     <ToggleSwitch RelativePanel.AlignRightWithPanel="True"
-                              Width="80" />
+                              Width="80" Name="isNotClearCodeToggle"
+                                 Toggled="isNotClearCodeToggle_Toggled"/>
                 </RelativePanel>
                 <RelativePanel Margin="0,5,0,5">
                     <TextBlock RelativePanel.AlignVerticalCenterWithPanel="True" 

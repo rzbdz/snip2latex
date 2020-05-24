@@ -1,4 +1,5 @@
-﻿using System;
+﻿using snip2latex.Model;
+using System;
 using System.Collections.Generic;
 using System.IO;
 using System.Linq;
@@ -29,6 +30,10 @@ namespace snip2latex.View
             this.InitializeComponent();
             MainPage.Current.hideBackButton();
             this.apiCombo.SelectedIndex = 0;
+            if (App.currentApplicationSettings != null) {
+                this.defaultWordsToggle.IsOn = App.currentApplicationSettings.isDefaultWords;
+                this.isNotClearCodeToggle.IsOn = App.currentApplicationSettings.isNotClearRecognizedCode;
+            }
         }
 
 
@@ -39,7 +44,7 @@ namespace snip2latex.View
 
         private void ComboBox_SelectionChanged(object sender, SelectionChangedEventArgs e)
         {
-            if(((ComboBox)sender).SelectedIndex == 0) {
+            if (((ComboBox)sender).SelectedIndex == 0) {
                 this.apiBoxAndBtn.Visibility = Visibility.Collapsed;
             }
             else {
@@ -51,5 +56,44 @@ namespace snip2latex.View
         {
             MainPage.Current.toNavigate(typeof(AboutPage));
         }
+        private async System.Threading.Tasks.Task saveTheSettingsAsync()
+        {
+            
+            App.currentApplicationSettings.isDefaultWords = this.defaultWordsToggle.IsOn;
+            App.currentApplicationSettings.isNotClearRecognizedCode = this.isNotClearCodeToggle.IsOn;
+            try {
+                await SaveSetting.saveAllSettingsAsync(App.currentSettingFile, App.currentApplicationSettings);
+            }
+            catch (Exception) {
+
+            }
+        }
+
+        private async void defaultWordsToggle_Toggled(object sender, RoutedEventArgs e)
+        {
+            if (App.currentApplicationSettings == null) {
+                App.currentApplicationSettings = new ApplicationSettings();
+            }
+            if (((ToggleSwitch)sender).IsOn == App.currentApplicationSettings.isDefaultWords) {
+            }
+            else {
+                await saveTheSettingsAsync();
+            }
+
+        }
+        private async void isNotClearCodeToggle_Toggled(object sender, RoutedEventArgs e)
+        {
+            if (App.currentApplicationSettings == null) {
+                App.currentApplicationSettings = new ApplicationSettings();
+            }
+            if (((ToggleSwitch)sender).IsOn == App.currentApplicationSettings.isNotClearRecognizedCode) {
+            }
+            else {
+                await saveTheSettingsAsync();
+            }
+
+        }
+
+        
     }
 }

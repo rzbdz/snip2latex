@@ -1,4 +1,5 @@
-﻿using snip2latex.View;
+﻿using snip2latex.Model;
+using snip2latex.View;
 using System;
 using System.Collections.Generic;
 using System.Drawing;
@@ -22,6 +23,7 @@ using Windows.UI.Xaml.Media;
 using Windows.UI.Xaml.Media.Animation;
 using Windows.UI.Xaml.Media.Imaging;
 using Windows.UI.Xaml.Navigation;
+using System.Threading.Tasks;
 
 // https://go.microsoft.com/fwlink/?LinkId=402352&clcid=0x804 上介绍了“空白页”项模板
 
@@ -34,7 +36,7 @@ namespace snip2latex
     {
         public static MainPage Current;
 
-        public MainPage()
+        public  MainPage()
         {
             this.InitializeComponent();
             Current = this;
