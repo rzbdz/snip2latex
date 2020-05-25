@@ -1,5 +1,5 @@
 # Snip to Latex
- ![](https://github.com/PanJunzhong/snip2latex/tree/master/project_info/Assets/Logo.png)
+ ![](https://github.com/PanJunzhong/snip2latex/tree/master/snip2latex/Assets/Logo.png)
 
 一个基于第三方API的UWP应用程序，将图像转换为Latex公式表达式。
 
