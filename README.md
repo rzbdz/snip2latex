@@ -1,5 +1,5 @@
 # Snip to Latex
- ![](snip2latex\Assets\Logo.png)
+ ![](https://github.com/PanJunzhong/snip2latex/tree/master/project_info/Assets/Logo.png)
 
 一个基于第三方API的UWP应用程序，将图像转换为Latex公式表达式。
 
@@ -93,13 +93,13 @@ namespace snip2latex
 
   Preview screenshots:
 
-![HomePage](project_info\HomePage.png)
+![HomePage](https://github.com/PanJunzhong/snip2latex/tree/master/project_info/HomePage.png)
 
-![ConvertPage](project_info\ConvertPage.png)
+![ConvertPage](https://github.com/PanJunzhong/snip2latex/tree/master/project_info/ConvertPage.png)
 
-![HistoryPage](project_info\HistoryPage.png)
+![HistoryPage](https://github.com/PanJunzhong/snip2latex/tree/master/project_info/HistoryPage.png)
 
-![HistoryDetails](project_info\HistoryDetails.png)
+![HistoryDetails](https://github.com/PanJunzhong/snip2latex/tree/master/project_info/HistoryDetails.png)
 
  ![](snip2latex\Assets\Logo.png)
 
