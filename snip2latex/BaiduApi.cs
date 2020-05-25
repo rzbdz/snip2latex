@@ -19,9 +19,9 @@ namespace com.baidu.api
         //public static String TOKEN = "24.adda70c11b9786206253ddb70affdc46.2592000.1493524354.282335-1234567";
 
         // 百度云中开通对应服务应用的 API Key 建议开通应用的时候多选服务
-        private static String clientId = MyToken.getApiKey();
+        private static String clientId = MyBaiduToken.getApiKey();
         // 百度云中开通对应服务应用的 Secret Key
-        private static String clientSecret = MyToken.getSecretKey();
+        private static String clientSecret = MyBaiduToken.getSecretKey();
 
         public static String getAccessToken()
         {

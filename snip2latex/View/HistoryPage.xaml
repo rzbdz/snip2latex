@@ -1,0 +1,29 @@
+﻿<Page
+    x:Class="snip2latex.View.History"
+    xmlns:data ="using:snip2latex.Model"
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:snip2latex.View"
+    xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    mc:Ignorable="d">
+    <StackPanel Margin="20,10,20,20"  Orientation="Vertical">
+        <RelativePanel>
+            <TextBlock RelativePanel.AlignVerticalCenterWith="refreshButton" Text="历史记录" Style="{ThemeResource TitleTextBlockStyle}"/>
+            <AppBarButton Click="refreshButton_Click" x:Name="refreshButton" RelativePanel.AlignRightWithPanel="True" Icon="Refresh" Height="36"/>
+            <AppBarButton x:Name="trashButton" Click="trashButton_Click" RelativePanel.LeftOf="refreshButton" Icon="Delete" Height="36"/>
+        </RelativePanel>
+        <GridView  Margin="0,10,0,0"
+                   ItemsSource="{x:Bind HistoryCollection}"
+                   IsItemClickEnabled="True"
+                   ItemClick="GridView_ItemClick"
+                   Name="gridView"
+                   >
+            <GridView.ItemTemplate>
+                <DataTemplate x:DataType="data:recognizedData">
+                    <local:HistoryITemplate CornerRadius="3"/>
+                </DataTemplate>
+            </GridView.ItemTemplate>
+        </GridView>
+    </StackPanel>
+</Page>

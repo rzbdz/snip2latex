@@ -8,6 +8,8 @@ using Windows.Storage;
 using Windows.Storage.Pickers;
 using Windows.UI.Xaml.Media.Imaging;
 using snip2latex;
+using System.Collections.Generic;
+using snip2latex.Model;
 
 // https://go.microsoft.com/fwlink/?LinkId=234238 上介绍了“空白页”项模板
 
@@ -19,40 +21,56 @@ namespace snip2latex.View
     public sealed partial class ConvertPage : Page
     {
         public static ConvertPage convertPage;
+        MathJaxServerForTencent tencentServer;
+        public static string saveStringTorefresh;
         public ConvertPage()
         {
             this.InitializeComponent();
-            initalize();
             ApplicationView.GetForCurrentView().Title = "开始导入图片文件识别吧!";
-            convertPage = this;
-            this.WebDemo.NavigateToString(MathJaxServer.hint());
+            initalizeProgressringAndImage();
+            this.tencentServer = new MathJaxServerForTencent();
+            tencentServer.init();
             MainPage.Current.showBackButton();
+            this.WebDemo.NavigateToString(tencentServer.hint());
+            convertPage = this;
+            if(App.currentApplicationSettings != null) {
+                if (App.currentApplicationSettings.isDefaultWords) {
+                    this.recognizeWordsCheck.IsChecked = true;
+                }
+            }
         }
 
-        private void initalize()
+        private void initalizeProgressringAndImage()
         {
-            progresring.Visibility = Visibility.Collapsed;
-            TextDemo.Text = "";
+            progressring.Visibility = Visibility.Collapsed;
+            if (App.currentApplicationSettings != null) {
+                if (App.currentApplicationSettings.isNotClearRecognizedCode) {
+
+                }
+                else {
+                    TextDemo.Text = "";
+                }
+            }
+            else {
+                TextDemo.Text = "";
+            }
             ImageControl.Source = new BitmapImage();
         }
         private async void Button_Click(object sender, RoutedEventArgs e)
         {
             ImageButton.IsEnabled = false;
-            initalize();
-            progresring.Visibility = Visibility.Visible;
-            //progresring.IsActive = true;
+            initalizeProgressringAndImage();
+            progressring.Visibility = Visibility.Visible;
             await chooseImageAndDeSerAsync();
             ImageButton.IsEnabled = true;
-            progresring.Visibility = Visibility.Collapsed;
+            progressring.Visibility = Visibility.Collapsed;
 
         }
-
-
 
         private void fixWebButton_Click(object sender, RoutedEventArgs e)
         {
             string boxStr = this.TextDemo.Text;
-            boxStr = MathJaxServer.fixFomulashtml(boxStr);
+            boxStr = tencentServer.fixFomulashtml(boxStr);
             WebDemo.NavigateToString(boxStr);
         }
 
@@ -64,45 +82,44 @@ namespace snip2latex.View
             picker.FileTypeFilter.Add(".jpeg");
             var file = await picker.PickSingleFileAsync();
             if (file != null) {
+                file = await file.CopyAsync(ApplicationData.Current.LocalFolder, file.GetHashCode() + file.Name);
                 try {
                     BitmapImage bmp = new BitmapImage();
                     await bmp.SetSourceAsync(await file.OpenAsync(FileAccessMode.Read));
                     ImageControl.Source = bmp;
-                    String str = await LatexFacade.PostNewAsync(file);
-                    Model.DataWrapperReturn data = Model.Data.wrapper(str);
+                    List<String> data;
+                    if (this.recognizeWordsCheck.IsChecked == true) {
+                        data = await TencentPaperData.getPaperStringArrayAsync(file);
+                    }
+                    else {
+                        data = await TencentData.getLatexStringArrayAsync(file);
+                    }
                     if (data == null) throw new Exception("Json didn't deserialize anything");
-                    Model.Data.restoreWords(data);
-                    //string htmlString;
                     HtmlResult htmlResult;
                     try {
-                        MathJaxServer.init();
-                        //MathJaxServer.multiOutlineFomulas(data, Model.Data.FomulaWordsSeparateOption.bothFomulaAndWords);
-                        //MathJaxServer.multiOutlineFomulas(data);
-                        //htmlString = MathJaxServer.getServerHtmlAsync();
-                        htmlResult = MathJaxServer.getServerHtmls(data);
+                        tencentServer.init();
+                        htmlResult = tencentServer.getServerHtmls(data);
                     }
                     catch (Exception e) {
-                        //htmlString = MathJaxServer.WebServerErrorHandle(e);
-                        htmlResult = MathJaxServer.WebServerErrorHandles(e);
+                        htmlResult = tencentServer.WebServerErrorHandles(e);
                     }
                     if (recognizeWordsCheck.IsChecked == true) {
-                        foreach (var i in data.words_result) {
-                            TextDemo.Text += i.words + "\n";
+                        foreach (var i in data) {
+                            TextDemo.Text += i + "\n";
                         }
                         WebDemo.NavigateToString(htmlResult.result_w);
                     }
                     else if (recognizeWordsCheck.IsChecked == false) {
-                        foreach (var i in data.formula_result) {
-                            TextDemo.Text += i.words + "\n";
+                        foreach (var i in data) {
+                            TextDemo.Text += i + "\n";
                         }
                         WebDemo.NavigateToString(htmlResult.result_f);
                     }
                     else {
-                        WebDemo.NavigateToString(MathJaxServer.WebServerErrorHandle(new Exception("wrong option")));
+                        WebDemo.NavigateToString(tencentServer.WebServerErrorHandle(new Exception("wrong option")));
                     }
-                    //WebDemo.NavigateToString(htmlString);
-                    //WebDemo_f.NavigateToString(htmlResult.result_f);
-                    //WebDemo_w.NavigateToString(htmlResult.result_w);
+                    HistoryData.addHistory(new recognizedData(bmp,TextDemo.Text,htmlResult,file));
+                    await HistoryData.storeAsync();
                 }
                 catch (WebException ex) {
                     try {
@@ -112,24 +129,25 @@ namespace snip2latex.View
 
                         ErrorPage.errorPage.showError(ex.Message + streamReader.ReadToEnd());
 
-                        initalize();
+                        initalizeProgressringAndImage();
                     }
                     catch (Exception e) {
                         MainPage.Current.toNavigate(typeof(ErrorPage));
                         ErrorPage.errorPage.showError(e.Message + "(Probably network problem)");
-                        initalize();
+                        initalizeProgressringAndImage();
                     }
                 }
                 catch (Exception ex) {
                     MainPage.Current.toNavigate(typeof(ErrorPage));
                     ErrorPage.errorPage.showError(ex.Message);
-                    initalize();
+                    initalizeProgressringAndImage();
                 }
             }
             else {
                 DisplayNoFileDialog();
-                initalize();
+                initalizeProgressringAndImage();
             }
+            saveStringTorefresh = TextDemo.Text;
         }
 
         private async void DisplayNoFileDialog()
@@ -148,5 +166,11 @@ namespace snip2latex.View
             }
         }
 
+        private void refreshCodeButton_Click(object sender, RoutedEventArgs e)
+        {
+            if (saveStringTorefresh != null) {
+                this.TextDemo.Text = saveStringTorefresh;
+            }
+        }
     }
 }

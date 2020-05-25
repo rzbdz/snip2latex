@@ -18,7 +18,7 @@
             <TextBlock Margin="0,0,0,10" RelativePanel.AlignTopWithPanel="True" Text="识别参数" Name="TitleBlock" Style="{StaticResource TitleTextBlockStyle}"/>
             <CheckBox Margin="5,0,0,0" RelativePanel.Below="TitleBlock" Name="recognizeWordsCheck"  Content="同时识别文字"/>
             <CheckBox Margin="5,0,0,0" RelativePanel.Below="recognizeWordsCheck" Name="separateCheck"  Content="分开显示代码(开发中)" IsEnabled="False"/>
-            <Button  Margin="5,0,0,0" RelativePanel.AlignBottomWithPanel="True" CornerRadius="2" Content="开始识别" Name="ImageButton" Click="Button_Click">
+            <Button  Margin="5,0,0,0" RelativePanel.AlignBottomWithPanel="True" CornerRadius="2" Content="打开图片" Name="ImageButton" Click="Button_Click">
                 <Button.Resources>
                     <SolidColorBrush x:Key="ButtonBackground" Color="{ThemeResource SystemAccentColor}"/>
                     <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="{ThemeResource HoverPurple}"/>
@@ -29,7 +29,7 @@
                 </Button.Resources>
             </Button>
             <StackPanel Orientation="Vertical"  RelativePanel.Below="separateCheck" Padding="5,5,0,0">
-                <Image Name="ImageControl"  Stretch="Uniform" MinHeight="32" MinWidth="32" MaxWidth="720" MaxHeight="128" Source="Assets/Square150x150Logo.scale-200.png" />
+                <Image Name="ImageControl"  Stretch="Uniform" MinHeight="32" MinWidth="32" MaxWidth="720" MaxHeight="128" />
                 <TextBlock Text="图片预览" Name="imageCaption" HorizontalAlignment="Right" Visibility="Collapsed"/>
             </StackPanel>
         </RelativePanel>
@@ -57,6 +57,21 @@
                     <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="{ThemeResource SystemAccentColor}"/>
                 </Button.Resources>
             </Button>
+            <Button Height="31.3333"
+                    Name="refreshCodeButton"
+                    RelativePanel.AlignBottomWithPanel="True" 
+                    RelativePanel.RightOf="fixWebButton" 
+                    CornerRadius="2"
+                    FontFamily="Segoe MDL2 Assets" 
+                    Content="&#xE72C;"
+                    Click="refreshCodeButton_Click">
+                <Button.Resources>
+                    <SolidColorBrush x:Key="ButtonForeground" Color="White"/>
+                    <SolidColorBrush x:Key="ButtonBackground" Color="{ThemeResource SystemAccentColor}"/>
+                    <SolidColorBrush x:Key="ButtonBackgroundPointerOver" Color="{ThemeResource HoverPurple}"/>
+                    <SolidColorBrush x:Key="ButtonBackgroundPressed" Color="{ThemeResource SystemAccentColor}"/>
+                </Button.Resources>
+            </Button>
         </RelativePanel>
         <RelativePanel Padding="20,20,20,20" Grid.Row="2">
             <TextBlock  Margin="0,0,0,10" RelativePanel.AlignTopWithPanel="True" Text="预览" Name="jaxBoxTitle" Style="{StaticResource TitleTextBlockStyle}"/>
@@ -71,7 +86,7 @@
                      Name="WebDemo"
                      DefaultBackgroundColor="Transparent"/>
         </RelativePanel>
-        <Grid  Name="progresring"  Grid.RowSpan="3">
+        <Grid Visibility="Collapsed"  Name="progressring"  Grid.RowSpan="3">
 
             <Rectangle Fill="{ThemeResource SystemControlAltHighAcrylicElementBrush}"/>
             <ProgressRing IsActive="True" 
