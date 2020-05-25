@@ -70,27 +70,27 @@ namespace snip2latex
 
 - MyBaiduToken.cs
 
-  ```csharp
-  namespace snip2latex
-  {
-      public static class MyBaiduToken
-      {
-          public static String getApiKey()
-          {
-              return "[your api key]";
-          }
-          public static String getAppID()
-          {
-              return "your app id";
-          }
-          public static String getSecretKey()
-          {
-              return "your secrect key";
-          }
-      }
-  }
-  ```
-  
+```csharp
+namespace snip2latex
+{
+	public static class MyBaiduToken
+	{
+		public static String getApiKey()
+		{
+            return "[your api key]";
+        }
+        public static String getAppID()
+        {
+            return "your app id";
+        }
+        public static String getSecretKey()
+        {
+            return "your secrect key";
+        }
+    }
+}
+```
+
   Preview screenshots:
 
 ![HomePage](project_info\HomePage.png)
