@@ -29,7 +29,7 @@
                 </Button.Resources>
             </Button>
             <StackPanel Orientation="Vertical"  RelativePanel.Below="separateCheck" Padding="5,5,0,0">
-                <Image Name="ImageControl"  Stretch="Uniform" MinHeight="32" MinWidth="32" MaxWidth="720" MaxHeight="128" Source="Assets/Square150x150Logo.scale-200.png" />
+                <Image Name="ImageControl"  Stretch="Uniform" MinHeight="32" MinWidth="32" MaxWidth="720" MaxHeight="128" />
                 <TextBlock Text="图片预览" Name="imageCaption" HorizontalAlignment="Right" Visibility="Collapsed"/>
             </StackPanel>
         </RelativePanel>

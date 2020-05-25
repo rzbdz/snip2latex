@@ -14,7 +14,7 @@
                HorizontalAlignment="Left"
                Height="100" 
                Width="100" 
-               Source="ms-appx:///Assets/StoreLogo.scale-400.png"/>
+               Source="ms-appx:///Assets/Logo.png"/>
             <TextBlock Style="{ThemeResource CaptionTextBlockStyle}" 
                        Text="版本: 1.2.2"
                        Margin="5,5,5,5"/>

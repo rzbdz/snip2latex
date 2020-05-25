@@ -16,7 +16,7 @@
                         Orientation="Vertical" 
                     HorizontalAlignment="Center"
                     VerticalAlignment="Center">
-            <Image Source="ms-appx:///Assets/StoreLogo.scale-400.png" 
+            <Image Source="ms-appx:///Assets/Logo.png" 
                    x:Name="Icon"
                    VerticalAlignment="Center"
                     Margin="20,20,20,0"
