@@ -26,6 +26,8 @@
             <TextBlock Margin="15,0,0,0" Foreground="Gray" Text=" Apache-2.0" Style="{ThemeResource CaptionTextBlockStyle}"/>
             <HyperlinkButton NavigateUri="https://www.mathjax.org/"  Margin="15,0,0,0" Content="MathJax Version 3 js"/>
             <TextBlock Margin="15,0,0,0" Foreground="Gray" Text=" Apache-2.0" Style="{ThemeResource CaptionTextBlockStyle}"/>
+            <HyperlinkButton NavigateUri="https://www.newtonsoft.com/json"  Margin="15,0,0,0" Content="Newtonsoft Json.NET"/>
+            <TextBlock Margin="15,0,0,0" Foreground="Gray" Text=" MIT" Style="{ThemeResource CaptionTextBlockStyle}"/>
         </StackPanel>
     </StackPanel>
 </Page>

@@ -8,6 +8,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.ApplicationModel.DataTransfer;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
+using Windows.Storage;
 using Windows.Storage.Streams;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
@@ -84,11 +85,13 @@ namespace snip2latex.View
             }
             if (f.Contains(StandardDataFormats.Bitmap)) {
                 RandomAccessStreamReference file = await dp.GetBitmapAsync();
-
                 BitmapImage image = new BitmapImage();
                 await image.SetSourceAsync(await file.OpenReadAsync());
                 ImageControl.Source = image;
-                await pasteImageAndDeSerAsync(file);
+                HtmlResult html = await pasteImageAndDeSerAsync(file);
+                StorageFile imgFile = await saveImageToFileAsync(file);
+                Model.HistoryData.addHistory(new Model.recognizedData(image,TextDemo.Text,html,imgFile));
+                await Model.HistoryData.storeAsync();
             }
             else if (f.Contains(StandardDataFormats.StorageItems)) {
                 DisplayErrorDialog("你复制的是文件不是图片");
@@ -98,7 +101,28 @@ namespace snip2latex.View
             }
         }
 
-        private async System.Threading.Tasks.Task pasteImageAndDeSerAsync(RandomAccessStreamReference imageStream)
+        private async System.Threading.Tasks.Task<StorageFile> saveImageToFileAsync(RandomAccessStreamReference img)
+        {
+            var imgstream = await img.OpenReadAsync();
+            BitmapImage bitmap = new BitmapImage();
+            bitmap.SetSource(imgstream);
+            Windows.UI.Xaml.Media.Imaging.WriteableBitmap src = new Windows.UI.Xaml.Media.Imaging.WriteableBitmap(bitmap.PixelWidth, bitmap.PixelHeight);
+            src.SetSource(imgstream);
+            Windows.Graphics.Imaging.BitmapDecoder decoder = await Windows.Graphics.Imaging.BitmapDecoder.CreateAsync(imgstream);
+            Windows.Graphics.Imaging.PixelDataProvider pxprd = await decoder.GetPixelDataAsync(Windows.Graphics.Imaging.BitmapPixelFormat.Bgra8, Windows.Graphics.Imaging.BitmapAlphaMode.Straight, new Windows.Graphics.Imaging.BitmapTransform(), Windows.Graphics.Imaging.ExifOrientationMode.RespectExifOrientation, Windows.Graphics.Imaging.ColorManagementMode.DoNotColorManage);
+            byte[] buffer = pxprd.DetachPixelData();
+            StorageFolder folder = ApplicationData.Current.LocalFolder;
+            StorageFile file = await folder.CreateFileAsync(img.GetHashCode() +"clipboardSaved"+ ".png", 
+                CreationCollisionOption.ReplaceExisting);
+            using (var fileStream = await file.OpenAsync(FileAccessMode.ReadWrite)) {
+                var encoder = await Windows.Graphics.Imaging.BitmapEncoder.CreateAsync(Windows.Graphics.Imaging.BitmapEncoder.PngEncoderId, fileStream);
+                encoder.SetPixelData(Windows.Graphics.Imaging.BitmapPixelFormat.Bgra8, Windows.Graphics.Imaging.BitmapAlphaMode.Straight, decoder.PixelWidth, decoder.PixelHeight, decoder.DpiX, decoder.DpiY, buffer);
+                await encoder.FlushAsync();
+            }
+            return file;
+        }
+
+        private async System.Threading.Tasks.Task<HtmlResult> pasteImageAndDeSerAsync(RandomAccessStreamReference imageStream)
         {
             if (imageStream != null) {
                 try {
@@ -136,6 +160,7 @@ namespace snip2latex.View
                     else {
                         WebDemo.NavigateToString(tencentServer.WebServerErrorHandle(new Exception("wrong option")));
                     }
+                    return htmlResult;
                 }
                 catch (WebException ex) {
                     try {
@@ -162,6 +187,7 @@ namespace snip2latex.View
                 initalizeProgressringAndImage();
             }
             saveStringTorefresh = TextDemo.Text;
+            return new HtmlResult("", "");
         }
 
 

@@ -1,0 +1,6 @@
+MainPackage=C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Release\snip2latex_0.1.4.0_x86.msix
+SymbolPackage=C:\Users\A1134\source\repos\snip2latex\snip2latex\obj\x86\Release\Symbols\snip2latex_0.1.4.0_x86.appxsym
+ResourcePack=C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Release\snip2latex_0.1.4.0_scale-100.msix
+ResourcePack=C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Release\snip2latex_0.1.4.0_scale-125.msix
+ResourcePack=C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Release\snip2latex_0.1.4.0_scale-150.msix
+ResourcePack=C:\Users\A1134\source\repos\snip2latex\snip2latex\bin\x86\Release\snip2latex_0.1.4.0_scale-400.msix

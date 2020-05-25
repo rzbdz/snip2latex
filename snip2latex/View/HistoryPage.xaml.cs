@@ -5,6 +5,7 @@ using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using System.Threading.Tasks;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.UI.ViewManagement;
@@ -26,19 +27,74 @@ namespace snip2latex.View
     public sealed partial class History : Page
     {
         public static History history;
-        public  ObservableCollection<recognizedData> HistoryCollection;
+        public ObservableCollection<recognizedData> HistoryCollection;
         public History()
         {
             ApplicationView.GetForCurrentView().Title = "识别记录...";
             this.InitializeComponent();
-            init();
+            HistoryCollection = new ObservableCollection<recognizedData>();
             history = this;
             MainPage.Current.hideBackButton();
-            
+            init();
+
         }
         public async void init()
         {
-            HistoryCollection = await HistoryData.readAsync();
+            var Collection = await HistoryData.readAsync();
+            foreach (var i in Collection) {
+                HistoryCollection.Add(i);
+            }
+        }
+        public async Task initAsync()
+        {
+            var Collection = await HistoryData.readAsync();
+            foreach (var i in Collection) {
+                HistoryCollection.Add(i);
+            }
+        }
+        public async Task refreshAsync()
+        {
+            HistoryCollection.Clear();
+            await initAsync();
+            await Model.HistoryData.storeAsync();
+            GC.Collect();
+        }
+        public async void refresh()
+        {
+            HistoryCollection.Clear();
+            await initAsync();
+            await Model.HistoryData.storeAsync();
+            GC.Collect();
+        }
+        public async System.Threading.Tasks.Task clearAsync()
+        {
+            ContentDialog c = new ContentDialog
+            {
+                Title = "警告",
+                Content = "清空过程是不可逆的!",
+                PrimaryButtonText = "删除",
+                CloseButtonText = "取消",
+            };
+            var rs = await c.ShowAsync();
+            if (rs == ContentDialogResult.Primary) {
+                await Model.HistoryData.clearAllAsync();
+                await Model.HistoryData.storeAsync();
+            }
+            refresh();
+        }
+        private void GridView_ItemClick(object sender, ItemClickEventArgs e)
+        {
+
+        }
+
+        private void refreshButton_Click(object sender, RoutedEventArgs e)
+        {
+            this.refresh();
+        }
+
+        private async void trashButton_Click(object sender, RoutedEventArgs e)
+        {
+            await clearAsync();
         }
     }
 }

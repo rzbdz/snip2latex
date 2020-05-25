@@ -7,16 +7,23 @@
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
     mc:Ignorable="d">
-    <Grid>
-        <GridView ItemsSource="{x:Bind HistoryCollection}">
+    <StackPanel Margin="20,10,20,20"  Orientation="Vertical">
+        <RelativePanel>
+            <TextBlock RelativePanel.AlignVerticalCenterWith="refreshButton" Text="历史记录" Style="{ThemeResource TitleTextBlockStyle}"/>
+            <AppBarButton Click="refreshButton_Click" x:Name="refreshButton" RelativePanel.AlignRightWithPanel="True" Icon="Refresh" Height="36"/>
+            <AppBarButton x:Name="trashButton" Click="trashButton_Click" RelativePanel.LeftOf="refreshButton" Icon="Delete" Height="36"/>
+        </RelativePanel>
+        <GridView  Margin="0,10,0,0"
+                   ItemsSource="{x:Bind HistoryCollection}"
+                   IsItemClickEnabled="True"
+                   ItemClick="GridView_ItemClick"
+                   Name="gridView"
+                   >
             <GridView.ItemTemplate>
                 <DataTemplate x:DataType="data:recognizedData">
-                    <StackPanel Height="150" Width="260" Padding="10,10,10,10"  Orientation="Vertical">
-                        <Image Stretch="UniformToFill" Height="100" Width="240" Source="{x:Bind bitmapImage}"/>
-                        <TextBlock HorizontalAlignment="Center" Text="{x:Bind date}"/>
-                    </StackPanel>
+                    <local:HistoryITemplate CornerRadius="3"/>
                 </DataTemplate>
             </GridView.ItemTemplate>
         </GridView>
-    </Grid>
+    </StackPanel>
 </Page>

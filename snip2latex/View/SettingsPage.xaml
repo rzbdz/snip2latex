@@ -78,6 +78,6 @@
                 </StackPanel>
             </StackPanel>
         </StackPanel>
-        <HyperlinkButton Click="HyperlinkButton_Click" Margin="0,0,0,10"  HorizontalAlignment="Center" VerticalAlignment="Bottom">snip2latex@v1.0.2#tencent-api</HyperlinkButton>
+        <HyperlinkButton Click="HyperlinkButton_Click" Margin="0,0,0,10"  HorizontalAlignment="Center" VerticalAlignment="Bottom">关于本应用@snip2latex</HyperlinkButton>
     </Grid>
 </Page>

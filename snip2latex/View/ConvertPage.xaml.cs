@@ -82,6 +82,7 @@ namespace snip2latex.View
             picker.FileTypeFilter.Add(".jpeg");
             var file = await picker.PickSingleFileAsync();
             if (file != null) {
+                file = await file.CopyAsync(ApplicationData.Current.LocalFolder, file.GetHashCode() + file.Name);
                 try {
                     BitmapImage bmp = new BitmapImage();
                     await bmp.SetSourceAsync(await file.OpenAsync(FileAccessMode.Read));
@@ -117,8 +118,8 @@ namespace snip2latex.View
                     else {
                         WebDemo.NavigateToString(tencentServer.WebServerErrorHandle(new Exception("wrong option")));
                     }
-                    HistoryData.addHistory(new recognizedData(bmp,TextDemo.Text,htmlResult));
-                    
+                    HistoryData.addHistory(new recognizedData(bmp,TextDemo.Text,htmlResult,file));
+                    await HistoryData.storeAsync();
                 }
                 catch (WebException ex) {
                     try {
