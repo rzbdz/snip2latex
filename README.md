@@ -1,5 +1,5 @@
 # Snip to Latex
- ![](https://github.com/PanJunzhong/snip2latex/tree/master/snip2latex/Assets/Logo.png)
+ ![]( https://gitee.com/rzbulldozer/snip2latex/blob/master/snip2latex/Assets/Logo.png)
 
 一个基于第三方API的UWP应用程序，将图像转换为Latex公式表达式。
 
@@ -93,15 +93,15 @@ namespace snip2latex
 
   Preview screenshots:
 
-![HomePage](https://github.com/PanJunzhong/snip2latex/tree/master/project_info/HomePage.png)
+![HomePage](https://gitee.com/rzbulldozer/snip2latex/blob/master/project_info/HomePage.png)
 
-![ConvertPage](https://github.com/PanJunzhong/snip2latex/tree/master/project_info/ConvertPage.png)
+![ConvertPage](https://gitee.com/rzbulldozer/snip2latex/blob/master/project_info/ConvertPage.png)
 
-![HistoryPage](https://github.com/PanJunzhong/snip2latex/tree/master/project_info/HistoryPage.png)
+![HistoryPage](https://gitee.com/rzbulldozer/snip2latex/blob/master/project_info/HistoryPage.png)
 
-![HistoryDetails](https://github.com/PanJunzhong/snip2latex/tree/master/project_info/HistoryDetails.png)
+![HistoryDetails](https://gitee.com/rzbulldozer/snip2latex/blob/master/project_info/HistoryDetails.png)
 
- ![](snip2latex\Assets\Logo.png)
+ ![](https://gitee.com/rzbulldozer/snip2latex/blob/master/snip2latex/Assets/Logo.png)
 
 An UWP app converting image to LaTeX formula expression based on third party api.
 
@@ -195,13 +195,13 @@ namespace snip2latex
 
 Preview screenshots:
 
-![HomePage](project_info\HomePage.png)
+![HomePage](https://gitee.com/rzbulldozer/snip2latex/blob/master/project_info/HomePage.png)
 
-![ConvertPage](project_info\ConvertPage.png)
+![ConvertPage](https://gitee.com/rzbulldozer/snip2latex/blob/master/project_info/ConvertPage.png)
 
-![HistoryPage](project_info\HistoryPage.png)
+![HistoryPage](https://gitee.com/rzbulldozer/snip2latex/blob/master/project_info/HistoryPage.png)
 
-![HistoryDetails](project_info\HistoryDetails.png)
+![HistoryDetails](https://gitee.com/rzbulldozer/snip2latex/blob/master/project_info/HistoryDetails.png)
 
 
 
