@@ -1,3 +1,5 @@
 # Auto detect text files and perform LF normalization
 * text=auto
 *.ps1 linguist-language=csharp
+*.psd1 linguist-language=csharp
+*.appx linguist-language=csharp
